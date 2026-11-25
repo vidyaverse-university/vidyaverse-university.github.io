@@ -1,0 +1,303 @@
+[
+ {
+  "id": "pendulum",
+  "title": "Pendulum lab",
+  "icon": "⏱️",
+  "faculty": "school",
+  "bands": [
+   "middle",
+   "secondary",
+   "senior"
+  ],
+  "summary": "Swing a real (non-linear) pendulum: change length, gravity, amplitude, mass and damping, and watch the period, energy and θ–t graph live."
+ },
+ {
+  "id": "projectile",
+  "title": "Projectile lab",
+  "icon": "🎯",
+  "faculty": "school",
+  "bands": [
+   "secondary",
+   "senior",
+   "ug"
+  ],
+  "summary": "Launch a ball at any speed, angle and height — with or without air resistance — and hit targets while reading range, height and time of flight."
+ },
+ {
+  "id": "circuit",
+  "title": "Circuit lab",
+  "icon": "💡",
+  "faculty": "school",
+  "bands": [
+   "middle",
+   "secondary",
+   "senior"
+  ],
+  "summary": "Wire three bulbs in series, parallel or a mix, set the battery and resistances, and see Ohm’s law, current flow and power live."
+ },
+ {
+  "id": "lens-optics",
+  "title": "Lens & optics lab",
+  "icon": "🔍",
+  "faculty": "school",
+  "bands": [
+   "secondary",
+   "senior",
+   "ug"
+  ],
+  "summary": "Move an object in front of a convex or concave lens and watch the three principal rays form real or virtual images, with the lens formula and magnification live."
+ },
+ {
+  "id": "ph-titration",
+  "title": "pH & titration lab",
+  "icon": "⚗️",
+  "faculty": "school",
+  "bands": [
+   "secondary",
+   "senior",
+   "ug"
+  ],
+  "summary": "Titrate strong or weak acid with NaOH drop by drop, watch real indicator colours and a live titration curve, find the equivalence point and pKa."
+ },
+ {
+  "id": "cell-explorer",
+  "title": "Cell explorer",
+  "icon": "🧫",
+  "faculty": "school",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary",
+   "senior"
+  ],
+  "summary": "Tap every part of an animal cell, a plant cell and a bacterium to learn what each organelle does — then find them in a guided hunt."
+ },
+ {
+  "id": "human-body",
+  "title": "Human body explorer",
+  "icon": "🫀",
+  "faculty": "school",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary",
+   "senior"
+  ],
+  "summary": "Explore the organs of six body systems, then exercise the body and watch heart rate, cardiac output and breathing respond."
+ },
+ {
+  "id": "microscope",
+  "title": "Virtual microscope",
+  "icon": "🔬",
+  "faculty": "school",
+  "bands": [
+   "middle",
+   "secondary",
+   "senior",
+   "ug"
+  ],
+  "summary": "Use a realistic light microscope: choose slides, switch objectives, focus with coarse and fine knobs, adjust light and oil, and measure real cell sizes."
+ },
+ {
+  "id": "graph-plotter",
+  "title": "Graph plotter",
+  "icon": "📈",
+  "faculty": "school",
+  "bands": [
+   "middle",
+   "secondary",
+   "senior",
+   "ug"
+  ],
+  "summary": "Type up to three functions, slide parameters a, b, c, pan and zoom, trace values and roots — and match target curves to master transformations."
+ },
+ {
+  "id": "geometry",
+  "title": "Triangle geometry lab",
+  "icon": "📐",
+  "faculty": "school",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary",
+   "senior"
+  ],
+  "summary": "Drag the corners of a triangle and watch sides, angles, area, Pythagoras’ squares, circumcircle, incircle, medians and altitudes update live."
+ },
+ {
+  "id": "probability",
+  "title": "Probability lab",
+  "icon": "🎲",
+  "faculty": "school",
+  "bands": [
+   "middle",
+   "secondary",
+   "senior",
+   "ug"
+  ],
+  "summary": "Flip coins, roll dice and spin spinners thousands of times; compare experimental and theoretical probability and watch the law of large numbers."
+ },
+ {
+  "id": "fraction-pizza",
+  "title": "Fraction pizza",
+  "icon": "🍕",
+  "faculty": "school",
+  "bands": [
+   "primary",
+   "middle"
+  ],
+  "summary": "Cut two pizzas into equal slices, tap slices to make fractions, and discover equivalent fractions, comparing and adding — with decimals and percentages."
+ },
+ {
+  "id": "turtle-code",
+  "title": "Turtle Code",
+  "icon": "🐢",
+  "faculty": "tech",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary"
+  ],
+  "summary": "Write tiny Logo-style programs (FD, RT, REPEAT) to steer a turtle and draw shapes — learn sequences, loops, debugging and the 360° turning rule."
+ },
+ {
+  "id": "budget-sim",
+  "title": "Budget Simulator",
+  "icon": "🧾",
+  "faculty": "life",
+  "bands": [
+   "secondary",
+   "senior",
+   "ug",
+   "pro"
+  ],
+  "summary": "Plan a monthly budget in rupees, test it against the 50/30/20 rule, then live through a year of surprise bills and a credit-card debt to see why emergency funds matter."
+ },
+ {
+  "id": "compound-interest",
+  "title": "Compound Interest Lab",
+  "icon": "📈",
+  "faculty": "life",
+  "bands": [
+   "secondary",
+   "senior",
+   "ug",
+   "pro"
+  ],
+  "summary": "See money grow: compare compound and simple interest, compounding frequency, SIPs, the Rule of 72 and the bite of inflation on a live growth chart."
+ },
+ {
+  "id": "water-cycle",
+  "title": "Water Cycle",
+  "icon": "💧",
+  "faculty": "school",
+  "bands": [
+   "primary",
+   "middle"
+  ],
+  "summary": "Heat the ocean, push clouds with the wind and make it rain or snow on a mountain — see evaporation, condensation, precipitation, runoff and groundwater in action."
+ },
+ {
+  "id": "solar-scale",
+  "title": "Solar System to Scale",
+  "icon": "🪐",
+  "faculty": "school",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary"
+  ],
+  "summary": "Compare the true sizes and distances of the planets, watch them orbit with Kepler’s third law, time sunlight’s journey and build a scale model in your head."
+ },
+ {
+  "id": "cpr-rhythm",
+  "title": "CPR Rhythm Trainer",
+  "icon": "❤️‍🩹",
+  "faculty": "life",
+  "bands": [
+   "middle",
+   "secondary",
+   "senior",
+   "ug",
+   "pro"
+  ],
+  "summary": "Practise the life-saving rhythm of hands-only CPR: 100–120 compressions a minute, 5–6 cm deep, with a metronome, depth gauge, live rate graph and the 30:2 cycle."
+ },
+ {
+  "id": "ecosystem",
+  "title": "Ecosystem: Predators & Prey",
+  "icon": "🦊",
+  "faculty": "school",
+  "bands": [
+   "middle",
+   "secondary",
+   "senior",
+   "ug"
+  ],
+  "summary": "Run a living Lotka–Volterra model of rabbits, foxes and grass: watch boom-and-bust cycles, carrying capacity, extinction and the surprising effects of droughts."
+ },
+ {
+  "id": "chemical-balance",
+  "title": "Balance the Equation",
+  "icon": "⚗️",
+  "faculty": "school",
+  "bands": [
+   "middle",
+   "secondary",
+   "senior"
+  ],
+  "summary": "Balance real chemical reactions by changing coefficients and watching atoms and masses on both sides — the law of conservation of mass made visible."
+ },
+ {
+  "id": "sound-waves",
+  "title": "Sound Waves Lab",
+  "icon": "🔊",
+  "faculty": "school",
+  "bands": [
+   "middle",
+   "secondary",
+   "senior"
+  ],
+  "summary": "Hear and see sound: change frequency, amplitude and waveform, watch air molecules squeeze and stretch, measure wavelength (v = fλ), make beats and octaves."
+ },
+ {
+  "id": "map-skills",
+  "title": "Map Skills",
+  "icon": "🗺️",
+  "faculty": "school",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary"
+  ],
+  "summary": "Read a topographic map of the town of Vidyapur: grid references, compass directions and bearings, measuring distance with a scale, map symbols and contour lines."
+ },
+ {
+  "id": "typing-lab",
+  "title": "Touch Typing Lab",
+  "icon": "⌨️",
+  "faculty": "tech",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary",
+   "senior",
+   "ug",
+   "pro"
+  ],
+  "summary": "Learn to type without looking: home row, finger zones, top and bottom rows and full sentences, with live words-per-minute, accuracy and a colour-coded keyboard."
+ },
+ {
+  "id": "stats-lab",
+  "title": "Statistics Explorer",
+  "icon": "📊",
+  "faculty": "school",
+  "bands": [
+   "secondary",
+   "senior",
+   "ug",
+   "pg"
+  ],
+  "summary": "Build data sets by tapping, then watch mean, median, mode, quartiles, standard deviation, box plots and histograms respond — plus a hands-on central limit theorem simulator."
+ }
+]
