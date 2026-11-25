@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" class="m-campus">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VidyaVerse University — free learning for every age</title>
+<meta name="description" content="VidyaVerse University: a free, private, offline-friendly online university for every age — infants with parents, every school class, JEE/NEET, university, PhD, tech, corporate, sports, arts, trades, life skills and wellbeing. No sign-up.">
+<meta name="theme-color" content="#1d3b45">
+<meta property="og:type" content="website">
+<meta property="og:title" content="VidyaVerse University — free learning for every age">
+<meta property="og:description" content="15 schools, from Nanhe Kadam (first steps) to Shodh (PhD). Lessons, labs, games, placement tests and exams. Free, private, no sign-up.">
+<meta property="og:url" content="https://kumarnikhildeveloperaccount.github.io/vidyaverse/">
+<meta property="og:image" content="https://kumarnikhildeveloperaccount.github.io/vidyaverse/favicon.svg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+  #splash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(120% 90% at 50% 110%,#ff9a6b 0%,#6d4bb3 38%,#17123a 72%,#0a0820 100%);color:#fff;font:600 16px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;transition:opacity .8s ease,visibility .8s}
+  #splash.out{opacity:0;visibility:hidden}
+  #splash .sp-in{display:grid;justify-items:center;gap:14px;text-align:center}
+  #splash svg{width:96px;height:96px;filter:drop-shadow(0 8px 30px rgba(255,160,120,.5))}
+  #splash .sp-p{stroke-dasharray:160;stroke-dashoffset:160;animation:spd 1.4s ease forwards}
+  #splash .sp-w{letter-spacing:.32em;font-size:clamp(20px,5vw,30px);font-weight:800;opacity:0;animation:spf .9s .5s ease forwards;padding-left:.32em}
+  #splash .sp-s{opacity:0;font-weight:500;font-size:13px;letter-spacing:.12em;animation:spf .9s .9s ease forwards;color:#ffe2c6}
+  @keyframes spd{to{stroke-dashoffset:0}}@keyframes spf{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){#splash *{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}}
+</style>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/modes.css">
+<link rel="stylesheet" href="css/ui.css">
+<link rel="stylesheet" href="css/widgets.css">
+<link rel="stylesheet" href="css/welcome.css">
+<link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+<div id="splash" aria-hidden="true">
+  <div class="sp-in">
+    <svg viewBox="0 0 64 64" fill="none">
+      <ellipse cx="32" cy="34" rx="27" ry="9" stroke="#ffcf6e" stroke-width="1.6" transform="rotate(-18 32 34)" class="sp-p" opacity=".85"/>
+      <path class="sp-p" d="M32 12 C39 21 39 34 32 44 C25 34 25 21 32 12Z" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/>
+      <path class="sp-p" d="M32 44 C23 41 15 34 13 23 C22 24 29 31 32 44Z M32 44 C41 41 49 34 51 23 C42 24 35 31 32 44Z" stroke="#ffb3c7" stroke-width="2" stroke-linejoin="round"/>
+      <path class="sp-p" d="M10 45 Q21 41 32 47 Q43 41 54 45" stroke="#ffcf6e" stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+    <div class="sp-w">VIDYAVERSE</div>
+    <div class="sp-s">UNIVERSITY · FOR EVERY AGE</div>
+  </div>
+</div>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar" id="topbar">
+  <a href="#/" class="brand" id="brand" data-nav="home" aria-label="VidyaVerse University, campus home">
+    <svg class="brand-logo" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+      <circle cx="32" cy="32" r="31" fill="var(--logo-bg)"/>
+      <ellipse cx="32" cy="34" rx="25" ry="8" stroke="var(--gold)" stroke-width="1.8" transform="rotate(-18 32 34)" opacity=".9"/>
+      <path d="M32 13 C38.5 21 38.5 33 32 43 C25.5 33 25.5 21 32 13Z" fill="var(--logo-petal)"/>
+      <path d="M32 43 C24 40 17 34 15 24 C23 25 29 31 32 43Z M32 43 C40 40 47 34 49 24 C41 25 35 31 32 43Z" fill="var(--logo-petal2)"/>
+      <path d="M12 45 Q22 41 32 47 Q42 41 52 45" stroke="var(--gold)" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="54" cy="25" r="2.4" fill="var(--gold)"/>
+    </svg>
+    <span class="brand-txt"><b>VidyaVerse</b><small>University</small></span>
+  </a>
+  <nav class="topnav" id="topnav" aria-label="Main">
+    <a href="#/" data-nav="home" data-i18n="home">Campus</a>
+    <a href="#/exams" data-nav="exams" data-i18n="exams">Exam hall</a>
+    <a href="#/labs" data-nav="labs" data-i18n="labs">Labs</a>
+    <a href="#/games" data-nav="games" data-i18n="games">Games</a>
+    <a href="#/progress" data-nav="progress" data-i18n="progress">Rewards</a>
+    <a href="#/parents" data-nav="parents" data-i18n="parents">Grown-ups</a>
+    <a href="#/about" data-nav="about" data-i18n="about">About</a>
+  </nav>
+  <div class="top-acts">
+    <button type="button" class="icon-btn" id="searchBtn" data-i18n-label="search" aria-label="Search courses and lessons">🔍</button>
+    <button type="button" class="icon-btn" id="soundBtn" data-sound-state aria-pressed="false" aria-label="Sound on or off">🔇</button>
+    <button type="button" class="icon-btn" id="modeBtn" aria-label="Change the look (UI mode)">🎨</button>
+    <button type="button" class="profile-chip" id="profileChip" aria-label="Your menu">👤</button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1"></main>
+
+<footer class="footer" id="footer">
+  <div class="foot-in">
+    <div class="foot-brand">
+      <b>VidyaVerse University</b>
+      <p>Free for every age. Private by design — your progress never leaves this device.</p>
+      <p class="indep">Topic tags show which syllabus a lesson can support. VidyaVerse is independent and not affiliated with any board, exam body or university.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#/about">About &amp; safety</a><a href="#/settings">Settings</a><a href="#/parents">For parents &amp; teachers</a><a href="#/exams">Exam hall</a>
+    </nav>
+    <div class="credits">
+      <p>Designed &amp; built by <b>Kumar Nikhil</b></p>
+      <p class="cl"><a href="https://kumarnikhildeveloperaccount.github.io/" rel="noopener" target="_blank">Portfolio</a> · <a href="https://www.linkedin.com/in/kumar-nikhil-1000a9192/" rel="noopener" target="_blank">LinkedIn</a> · <a href="mailto:nkashyapnikhilnk@gmail.com">Email</a></p>
+      <p><a href="https://kumarnikhildeveloperaccount.github.io/" rel="noopener" target="_blank">More projects by Kumar Nikhil →</a></p>
+      <p class="grat">With gratitude to God — Om Namah Paarvati Pateh, Har Har Mahadev. May God bless you and everyone.</p>
+    </div>
+  </div>
+</footer>
+
+<nav class="tabbar" id="tabbar" aria-label="Quick navigation">
+  <a href="#/" data-nav="home"><span aria-hidden="true">🏛️</span><b data-i18n="home">Campus</b></a>
+  <a href="#/exams" data-nav="exams"><span aria-hidden="true">📝</span><b data-i18n="exams">Exam hall</b></a>
+  <a href="#/labs" data-nav="labs"><span aria-hidden="true">🧪</span><b data-i18n="labs">Labs</b></a>
+  <a href="#/games" data-nav="games"><span aria-hidden="true">🎮</span><b data-i18n="games">Games</b></a>
+  <a href="#/progress" data-nav="progress"><span aria-hidden="true">🏅</span><b data-i18n="progress">Rewards</b></a>
+</nav>
+
+<button type="button" id="quickExit" class="quick-exit" hidden aria-label="Quick exit to a neutral page (or press Escape)">✋ <span data-i18n="quickExit">Quick exit</span> <kbd>Esc</kbd></button>
+
+<section id="launcher" class="launcher" hidden aria-modal="true" role="dialog" aria-labelledby="launchTitle">
+  <div class="l-head">
+    <button type="button" class="btn ghost" id="launchBack" aria-label="Back">← <span data-i18n="back">Back</span></button>
+    <h2 id="launchTitle">Lab</h2>
+    <span class="l-sp"></span>
+  </div>
+  <div id="launchBody" class="l-body"></div>
+</section>
+
+<div id="modals"></div>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<div id="captions" class="captions" aria-live="polite" role="status"></div>
+<noscript><p class="noscript">VidyaVerse needs JavaScript to run its lessons. Please enable it — everything stays on your device.</p></noscript>
+
+<script src="js/core.js?v=2.0.0" defer></script>
+<script src="js/data.js?v=2.0.0" defer></script>
+<script src="js/store.js?v=2.0.0" defer></script>
+<script src="js/campus.js?v=2.0.0" defer></script>
+<script src="js/app.js?v=2.0.0" defer></script>
+</body>
+</html>
