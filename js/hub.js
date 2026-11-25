@@ -14,6 +14,7 @@
     var seg = h('div', { class: 'seg', role: 'group', 'aria-label': 'Filter' });
     var q = h('input', { type: 'search', placeholder: 'Filter ' + m.title.toLowerCase() + '…', 'aria-label': 'Filter ' + m.title });
     w.appendChild(h('div', { class: 'hub-head' }, [h('div', null, [h('p', { class: 'eyebrow' }, m.eyebrow), h('h1', null, m.icon + ' ' + VV2.t(kind)), h('p', { class: 'lead' }, m.lead)]), h('div', { class: 'row' }, [seg, q])]));
+    if (kind === 'labs' && VV2.routes && VV2.routes.code) w.appendChild(h('a', { href: '#/code', class: 'card hub-card hub-codelink', style: { '--c': '#2b3f73', marginBottom: '16px' }, 'data-say': 'Code Studio' }, [h('span', { class: 'hc-i', 'aria-hidden': 'true' }, '💻'), h('b', null, 'Code Studio — write & run code'), h('small', null, 'Write and run code right in your browser.'), h('span', { class: 'hc-b' }, [h('span', { class: 'pill' }, '⚙️ Yantra'), h('span', { class: 'pill lv' }, 'built-in')])]));
     var g = h('div', { class: 'hub-grid' }); w.appendChild(g);
     for (var i = 0; i < 6; i++) g.appendChild(h('div', { class: 'skel', 'aria-hidden': 'true' }));
     return D.list(kind).then(function (items) {
