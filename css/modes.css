@@ -1,0 +1,71 @@
+/* VidyaVerse v2 — five UI modes: tiny · kids · teen · campus · pro (palette, type, density, motion) */
+
+/* ===== CAMPUS (default) — scholarly, calm parchment & deep teal ===== */
+html.m-campus{--bgimg:radial-gradient(900px 500px at 85% -10%,rgba(212,162,60,.16),transparent 60%),radial-gradient(800px 600px at -10% 10%,rgba(29,92,99,.10),transparent 60%)}
+html.m-campus .hero{background:linear-gradient(135deg,#1d3b45,#1d5c63 55%,#2f6f61);color:#fdf7ea}
+html.m-campus .hero .eyebrow{color:#f2cf7c}
+html.m-campus .school-card{border-top:4px solid var(--c)}
+
+/* ===== TINY — audio-first, huge targets, soft cream & pastels ===== */
+html.m-tiny{--bg:#fff4e3;--bg2:#ffe9cc;--card:#fffdf8;--card2:#fff1dc;--ink:#3d2b1f;--ink2:#7a5c45;--line:rgba(122,92,69,.18);
+  --pri:#ff7a45;--pri2:#ffa24c;--pri-ink:#fff;--acc:#3fa7f5;--gold:#ffbf2e;--radius:32px;--radius-s:22px;--tap:72px;
+  --font:ui-rounded,"Arial Rounded MT Bold","Nunito","Segoe UI Rounded","Segoe UI",system-ui,sans-serif;--font-h:var(--font);--fs:20px;--lh:1.5;--gap:22px;
+  --shadow:0 14px 0 -6px rgba(255,122,69,.18),0 10px 26px -8px rgba(122,92,69,.25);--logo-bg:#ff7a45;--logo-petal:#fff;--logo-petal2:#ffe0a3;
+  --bgimg:radial-gradient(circle at 12% 20%,rgba(255,191,46,.25) 0 60px,transparent 61px),radial-gradient(circle at 88% 30%,rgba(63,167,245,.18) 0 80px,transparent 81px),radial-gradient(circle at 70% 90%,rgba(255,122,69,.14) 0 120px,transparent 121px)}
+html.m-tiny .btn{font-size:1.15rem;padding:16px 26px;border-width:3px}
+html.m-tiny .btn:active{transform:scale(.92)}
+html.m-tiny .topnav,html.m-tiny .footer .foot-links{display:none}
+html.m-tiny .hero{background:linear-gradient(160deg,#ffd27a,#ff9a6b);color:#3d2b1f}
+html.m-tiny h1,html.m-tiny h2{letter-spacing:0}
+html.m-tiny .course-card,html.m-tiny .school-card{border-width:3px}
+html.m-tiny .tabbar a{min-height:64px;font-size:.8rem}
+html.m-tiny .tabbar a span{font-size:1.8rem}
+html.m-tiny .card:active{transform:scale(.97)}
+html.m-tiny .icon-btn{width:52px;height:52px;font-size:1.4rem}
+
+/* ===== KIDS — playful, bright sky & candy ===== */
+html.m-kids{--bg:#eef6ff;--bg2:#dfeeff;--card:#fff;--card2:#f1f6ff;--ink:#1e2a5a;--ink2:#56628f;--line:rgba(30,42,90,.13);
+  --pri:#6a4cff;--pri2:#9a6bff;--pri-ink:#fff;--acc:#ff9f1c;--gold:#ffc83d;--good:#22b573;--bad:#ff5a5f;--radius:24px;--radius-s:16px;--tap:52px;
+  --font:ui-rounded,"Arial Rounded MT Bold","Nunito","Trebuchet MS","Segoe UI",system-ui,sans-serif;--font-h:var(--font);--fs:17px;
+  --shadow:0 8px 0 -3px rgba(106,76,255,.14),0 12px 24px -10px rgba(30,42,90,.25);--logo-bg:#6a4cff;--logo-petal:#fff;--logo-petal2:#ffd166;
+  --bgimg:radial-gradient(circle at 8% 12%,rgba(255,200,61,.35) 0 40px,transparent 41px),radial-gradient(circle at 94% 18%,rgba(106,76,255,.14) 0 90px,transparent 91px),radial-gradient(circle at 20% 85%,rgba(34,181,115,.12) 0 110px,transparent 111px),linear-gradient(180deg,#eaf4ff,#f7fbff)}
+html.m-kids .hero{background:linear-gradient(135deg,#6a4cff,#3fa7f5 60%,#22c3b5);color:#fff}
+html.m-kids .hero .eyebrow{color:#ffe28a}
+html.m-kids .btn.primary{box-shadow:0 5px 0 #4a2fd6}
+html.m-kids .btn.primary:active{box-shadow:0 1px 0 #4a2fd6;transform:translateY(4px)}
+html.m-kids .school-card:hover .sc-i,html.m-kids .school-card:focus-visible .sc-i{animation:wiggle .6s ease}
+@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg) scale(1.1)}75%{transform:rotate(10deg) scale(1.1)}}
+
+/* ===== TEEN — bold, dark neon, social ===== */
+html.m-teen{--bg:#0f0b22;--bg2:#150f2e;--card:#1b1540;--card2:#241c52;--ink:#f4f1ff;--ink2:#b5acd8;--line:rgba(180,160,255,.18);
+  --pri:#ff3d7f;--pri2:#7c4dff;--pri-ink:#fff;--acc:#00e5c3;--gold:#ffd23f;--good:#2ee59d;--bad:#ff5470;--radius:20px;--radius-s:12px;
+  --font:"Avenir Next","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;--font-h:"Avenir Next Condensed","Segoe UI Black","Arial Black",system-ui,sans-serif;
+  --shadow:0 0 0 1px rgba(255,61,127,.08),0 18px 40px -18px rgba(124,77,255,.6);--logo-bg:#ff3d7f;--logo-petal:#fff;--logo-petal2:#00e5c3;
+  --bgimg:radial-gradient(700px 500px at 90% -10%,rgba(255,61,127,.22),transparent 60%),radial-gradient(700px 600px at -10% 30%,rgba(124,77,255,.22),transparent 60%),radial-gradient(600px 400px at 60% 110%,rgba(0,229,195,.12),transparent 60%)}
+html.m-teen h1,html.m-teen h2{font-weight:900;letter-spacing:-.02em;text-transform:none}
+html.m-teen .eyebrow{color:var(--acc)}
+html.m-teen .hero{background:linear-gradient(120deg,#ff3d7f,#7c4dff 60%,#1b1540);color:#fff}
+html.m-teen .card{background:linear-gradient(160deg,var(--card),#160f36)}
+html.m-teen .btn.primary{box-shadow:0 0 24px rgba(255,61,127,.45)}
+html.m-teen .pill.sens{background:#3a1f2a;color:#ffb3a1;border-color:#6b3040}
+html.m-teen .toast{background:#fff;color:#0f0b22}
+html.m-teen input,html.m-teen select,html.m-teen textarea{background:#120c2c}
+
+/* ===== PRO — sleek dark dashboard, dense ===== */
+html.m-pro{--bg:#0b1016;--bg2:#0f151d;--card:#131b25;--card2:#1a2430;--ink:#e6edf5;--ink2:#93a1b3;--line:rgba(147,161,179,.16);
+  --pri:#4f8cff;--pri2:#3a6ee0;--pri-ink:#fff;--acc:#3ddc97;--gold:#f5c04a;--good:#3ddc97;--bad:#ff6b6b;--radius:12px;--radius-s:8px;
+  --font:Inter,"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",sans-serif;--font-h:var(--font);--fs:15px;--lh:1.55;--gap:14px;--dur:.3s;
+  --shadow:0 1px 0 rgba(255,255,255,.03) inset,0 10px 30px -16px rgba(0,0,0,.7);--logo-bg:#4f8cff;--logo-petal:#fff;--logo-petal2:#9cc2ff;
+  --bgimg:linear-gradient(rgba(79,140,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(79,140,255,.035) 1px,transparent 1px);}
+html.m-pro body::before{background-size:32px 32px}
+html.m-pro h1,html.m-pro h2,html.m-pro h3{font-weight:700;letter-spacing:-.02em}
+html.m-pro .hero{background:linear-gradient(135deg,#131b25,#17263a);color:var(--ink);border:1px solid var(--line)}
+html.m-pro .btn{border-radius:8px}
+html.m-pro .pill{border-radius:6px}
+html.m-pro .pill.sens{background:#2a1f16;color:#ffc58f;border-color:#5a3a1c}
+html.m-pro .toast{background:#e6edf5;color:#0b1016}
+html.m-pro .seg,html.m-pro .seg-b{border-radius:8px}
+
+/* ---- dark-surface tweaks shared by teen & pro ---- */
+html.m-teen .skel,html.m-pro .skel{background:linear-gradient(100deg,var(--card2) 30%,var(--card) 50%,var(--card2) 70%);background-size:300% 100%}
+html.m-teen code,html.m-pro code{background:rgba(255,255,255,.08)}
