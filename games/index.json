@@ -1,0 +1,163 @@
+[
+ {
+  "id": "math-sprint",
+  "title": "Math Sprint",
+  "icon": "⚡",
+  "faculty": "school",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary"
+  ],
+  "summary": "Race the clock with mental maths — from counting on and times tables to percentages, squares, negatives and BODMAS — with a strategy tip after every answer."
+ },
+ {
+  "id": "spell-bee",
+  "title": "Spell Bee",
+  "icon": "🐝",
+  "faculty": "languages",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary",
+   "senior"
+  ],
+  "summary": "Hear a word, read its meaning and an example sentence, then spell it — with memory tricks and spelling rules for every word."
+ },
+ {
+  "id": "quiz-show",
+  "title": "Quiz Show",
+  "icon": "🎤",
+  "faculty": "school",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary",
+   "senior",
+   "ug",
+   "pro"
+  ],
+  "summary": "A game-show quiz across science, India, the world, maths and language — climb the prize ladder with 50:50, hint and audience-poll lifelines, and learn why each answer is right."
+ },
+ {
+  "id": "memory-match",
+  "title": "Memory Match",
+  "icon": "🧠",
+  "faculty": "early",
+  "bands": [
+   "toddler",
+   "play",
+   "prek",
+   "primary",
+   "middle",
+   "secondary"
+  ],
+  "summary": "Flip cards to find matching pairs — same pictures for little ones, animals and their babies for kids, and chemical elements with their symbols for older learners."
+ },
+ {
+  "id": "word-builder",
+  "title": "Word Builder",
+  "icon": "🔤",
+  "faculty": "languages",
+  "bands": [
+   "prek",
+   "primary",
+   "middle",
+   "secondary"
+  ],
+  "summary": "Build words three ways: sound out picture words letter by letter, find hidden words in a set of letters, and assemble prefixes, roots and suffixes to make words that match a meaning."
+ },
+ {
+  "id": "bubble-pop-abc",
+  "title": "Bubble Pop ABC",
+  "icon": "🎈",
+  "faculty": "early",
+  "bands": [
+   "toddler",
+   "play",
+   "prek",
+   "primary"
+  ],
+  "summary": "Pop floating bubbles to learn the alphabet: match big letters, then small letters, then the first sound of a picture word — with gentle, no-fail feedback."
+ },
+ {
+  "id": "number-line-jump",
+  "title": "Number Line Jump",
+  "icon": "🐸",
+  "faculty": "school",
+  "bands": [
+   "primary",
+   "middle"
+  ],
+  "summary": "Help a frog hop along a number line to place numbers, add and subtract by jumping, cross zero into negatives, and land on fractions and decimals."
+ },
+ {
+  "id": "flag-dash",
+  "title": "Flag Dash",
+  "icon": "🏁",
+  "faculty": "school",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary",
+   "senior",
+   "pro"
+  ],
+  "summary": "Race against the clock to name 40+ national flags drawn in true colours, spot look-alikes such as Chad and Romania, and learn capitals and flag facts."
+ },
+ {
+  "id": "code-maze",
+  "title": "Code Maze",
+  "icon": "🤖",
+  "faculty": "tech",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary"
+  ],
+  "summary": "Program a robot through mazes with blocks — sequences, turns, loops, nested loops, sensors and \"repeat until\" — and learn to debug a broken program."
+ },
+ {
+  "id": "market-day",
+  "title": "Market Day",
+  "icon": "🛒",
+  "faculty": "life",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary",
+   "senior"
+  ],
+  "summary": "Run a nimbu-pani stall: give correct change in rupees, then set prices using a live demand and profit graph — learn revenue, cost, profit, break-even, margin vs markup and why limited stock changes the best price."
+ },
+ {
+  "id": "rhythm-tap",
+  "title": "Rhythm Tap",
+  "icon": "🥁",
+  "faculty": "arts",
+  "bands": [
+   "primary",
+   "middle",
+   "secondary",
+   "senior",
+   "ug",
+   "pro"
+  ],
+  "summary": "Tap in time with a precise metronome: steady pulse, eighth notes, rests, syncopation and Teentaal claps — with millisecond timing feedback, an early/late histogram and a tap-tempo steadiness meter."
+ },
+ {
+  "id": "debate-arena",
+  "title": "Debate Arena",
+  "icon": "🎙️",
+  "faculty": "university",
+  "bands": [
+   "middle",
+   "secondary",
+   "senior",
+   "ug",
+   "pg",
+   "pro"
+  ],
+  "summary": "Win the audience with clear thinking: spot 13 logical fallacies, separate claims, evidence and reasoning, steelman the other side and choose the strongest rebuttal — from school debates to workplace meetings."
+ }
+]
