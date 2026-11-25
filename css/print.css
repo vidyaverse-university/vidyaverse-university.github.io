@@ -1,0 +1,13 @@
+/* VidyaVerse v2 — print: lessons, results and certificates print cleanly */
+@page{margin:14mm}
+body{background:#fff!important;color:#000!important;padding:0!important}
+body::before,.topbar,.tabbar,.footer,.quick-exit,.toasts,.captions,#modals,.lp-rail,.lp-nav,.lp-prog,.searchbar,.f-wrap,.btn,.icon-btn,.campus-map,.skip,#splash,.launcher,.wl{display:none!important}
+.card,.step,.sb-frame{box-shadow:none!important;border:1px solid #999!important;background:#fff!important;color:#000!important;break-inside:avoid}
+.step{opacity:1!important;transform:none!important}
+a{color:#000;text-decoration:underline}
+main{padding:0!important}
+.hero,.course-hero,.school-hero{background:#fff!important;color:#000!important;border:1px solid #999}
+body.printing-cert>*:not(#printCert){display:none!important}
+body.printing-cert #printCert{display:block!important;position:static!important;width:auto!important;height:auto!important;overflow:visible!important}
+#printCert img{width:100%;height:auto;display:block}
+.print-cert{display:none}
