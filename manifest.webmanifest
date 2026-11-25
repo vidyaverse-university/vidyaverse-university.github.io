@@ -1,0 +1,25 @@
+{
+ "name": "VidyaVerse University",
+ "short_name": "VidyaVerse",
+ "description": "A free, private, offline-friendly university for every age — 15 schools from Nanhe Kadam to Shodh.",
+ "start_url": "./#/",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "any",
+ "background_color": "#f6f1e7",
+ "theme_color": "#1d3b45",
+ "lang": "en",
+ "categories": [
+  "education",
+  "kids",
+  "productivity"
+ ],
+ "icons": [
+  {
+   "src": "favicon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml",
+   "purpose": "any"
+  }
+ ]
+}
