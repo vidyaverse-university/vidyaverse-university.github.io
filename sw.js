@@ -1,5 +1,5 @@
 /* VidyaVerse v2 service worker — app shell cache-first (with background refresh), packs/labs/games network-first with cache fallback */
-var VERSION = 'vv2-2.1.1', CDN_CACHE = 'vv2-cdn-1';
+var VERSION = 'vv2-2.1.2', CDN_CACHE = 'vv2-cdn-1';
 var SHELL = ['./', 'index.html', 'favicon.svg', 'manifest.webmanifest', 'css/base.css', 'css/modes.css', 'css/ui.css', 'css/widgets.css', 'css/welcome.css', 'css/print.css',
   'js/core.js?v=2.0.0', 'js/data.js?v=2.0.0', 'js/store.js?v=2.0.0', 'js/campus.js?v=2.0.0', 'js/app.js?v=2.0.0',
   'js/welcome.js?v=2.0.0', 'js/player.js?v=2.0.0', 'js/widgets-a.js?v=2.0.0', 'js/widgets-b.js?v=2.0.0', 'js/exam.js?v=2.0.0',
