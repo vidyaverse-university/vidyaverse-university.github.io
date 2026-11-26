@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="css/ui.css">
 <link rel="stylesheet" href="css/widgets.css">
 <link rel="stylesheet" href="css/welcome.css">
+<link rel="stylesheet" href="css/nav.css?v=2.3.0">
 <link rel="stylesheet" href="css/print.css" media="print">
 </head>
 <body>
@@ -62,14 +63,14 @@
   </a>
   <nav class="topnav" id="topnav" aria-label="Main">
     <a href="#/" data-nav="home" data-i18n="home">Campus</a>
-    <a href="#/exams" data-nav="exams" data-i18n="exams">Exam hall</a>
-    <a href="#/handson" data-nav="labs" title="Lab Hub — every hands-on lab, terminal, ticket and simulation"><span class="tn-i" aria-hidden="true">🧪 </span><span data-i18n="labs">Labs</span></a>
+    <a href="#/programmes" data-nav="programmes" title="Programmes — degrees, Class 1–12 and certificates, semester by semester"><span class="tn-i" aria-hidden="true">🎓 </span><span data-i18n="programmes">Programmes</span></a>
+    <a href="#/unaskable" data-nav="unaskable" title="Too awkward to ask? Ask here — privately"><span class="tn-i" aria-hidden="true">💬 </span><span data-i18n="askAnything">Ask anything</span></a>
     <a href="#/roadmaps" data-nav="roadmaps" title="Career roadmaps — zero to job-ready"><span class="tn-i" aria-hidden="true">🗺️ </span><span data-i18n="roadmaps">Roadmaps</span></a>
-    <a href="#/code" data-nav="code" title="Code Studio — write and run code in 12 languages">Code</a>
-    <a href="#/games" data-nav="games" data-i18n="games">Games</a>
-    <a href="#/progress" data-nav="progress" data-i18n="progress">Rewards</a>
-    <a href="#/parents" data-nav="parents" data-i18n="parents">Grown-ups</a>
-    <a href="#/about" data-nav="about" data-i18n="about">About</a>
+    <a href="#/handson" data-nav="labs" title="Lab Hub — every hands-on lab, terminal, ticket and simulation"><span class="tn-i" aria-hidden="true">🧪 </span><span data-i18n="labs">Labs</span></a>
+    <a href="#/exams" data-nav="exams" class="tn-x1" data-i18n="exams">Exam hall</a>
+    <a href="#/code" data-nav="code" class="tn-x2" title="Code Studio — write and run code in 12 languages">Code</a>
+    <a href="#/games" data-nav="games" class="tn-x2" data-i18n="games">Games</a>
+    <a href="#/more" class="tn-more" data-more role="button" aria-haspopup="dialog" title="Every destination: rewards, grown-ups, settings, about…"><span data-i18n="more">More</span>&nbsp;▾</a>
   </nav>
   <div class="top-acts">
     <button type="button" class="icon-btn" id="searchBtn" data-i18n-label="search" aria-label="Search courses and lessons">🔍</button>
@@ -89,7 +90,7 @@
       <p class="indep">Topic tags show which syllabus a lesson can support. VidyaVerse is independent and not affiliated with any board, exam body or university.</p>
     </div>
     <nav class="foot-links" aria-label="Footer">
-      <a href="#/about">About &amp; safety</a><a href="#/settings">Settings</a><a href="#/parents">For parents &amp; teachers</a><a href="#/exams">Exam hall</a><a href="#/handson">Lab Hub</a><a href="#/roadmaps">Career roadmaps</a>
+      <a href="#/about">About &amp; safety</a><a href="#/settings">Settings</a><a href="#/parents">For parents &amp; teachers</a><a href="#/exams">Exam hall</a><a href="#/handson">Lab Hub</a><a href="#/roadmaps">Career roadmaps</a><a href="#/programmes">Programmes</a><a href="#/unaskable">Ask anything (privately)</a><a href="#/games">Games</a><a href="#/progress">Rewards</a>
     </nav>
     <div class="credits">
       <p>Designed &amp; built by <b>Kumar Nikhil</b></p>
@@ -102,10 +103,10 @@
 
 <nav class="tabbar" id="tabbar" aria-label="Quick navigation">
   <a href="#/" data-nav="home"><span aria-hidden="true">🏛️</span><b data-i18n="home">Campus</b></a>
-  <a href="#/exams" data-nav="exams"><span aria-hidden="true">📝</span><b data-i18n="exams">Exam hall</b></a>
+  <a href="#/programmes" data-nav="programmes"><span aria-hidden="true">🎓</span><b data-i18n="programmes">Programmes</b></a>
+  <a href="#/unaskable" data-nav="unaskable" aria-label="Ask anything, privately"><span aria-hidden="true">💬</span><b data-i18n="askAnything">Ask anything</b></a>
   <a href="#/handson" data-nav="labs"><span aria-hidden="true">🧪</span><b data-i18n="labs">Labs</b></a>
-  <a href="#/games" data-nav="games"><span aria-hidden="true">🎮</span><b data-i18n="games">Games</b></a>
-  <a href="#/progress" data-nav="progress"><span aria-hidden="true">🏅</span><b data-i18n="progress">Rewards</b></a>
+  <a href="#/more" data-more role="button" aria-haspopup="dialog" aria-label="More: exams, roadmaps, games, rewards and everything else"><span aria-hidden="true">☰</span><b data-i18n="more">More</b></a>
 </nav>
 
 <button type="button" id="quickExit" class="quick-exit" hidden aria-label="Quick exit to a neutral page (or press Escape)">✋ <span data-i18n="quickExit">Quick exit</span> <kbd>Esc</kbd></button>
@@ -124,10 +125,10 @@
 <div id="captions" class="captions" aria-live="polite" role="status"></div>
 <noscript><p class="noscript">VidyaVerse needs JavaScript to run its lessons. Please enable it — everything stays on your device.</p></noscript>
 
-<script src="js/core.js?v=2.2.2" defer></script>
-<script src="js/data.js?v=2.2.2" defer></script>
-<script src="js/store.js?v=2.2.2" defer></script>
-<script src="js/campus.js?v=2.2.2" defer></script>
-<script src="js/app.js?v=2.2.2" defer></script>
+<script src="js/core.js?v=2.3.0" defer></script>
+<script src="js/data.js?v=2.3.0" defer></script>
+<script src="js/store.js?v=2.3.0" defer></script>
+<script src="js/campus.js?v=2.3.0" defer></script>
+<script src="js/app.js?v=2.3.0" defer></script>
 </body>
 </html>
