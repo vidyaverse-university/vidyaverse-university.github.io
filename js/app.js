@@ -50,7 +50,8 @@
     school: [[], function (a) { return VV2.Campus.school(main, a[0]); }],
     course: [[], function (a) { return VV2.Campus.course(main, a[0]); }],
     search: [[], function (a, q) { return VV2.Campus.search(main, q.q || ''); }],
-    lesson: [['player', 'widgets-a', 'widgets-b'], function (a) { return VV2.Player.render(main, a[0]); }],
+    lesson: [['player', 'widgets-a', 'widgets-b', 'widgets-code'], function (a) { return VV2.Player.render(main, a[0]); }],
+    code: [['widgets-code', 'codestudio'], function (a) { return VV2.Studio.render(main, a[0]); }],
     exam: [['exam'], function (a, q) { return VV2.Exam.course(main, a[0], q); }],
     exams: [['exam'], function () { return VV2.Exam.hall(main); }],
     ladder: [['exam'], function (a) { return VV2.Exam.ladder(main, a[0]); }],
@@ -70,7 +71,7 @@
     notfound: [['pages'], function () { return VV2.Pages.notFound(main); }]
   };
   var GATED = { settings: 1, parents: 1, profiles: 1, about: 1, welcome: 1 };
-  var NAV = { home: 'home', school: 'home', course: 'home', search: 'home', lesson: 'home', exam: 'exams', exams: 'exams', ladder: 'exams', mock: 'exams', placement: 'exams', labs: 'labs', lab: 'labs', games: 'games', game: 'games', progress: 'progress', parents: 'parents', settings: 'progress', profiles: 'progress', about: 'about' };
+  var NAV = { home: 'home', school: 'home', course: 'home', search: 'home', lesson: 'home', exam: 'exams', exams: 'exams', ladder: 'exams', mock: 'exams', placement: 'exams', labs: 'labs', lab: 'labs', code: 'code', games: 'games', game: 'games', progress: 'progress', parents: 'parents', settings: 'progress', profiles: 'progress', about: 'about' };
 
   function parse() {
     var raw = (location.hash || '').replace(/^#\/?/, ''), qi = raw.indexOf('?'), q = {};
