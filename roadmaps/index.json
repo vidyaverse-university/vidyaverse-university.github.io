@@ -1,0 +1,5835 @@
+[
+{
+"id":"linux-sysadmin",
+"title":"Linux System Administrator",
+"category":"Tech careers",
+"icon":"🐧",
+"color":"#2b8a3e",
+"audience":"Freshers, helpdesk staff, career switchers",
+"duration":"5–6 months · ~8 h/week",
+"summary":"From your first shell command to running production web and database servers and clearing a real ticket queue.",
+"outcomes":[
+"Work fluently in bash, grep, sed and awk",
+"Manage users, permissions, packages, systemd and SELinux",
+"Partition disks, use LVM and back up with rsync",
+"Run nginx, TLS and MariaDB",
+"Clear disk-full, SSH, permission and high-load tickets"
+],
+"minutes":2700,
+"final":true,
+"stages":[
+{
+"title":"Shell & filesystem",
+"weeks":4,
+"courses":[
+"tech-linux-foundations.shell-filesystem",
+"tech-linux-foundations.text-tools",
+"tech-linux-foundations.permissions-acls",
+"tech-linux-foundations.users-sudo",
+"tech-linux-foundations.processes-signals",
+"tech-linux-foundations.bash-scripting"
+],
+"labs":[
+"tech-linux-foundations.shell-filesystem.l2",
+"tech-linux-foundations.text-tools.l2",
+"tech-linux-foundations.permissions-acls.l2"
+],
+"milestone":"Write a bash script that rotates and compresses old logs."
+},
+{
+"title":"Services, packages & security",
+"weeks":4,
+"courses":[
+"tech-linux-services.systemd-journald",
+"tech-linux-services.packages-dnf-apt",
+"tech-linux-services.cron-timers",
+"tech-linux-services.ssh-keys",
+"tech-linux-services.selinux-basics",
+"tech-linux-services.log-analysis"
+],
+"labs":[
+"tech-linux-services.systemd-journald.l2",
+"tech-linux-services.packages-dnf-apt.l2",
+"tech-linux-services.cron-timers.l2"
+],
+"milestone":"A custom systemd service that restarts on failure and logs to journald."
+},
+{
+"title":"Storage & backups",
+"weeks":3,
+"courses":[
+"tech-linux-storage.partitions-filesystems",
+"tech-linux-storage.lvm",
+"tech-linux-storage.mounts-fstab-swap",
+"tech-linux-storage.disk-full",
+"tech-linux-storage.backup-rsync-tar"
+],
+"labs":[
+"tech-linux-storage.partitions-filesystems.l2",
+"tech-linux-storage.lvm.l2",
+"tech-linux-storage.mounts-fstab-swap.l1"
+],
+"milestone":"Grow an LVM volume online and restore a file from a tar/rsync backup."
+},
+{
+"title":"Networking",
+"weeks":3,
+"courses":[
+"tech-linux-network.ip-routing",
+"tech-linux-network.ports-sockets",
+"tech-linux-network.networkmanager",
+"tech-linux-network.dns",
+"tech-linux-network.firewalls"
+],
+"labs":[
+"tech-linux-network.ip-routing.l2",
+"tech-linux-network.ports-sockets.l1",
+"tech-linux-network.networkmanager.l1"
+],
+"milestone":"Fix a box with a wrong gateway and a blocked firewall port."
+},
+{
+"title":"Servers",
+"weeks":4,
+"courses":[
+"tech-linux-servers.nginx",
+"tech-linux-servers.tls-certificates",
+"tech-linux-servers.mariadb",
+"tech-linux-servers.performance",
+"tech-linux-servers.containers-intro"
+],
+"labs":[
+"tech-linux-servers.nginx.l1",
+"tech-linux-servers.tls-certificates.l2",
+"tech-linux-servers.mariadb.l1"
+],
+"milestone":"nginx reverse proxy with a renewed TLS certificate in front of an app."
+},
+{
+"title":"Ticket queue & interview",
+"weeks":3,
+"courses":[
+"tech-linux-tickets.ticket-disk-full",
+"tech-linux-tickets.ticket-service-wont-start",
+"tech-linux-tickets.ticket-permission-denied",
+"tech-linux-tickets.ticket-high-load",
+"tech-linux-tickets.ticket-cant-ssh",
+"tech-linux-tickets.ticket-expired-cert",
+"career-interview-it-infra.linux-admin"
+],
+"labs":[
+"tech-linux-tickets.ticket-disk-full.l1",
+"tech-linux-tickets.ticket-service-wont-start.l1",
+"tech-linux-tickets.ticket-permission-denied.l1"
+],
+"milestone":"Close six tickets and score 70 %+ in the Linux admin mock interview."
+}
+]
+},
+{
+"id":"windows-sysadmin",
+"title":"Windows Server Administrator",
+"category":"Tech careers",
+"icon":"🪟",
+"color":"#1c7ed6",
+"audience":"Helpdesk L1s, freshers",
+"duration":"5–6 months · ~8 h/week",
+"summary":"Windows client to Active Directory, Group Policy, PowerShell automation, Hyper-V and L1–L3 queues.",
+"outcomes":[
+"Run DNS, DHCP, file services and RDP",
+"Manage AD and Group Policy",
+"Automate admin work with PowerShell",
+"Triage BSODs, failed patches and major incidents"
+],
+"minutes":2451,
+"final":true,
+"stages":[
+{
+"title":"Windows client & CMD/PowerShell",
+"weeks":3,
+"courses":[
+"tech-win-client.foundations",
+"tech-win-client.accounts-profiles",
+"tech-win-client.printers-drivers",
+"tech-win-client.networking",
+"tech-win-client.bitlocker-security"
+],
+"labs":[
+"tech-win-client.foundations.l2",
+"tech-win-client.accounts-profiles.l2",
+"tech-win-client.printers-drivers.l2"
+],
+"milestone":"Diagnose a PC that cannot reach the network using ipconfig, ping and nslookup."
+},
+{
+"title":"Server roles",
+"weeks":4,
+"courses":[
+"tech-win-server.install-core",
+"tech-win-server.dns",
+"tech-win-server.dhcp",
+"tech-win-server.file-services",
+"tech-win-server.remote-desktop"
+],
+"labs":[
+"tech-win-server.install-core.l2",
+"tech-win-server.dns.l2",
+"tech-win-server.dhcp.l2"
+],
+"milestone":"A DHCP scope with reservations and a DNS zone that resolves."
+},
+{
+"title":"Active Directory & GPO",
+"weeks":4,
+"courses":[
+"tech-win-ad.ad-foundations",
+"tech-win-ad.users-groups-ous",
+"tech-win-ad.passwords-lockouts",
+"tech-win-ad.gpo-fundamentals",
+"tech-win-ad.gpo-troubleshooting"
+],
+"labs":[
+"tech-win-ad.ad-foundations.l2",
+"tech-win-ad.users-groups-ous.l1",
+"tech-win-ad.passwords-lockouts.l2"
+],
+"milestone":"Find the source of an account lockout and fix a GPO that will not apply."
+},
+{
+"title":"PowerShell, storage, patching & backup",
+"weeks":4,
+"courses":[
+"tech-win-ps.ps-scripting",
+"tech-win-ps.ps-automation",
+"tech-win-ps.storage-disks",
+"tech-win-ps.patching",
+"tech-win-ps.backup-restore"
+],
+"labs":[
+"tech-win-ps.ps-scripting.l1",
+"tech-win-ps.ps-automation.l1",
+"tech-win-ps.storage-disks.l2"
+],
+"milestone":"An unattended scheduled script that reports low disk space."
+},
+{
+"title":"Infrastructure & security",
+"weeks":3,
+"courses":[
+"tech-win-infra.hyper-v",
+"tech-win-infra.entra-hybrid",
+"tech-win-infra.events-performance",
+"tech-win-infra.security-hardening",
+"tech-win-infra.change-management"
+],
+"labs":[
+"tech-win-infra.hyper-v.l2",
+"tech-win-infra.entra-hybrid.l2",
+"tech-win-infra.events-performance.l2"
+],
+"milestone":"A hardened Hyper-V host with documented change."
+},
+{
+"title":"Ticket queues & interview",
+"weeks":3,
+"courses":[
+"tech-win-tickets.l1-queue",
+"tech-win-tickets.l2-server-queue",
+"tech-win-tickets.rdp-patch-queue",
+"tech-win-tickets.bsod-triage",
+"tech-win-tickets.l3-major-incidents",
+"career-interview-it-infra.windows-admin"
+],
+"labs":[
+"tech-win-tickets.bsod-triage.l2",
+"tech-win-tickets.l1-queue.l2",
+"tech-win-tickets.l2-server-queue.l1"
+],
+"milestone":"Work an L1→L3 queue and pass the Windows admin mock interview."
+}
+]
+},
+{
+"id":"vmware-engineer",
+"title":"VMware vSphere Engineer",
+"category":"Tech careers",
+"icon":"🗄️",
+"color":"#495057",
+"audience":"Windows/Linux admins moving to virtualisation",
+"duration":"5 months · ~8 h/week",
+"summary":"ESXi, vCenter, VM operations, networking and storage, HA/DRS, performance, security and troubleshooting.",
+"outcomes":[
+"Build ESXi hosts and vCenter",
+"Operate VMs, templates, snapshots and vMotion",
+"Configure vSS/vDS and datastores",
+"Troubleshoot PSOD, APD/PDL and full datastores"
+],
+"minutes":2418,
+"final":true,
+"stages":[
+{
+"title":"Virtualisation foundations",
+"weeks":3,
+"courses":[
+"tech-vmw-foundations.virtualization-concepts",
+"tech-vmw-foundations.esxi-install",
+"tech-vmw-foundations.esxcli-shell",
+"tech-vmw-foundations.vcenter",
+"tech-vmw-foundations.access-control",
+"tech-vmw-foundations.host-day1"
+],
+"labs":[
+"tech-vmw-foundations.esxi-install.l3",
+"tech-vmw-foundations.esxcli-shell.l2",
+"tech-vmw-foundations.vcenter.l3"
+],
+"milestone":"An ESXi host joined to vCenter with NTP and syslog configured."
+},
+{
+"title":"VM operations",
+"weeks":3,
+"courses":[
+"tech-vmw-vm-ops.vm-lifecycle",
+"tech-vmw-vm-ops.templates-library",
+"tech-vmw-vm-ops.snapshots",
+"tech-vmw-vm-ops.vmotion",
+"tech-vmw-vm-ops.vm-files-orphans",
+"tech-vmw-vm-ops.powercli-day2"
+],
+"labs":[
+"tech-vmw-vm-ops.vm-lifecycle.l2",
+"tech-vmw-vm-ops.templates-library.l2",
+"tech-vmw-vm-ops.snapshots.l2"
+],
+"milestone":"Clone from a template, snapshot, vMotion and clean up sprawl."
+},
+{
+"title":"Networking & storage",
+"weeks":4,
+"courses":[
+"tech-vmw-network-storage.vss",
+"tech-vmw-network-storage.vds",
+"tech-vmw-network-storage.vmfs",
+"tech-vmw-network-storage.nfs-iscsi",
+"tech-vmw-network-storage.vsan",
+"tech-vmw-network-storage.multipathing"
+],
+"labs":[
+"tech-vmw-network-storage.vss.l2",
+"tech-vmw-network-storage.vds.l3",
+"tech-vmw-network-storage.vmfs.l3"
+],
+"milestone":"A vDS with VMkernel ports and an iSCSI datastore with multipathing."
+},
+{
+"title":"Availability & performance",
+"weeks":3,
+"courses":[
+"tech-vmw-availability-perf.ha",
+"tech-vmw-availability-perf.drs-pools",
+"tech-vmw-availability-perf.cpu-perf",
+"tech-vmw-availability-perf.memory-perf",
+"tech-vmw-availability-perf.storage-net-perf",
+"tech-vmw-availability-perf.backup"
+],
+"labs":[
+"tech-vmw-availability-perf.ha.l3",
+"tech-vmw-availability-perf.cpu-perf.l2",
+"tech-vmw-availability-perf.memory-perf.l2"
+],
+"milestone":"Explain a CPU-ready problem from esxtop and fix it."
+},
+{
+"title":"Operations & security",
+"weeks":3,
+"courses":[
+"tech-vmw-ops-security.vlcm",
+"tech-vmw-ops-security.certificates",
+"tech-vmw-ops-security.hardening",
+"tech-vmw-ops-security.monitoring-logs",
+"tech-vmw-ops-security.powercli-basics",
+"tech-vmw-ops-security.powercli-automation"
+],
+"labs":[
+"tech-vmw-ops-security.vlcm.l3",
+"tech-vmw-ops-security.certificates.l2",
+"tech-vmw-ops-security.hardening.l2"
+],
+"milestone":"Patch a cluster with vLCM and automate a report with PowerCLI."
+},
+{
+"title":"Troubleshooting & interview",
+"weeks":3,
+"courses":[
+"tech-vmw-troubleshooting.host-not-responding",
+"tech-vmw-troubleshooting.datastore-full",
+"tech-vmw-troubleshooting.apd-pdl",
+"tech-vmw-troubleshooting.psod",
+"tech-vmw-troubleshooting.vm-wont-power-on",
+"tech-vmw-troubleshooting.ticket-queue",
+"career-interview-it-infra.vmware-admin"
+],
+"labs":[
+"tech-vmw-troubleshooting.host-not-responding.l2",
+"tech-vmw-troubleshooting.datastore-full.l2",
+"tech-vmw-troubleshooting.apd-pdl.l2"
+],
+"milestone":"Clear the vSphere ticket queue and pass the VMware mock interview."
+}
+]
+},
+{
+"id":"network-engineer",
+"title":"Network Engineer (CCNA-level)",
+"category":"Tech careers",
+"icon":"🌐",
+"color":"#0b7285",
+"audience":"Freshers, IT support staff",
+"duration":"4 months · ~8 h/week",
+"summary":"Subnetting to OSPF, NAT, ACLs, wireless, IPv6 and methodical troubleshooting.",
+"outcomes":[
+"Subnet in your head",
+"Configure VLANs, trunks, STP and OSPF",
+"Apply NAT, ACLs and device hardening",
+"Troubleshoot layers 1–3 and WAN issues"
+],
+"minutes":1008,
+"final":true,
+"stages":[
+{
+"title":"Models, IPv4 & subnetting",
+"weeks":4,
+"courses":[
+"tech-net-foundations.models-encapsulation",
+"tech-net-foundations.binary-ipv4",
+"tech-net-foundations.subnetting-core",
+"tech-net-foundations.vlsm-summarisation",
+"tech-net-foundations.subnet-speed-drills",
+"tech-net-foundations.ethernet-arp-icmp-toolbox"
+],
+"labs":[
+"tech-net-foundations.models-encapsulation.l3",
+"tech-net-foundations.ethernet-arp-icmp-toolbox.l2",
+"tech-net-foundations.binary-ipv4.l2"
+],
+"milestone":"Plan a VLSM address scheme for a five-site company."
+},
+{
+"title":"Switching & routing",
+"weeks":4,
+"courses":[
+"tech-net-switching-routing.switching-vlans-trunks",
+"tech-net-switching-routing.stp-etherchannel",
+"tech-net-switching-routing.routing-static-intervlan",
+"tech-net-switching-routing.ospf-single-area",
+"tech-net-switching-routing.l3-switching-fhrp"
+],
+"labs":[
+"tech-net-switching-routing.switching-vlans-trunks.l2",
+"tech-net-switching-routing.stp-etherchannel.l3",
+"tech-net-switching-routing.routing-static-intervlan.l2"
+],
+"milestone":"Inter-VLAN routing and single-area OSPF up and verified."
+},
+{
+"title":"Services & security",
+"weeks":3,
+"courses":[
+"tech-net-services-security.nat-pat",
+"tech-net-services-security.acls-traffic-filtering",
+"tech-net-services-security.tcp-udp-dhcp-dns",
+"tech-net-services-security.wireless-lan",
+"tech-net-services-security.ipv6-essentials",
+"tech-net-services-security.device-hardening-monitoring",
+"uni-cse-cn.u6-transport"
+],
+"labs":[
+"tech-net-services-security.nat-pat.l2",
+"tech-net-services-security.acls-traffic-filtering.l3",
+"tech-net-services-security.tcp-udp-dhcp-dns.l2"
+],
+"milestone":"NAT/PAT plus ACLs that allow only what is needed."
+},
+{
+"title":"Troubleshooting & interview",
+"weeks":3,
+"courses":[
+"tech-net-troubleshooting.method-and-evidence",
+"tech-net-troubleshooting.layer1-2-faults",
+"tech-net-troubleshooting.layer3-faults",
+"tech-net-troubleshooting.performance-mtu-wan",
+"tech-net-troubleshooting.support-desk-ticket-bank",
+"career-interview-it-infra.network-engineer"
+],
+"labs":[
+"tech-net-troubleshooting.method-and-evidence.l3",
+"tech-net-troubleshooting.layer1-2-faults.l2",
+"tech-net-troubleshooting.layer3-faults.l2"
+],
+"milestone":"Close the network ticket bank and pass the network engineer mock interview."
+}
+]
+},
+{
+"id":"soc-analyst",
+"title":"SOC Analyst",
+"category":"Tech careers",
+"icon":"🛡️",
+"color":"#c92a2a",
+"audience":"IT support staff, CS graduates",
+"duration":"4 months · ~8 h/week",
+"summary":"Security basics, SIEM and log analysis, phishing triage, threat intel, incident response and Windows detections.",
+"outcomes":[
+"Triage alerts and phishing emails",
+"Hunt through logs with grep/awk",
+"Follow IR playbooks and keep evidence intact",
+"Detect suspicious Windows logons"
+],
+"minutes":1039,
+"final":true,
+"stages":[
+{
+"title":"Security foundations",
+"weeks":3,
+"courses":[
+"corp-cyber.ch1-foundations",
+"corp-cyber.ch2-phishing",
+"corp-cyber.ch3-identity",
+"corp-cyber.ch4-devices-incidents",
+"corp-cyber.revision",
+"uni-cse-security.foundations"
+],
+"labs":[
+"corp-cyber.ch1-foundations.l4",
+"corp-cyber.ch2-phishing.l4",
+"uni-cse-security.foundations.l4"
+],
+"milestone":"Explain a real breach in CIA and risk terms."
+},
+{
+"title":"Networking for defenders",
+"weeks":3,
+"courses":[
+"tech-net-foundations.models-encapsulation",
+"tech-net-services-security.tcp-udp-dhcp-dns",
+"tech-linux-foundations.text-tools"
+],
+"labs":[
+"tech-net-foundations.models-encapsulation.l3",
+"tech-net-services-security.tcp-udp-dhcp-dns.l2",
+"tech-linux-foundations.text-tools.l2"
+],
+"milestone":"Read a packet flow and a DNS log line by line."
+},
+{
+"title":"SOC foundations",
+"weeks":4,
+"courses":[
+"tech-soc-foundations.soc-siem-basics",
+"tech-soc-foundations.log-analysis-shell",
+"tech-soc-foundations.phishing-triage",
+"tech-soc-foundations.threat-intel-basics",
+"tech-soc-foundations.network-security-monitoring"
+],
+"labs":[
+"tech-soc-foundations.soc-siem-basics.l3",
+"tech-soc-foundations.log-analysis-shell.l2",
+"tech-soc-foundations.phishing-triage.l2"
+],
+"milestone":"Triage a phishing email end to end and write the ticket."
+},
+{
+"title":"Incident response",
+"weeks":4,
+"courses":[
+"tech-soc-response.incident-response-playbooks",
+"tech-soc-response.vulnerability-management",
+"tech-soc-response.digital-forensics-basics",
+"tech-soc-response.windows-event-detection",
+"tech-soc-response.soc-operations-metrics"
+],
+"labs":[
+"tech-soc-response.vulnerability-management.l4",
+"tech-soc-response.digital-forensics-basics.l2",
+"tech-soc-response.windows-event-detection.l2"
+],
+"milestone":"Run an IR playbook and hand over cleanly."
+},
+{
+"title":"Interview",
+"weeks":1,
+"courses":[
+"career-interview-it-infra.soc-analyst"
+],
+"labs":[
+"career-interview-it-infra.soc-analyst.l1",
+"career-interview-it-infra.soc-analyst.l2",
+"career-interview-it-infra.soc-analyst.l3"
+],
+"milestone":"Pass the SOC analyst mock interview."
+}
+]
+},
+{
+"id":"aws-solutions-architect",
+"title":"AWS Solutions Architect",
+"category":"Tech careers",
+"icon":"☁️",
+"color":"#f59f00",
+"audience":"Admins and developers moving to cloud",
+"duration":"5–6 months · ~8 h/week",
+"summary":"Cloud practitioner to solutions architect: IAM, VPC, compute, storage, databases, serverless, containers, IaC, security and cost.",
+"outcomes":[
+"Design secure multi-tier VPCs",
+"Pick the right compute, storage and database",
+"Build serverless and container workloads",
+"Apply the Well-Architected Framework and cost optimisation"
+],
+"minutes":2170,
+"final":true,
+"stages":[
+{
+"title":"Cloud concepts",
+"weeks":3,
+"courses":[
+"corp-cloud.ch1-concepts",
+"corp-cloud.ch2-compute",
+"corp-cloud.ch3-storage-db",
+"corp-cloud.ch4-networking",
+"corp-cloud.ch5-security",
+"corp-cloud.ch6-cost-architecture",
+"corp-cloud.revision",
+"tech-cloud-aws-gcp.aws-cloud-practitioner"
+],
+"labs":[
+"corp-cloud.ch4-networking.l1",
+"tech-cloud-aws-gcp.aws-cloud-practitioner.l4",
+"corp-cloud.ch2-compute.l3"
+],
+"milestone":"Explain regions, AZs and shared responsibility to a non-techie."
+},
+{
+"title":"Linux basics for cloud",
+"weeks":2,
+"courses":[
+"tech-linux-foundations.shell-filesystem",
+"tech-linux-services.ssh-keys"
+],
+"labs":[
+"tech-linux-foundations.shell-filesystem.l2",
+"tech-linux-services.ssh-keys.l1",
+"tech-linux-foundations.shell-filesystem.l3"
+],
+"milestone":"SSH into a server with keys and read its logs."
+},
+{
+"title":"AWS foundations",
+"weeks":5,
+"courses":[
+"tech-aws-foundations.iam-zero-to-hero",
+"tech-aws-foundations.ec2-ebs",
+"tech-aws-foundations.vpc-networking",
+"tech-aws-foundations.s3-storage",
+"tech-aws-foundations.cloudwatch-cloudtrail",
+"tech-aws-foundations.final-mock-interviews-exam"
+],
+"labs":[
+"tech-aws-foundations.iam-zero-to-hero.l1",
+"tech-aws-foundations.ec2-ebs.l1",
+"tech-aws-foundations.vpc-networking.l2"
+],
+"milestone":"A VPC with public/private subnets, an EC2 web server and an S3 bucket policy."
+},
+{
+"title":"Data & serverless",
+"weeks":5,
+"courses":[
+"tech-aws-data-serverless.rds-aurora",
+"tech-aws-data-serverless.dynamodb",
+"tech-aws-data-serverless.lambda-api-gateway",
+"tech-aws-data-serverless.elb-autoscaling",
+"tech-aws-data-serverless.route53-cloudfront",
+"tech-aws-data-serverless.final-mock-interviews-exam"
+],
+"labs":[
+"tech-aws-data-serverless.rds-aurora.l1",
+"tech-aws-data-serverless.dynamodb.l1",
+"tech-aws-data-serverless.lambda-api-gateway.l1"
+],
+"milestone":"A Lambda + API Gateway + DynamoDB API behind CloudFront."
+},
+{
+"title":"Architect: containers, IaC, security, cost",
+"weeks":5,
+"courses":[
+"tech-aws-architect.ecs-eks",
+"tech-aws-architect.cloudformation-cdk",
+"tech-aws-architect.cost-optimisation",
+"tech-aws-architect.security-kms-secrets-guardduty",
+"tech-aws-architect.well-architected-migration",
+"tech-aws-architect.final-mock-interviews-exam",
+"career-interview-it-infra.cloud-engineer"
+],
+"labs":[
+"tech-aws-architect.ecs-eks.l1",
+"tech-aws-architect.cloudformation-cdk.l2",
+"tech-aws-architect.cost-optimisation.l1"
+],
+"milestone":"A CDK/CloudFormation stack and the AWS mock interview + final exam."
+}
+]
+},
+{
+"id":"azure-admin",
+"title":"Azure Administrator",
+"category":"Tech careers",
+"icon":"🔷",
+"color":"#1971c2",
+"audience":"Windows admins, cloud beginners",
+"duration":"4–5 months · ~8 h/week",
+"summary":"AZ-900 to AZ-104 style skills, then App Service, Functions, AKS, Azure SQL, Monitor and Bicep.",
+"outcomes":[
+"Administer Entra ID, RBAC and Policy",
+"Deploy and network VMs",
+"Run apps and databases on Azure",
+"Monitor with KQL and deploy with Bicep"
+],
+"minutes":1547,
+"final":true,
+"stages":[
+{
+"title":"Fundamentals",
+"weeks":3,
+"courses":[
+"tech-cloud-azure.az-900-fundamentals",
+"corp-cloud.ch1-concepts"
+],
+"labs":[
+"tech-cloud-azure.az-900-fundamentals.l4",
+"corp-cloud.ch1-concepts.l4"
+],
+"milestone":"Map an on-prem app to Azure services."
+},
+{
+"title":"Administrator I & II",
+"weeks":6,
+"courses":[
+"tech-cloud-azure.az-104-identity-governance-storage",
+"tech-cloud-azure.az-104-compute-networking-monitoring"
+],
+"labs":[
+"tech-cloud-azure.az-104-identity-governance-storage.l1",
+"tech-cloud-azure.az-104-compute-networking-monitoring.l1",
+"tech-cloud-azure.az-104-identity-governance-storage.l4"
+],
+"milestone":"RBAC and a policy that blocks public IPs."
+},
+{
+"title":"Hands-on admin",
+"weeks":5,
+"courses":[
+"tech-azure-admin.entra-id",
+"tech-azure-admin.azure-vms",
+"tech-azure-admin.vnets-nsgs",
+"tech-azure-admin.azure-storage",
+"tech-azure-admin.policy-rbac",
+"tech-azure-admin.final-mock-interviews-exam"
+],
+"labs":[
+"tech-azure-admin.entra-id.l1",
+"tech-azure-admin.azure-vms.l1",
+"tech-azure-admin.vnets-nsgs.l1"
+],
+"milestone":"A peered VNet with NSGs and a protected VM."
+},
+{
+"title":"Apps, data & IaC",
+"weeks":5,
+"courses":[
+"tech-azure-apps.app-service",
+"tech-azure-apps.azure-functions",
+"tech-azure-apps.aks",
+"tech-azure-apps.azure-sql",
+"tech-azure-apps.azure-monitor",
+"tech-azure-apps.arm-bicep",
+"tech-azure-apps.final-mock-interviews-exam",
+"career-interview-it-infra.cloud-engineer"
+],
+"labs":[
+"tech-azure-apps.app-service.l1",
+"tech-azure-apps.azure-functions.l1",
+"tech-azure-apps.aks.l1"
+],
+"milestone":"A Bicep deployment and the Azure mock interview + final exam."
+}
+]
+},
+{
+"id":"gcp-engineer",
+"title":"Google Cloud Engineer",
+"category":"Tech careers",
+"icon":"🟢",
+"color":"#2f9e44",
+"audience":"Cloud beginners, Linux admins",
+"duration":"3–4 months · ~8 h/week",
+"summary":"Associate Cloud Engineer skills: IAM, Compute Engine, VPC, Cloud Storage, Cloud Run and Functions.",
+"outcomes":[
+"Set up projects and IAM correctly",
+"Run VMs, MIGs and load balancers",
+"Design global VPCs",
+"Deploy serverless with Cloud Run"
+],
+"minutes":943,
+"final":true,
+"stages":[
+{
+"title":"Cloud concepts",
+"weeks":2,
+"courses":[
+"corp-cloud.ch1-concepts",
+"tech-cloud-aws-gcp.cloud-rosetta"
+],
+"labs":[
+"tech-cloud-aws-gcp.cloud-rosetta.l3",
+"corp-cloud.ch1-concepts.l4"
+],
+"milestone":"Translate an AWS design to Google Cloud."
+},
+{
+"title":"ACE essentials",
+"weeks":4,
+"courses":[
+"tech-cloud-aws-gcp.gcp-ace"
+],
+"labs":[
+"tech-cloud-aws-gcp.gcp-ace.l4"
+],
+"milestone":"Explain the resource hierarchy and billing."
+},
+{
+"title":"Hands-on engineer",
+"weeks":5,
+"courses":[
+"tech-gcp-engineer.gcp-iam",
+"tech-gcp-engineer.compute-engine",
+"tech-gcp-engineer.gcp-vpc",
+"tech-gcp-engineer.cloud-storage",
+"tech-gcp-engineer.cloud-run-functions",
+"tech-gcp-engineer.final-mock-interviews-exam"
+],
+"labs":[
+"tech-gcp-engineer.gcp-iam.l1",
+"tech-gcp-engineer.compute-engine.l1",
+"tech-gcp-engineer.gcp-vpc.l1"
+],
+"milestone":"A MIG behind a load balancer and a Cloud Run service."
+},
+{
+"title":"Kubernetes, data & interview",
+"weeks":3,
+"courses":[
+"tech-gcp-data-security.gke",
+"tech-gcp-data-security.bigquery",
+"career-interview-it-infra.cloud-engineer"
+],
+"labs":[
+"tech-gcp-data-security.gke.l1",
+"tech-gcp-data-security.bigquery.l1",
+"career-interview-it-infra.cloud-engineer.l1"
+],
+"milestone":"Pass the cloud engineer mock interview."
+}
+]
+},
+{
+"id":"gcp-security-engineer",
+"title":"Google Cloud Security Engineer",
+"category":"Tech careers",
+"icon":"🔐",
+"color":"#087f5b",
+"audience":"Cloud engineers, security analysts",
+"duration":"3–4 months · ~8 h/week",
+"summary":"Secure Google Cloud: IAM, org policies, Security Command Center, VPC Service Controls, logging and monitoring.",
+"outcomes":[
+"Design least-privilege IAM",
+"Enforce organisation policies",
+"Detect issues with SCC and Cloud Logging",
+"Build perimeters with VPC Service Controls"
+],
+"minutes":1005,
+"final":true,
+"stages":[
+{
+"title":"Security foundations",
+"weeks":3,
+"courses":[
+"tech-security-devops.security-foundations",
+"corp-cloud.ch5-security"
+],
+"labs":[
+"tech-security-devops.security-foundations.l3",
+"corp-cloud.ch5-security.l1",
+"corp-cloud.ch5-security.l2"
+],
+"milestone":"Threat-model a simple cloud app."
+},
+{
+"title":"Google Cloud engineer basics",
+"weeks":4,
+"courses":[
+"tech-gcp-engineer.gcp-iam",
+"tech-gcp-engineer.gcp-vpc",
+"tech-gcp-engineer.cloud-storage"
+],
+"labs":[
+"tech-gcp-engineer.gcp-iam.l1",
+"tech-gcp-engineer.gcp-vpc.l1",
+"tech-gcp-engineer.cloud-storage.l1"
+],
+"milestone":"Lock down a bucket and a VPC."
+},
+{
+"title":"Data & security services",
+"weeks":5,
+"courses":[
+"tech-gcp-data-security.gke",
+"tech-gcp-data-security.bigquery",
+"tech-gcp-data-security.pubsub",
+"tech-gcp-data-security.logging-monitoring",
+"tech-gcp-data-security.org-policy-scc",
+"tech-gcp-data-security.security-engineer",
+"tech-gcp-data-security.final-mock-interviews-exam"
+],
+"labs":[
+"tech-gcp-data-security.gke.l1",
+"tech-gcp-data-security.pubsub.l1",
+"tech-gcp-data-security.logging-monitoring.l1"
+],
+"milestone":"An org policy and an SCC finding triaged."
+},
+{
+"title":"Interview",
+"weeks":1,
+"courses":[
+"career-interview-it-infra.cloud-engineer"
+],
+"labs":[
+"career-interview-it-infra.cloud-engineer.l1",
+"career-interview-it-infra.cloud-engineer.l2",
+"career-interview-it-infra.cloud-engineer.l3"
+],
+"milestone":"Pass the cloud mock interview."
+}
+]
+},
+{
+"id":"oracle-dba",
+"title":"Oracle DBA",
+"category":"Tech careers",
+"icon":"🔶",
+"color":"#c92a2a",
+"audience":"SQL developers, sysadmins",
+"duration":"5 months · ~8 h/week",
+"summary":"SQL to Oracle architecture, security, storage, RMAN, Data Guard and AWR tuning, plus PL/SQL and OCI.",
+"outcomes":[
+"Administer users, tablespaces and undo",
+"Back up and recover with RMAN",
+"Read AWR/ASH reports",
+"Write PL/SQL packages"
+],
+"minutes":1767,
+"final":true,
+"stages":[
+{
+"title":"SQL foundations",
+"weeks":3,
+"courses":[
+"tech-data-systems.sql-from-zero",
+"uni-cse-dbms.u3-sql-basics",
+"uni-cse-dbms.u4-sql-advanced"
+],
+"labs":[
+"uni-cse-dbms.u3-sql-basics.l1",
+"uni-cse-dbms.u4-sql-advanced.l1",
+"tech-data-systems.sql-from-zero.l5"
+],
+"milestone":"Answer ten business questions in SQL."
+},
+{
+"title":"Oracle administration",
+"weeks":6,
+"courses":[
+"tech-oracle-dba.db-architecture",
+"tech-oracle-dba.users-roles-security",
+"tech-oracle-dba.tablespaces-storage",
+"tech-oracle-dba.rman-backup-recovery",
+"tech-oracle-dba.data-guard",
+"tech-oracle-dba.performance-awr",
+"tech-oracle-dba.final-mock-interviews-exam"
+],
+"labs":[
+"tech-oracle-dba.db-architecture.l2",
+"tech-oracle-dba.users-roles-security.l1",
+"tech-oracle-dba.tablespaces-storage.l1"
+],
+"milestone":"An RMAN restore and a tuned query from an AWR report."
+},
+{
+"title":"PL/SQL",
+"weeks":4,
+"courses":[
+"tech-oracle-plsql.plsql-basics",
+"tech-oracle-plsql.cursors-collections",
+"tech-oracle-plsql.subprograms-packages",
+"tech-oracle-plsql.exceptions-triggers",
+"tech-oracle-plsql.sql-for-plsql",
+"tech-oracle-plsql.final-mock-interviews-exam"
+],
+"labs":[
+"tech-oracle-plsql.plsql-basics.l1",
+"tech-oracle-plsql.cursors-collections.l1",
+"tech-oracle-plsql.subprograms-packages.l1"
+],
+"milestone":"A package with error handling and a trigger."
+},
+{
+"title":"Cloud & interview",
+"weeks":3,
+"courses":[
+"tech-oci-multicloud.oci-tenancy-iam",
+"tech-oci-multicloud.oci-vcn-compute",
+"tech-oci-multicloud.oci-storage-adb",
+"tech-oci-multicloud.multicloud-comparison",
+"tech-oci-multicloud.cert-style-practice",
+"tech-oci-multicloud.final-mock-interviews-exam",
+"career-interview-it-infra.dba"
+],
+"labs":[
+"tech-oci-multicloud.oci-tenancy-iam.l1",
+"tech-oci-multicloud.oci-vcn-compute.l1",
+"tech-oci-multicloud.oci-storage-adb.l1"
+],
+"milestone":"Pass the DBA mock interview."
+}
+]
+},
+{
+"id":"devops-sre",
+"title":"DevOps / SRE Engineer",
+"category":"Tech careers",
+"icon":"♾️",
+"color":"#0aa2c0",
+"audience":"Developers and sysadmins",
+"duration":"6–7 months · ~8 h/week",
+"summary":"Linux and Git, CI/CD and Docker, Terraform and Ansible, Kubernetes and Helm, then SRE: observability, SLOs and on-call.",
+"outcomes":[
+"Build and fix pipelines",
+"Containerise and run on Kubernetes",
+"Manage infrastructure as code",
+"Run SLOs, incidents and postmortems"
+],
+"minutes":2097,
+"final":true,
+"stages":[
+{
+"title":"Linux & scripting",
+"weeks":4,
+"courses":[
+"tech-linux-foundations.shell-filesystem",
+"tech-linux-foundations.text-tools",
+"tech-linux-foundations.permissions-acls",
+"tech-linux-foundations.users-sudo",
+"tech-linux-foundations.processes-signals",
+"tech-linux-foundations.bash-scripting",
+"tech-linux-services.systemd-journald"
+],
+"labs":[
+"tech-linux-foundations.shell-filesystem.l2",
+"tech-linux-foundations.text-tools.l2",
+"tech-linux-foundations.permissions-acls.l2"
+],
+"milestone":"A bash script that checks a service and restarts it."
+},
+{
+"title":"Git & CI/CD",
+"weeks":4,
+"courses":[
+"tech-devops-git.branching-merging",
+"tech-devops-git.rebase-history",
+"tech-devops-git.conflicts-collab",
+"tech-devops-git-cicd.git",
+"tech-devops-git-cicd.cicd",
+"tech-devops-git-cicd.pipeline-tickets",
+"tech-devops-git-cicd.docker"
+],
+"labs":[
+"tech-devops-git.branching-merging.l1",
+"tech-devops-git.rebase-history.l1",
+"tech-devops-git.conflicts-collab.l1"
+],
+"milestone":"A pipeline that builds, tests and pushes a Docker image."
+},
+{
+"title":"Cloud & IaC",
+"weeks":4,
+"courses":[
+"corp-cloud.ch1-concepts",
+"corp-cloud.ch2-compute",
+"corp-cloud.ch3-storage-db",
+"corp-cloud.ch4-networking",
+"corp-cloud.ch5-security",
+"corp-cloud.ch6-cost-architecture",
+"corp-cloud.revision",
+"tech-devops-iac.terraform",
+"tech-devops-iac.tf-troubleshoot",
+"tech-devops-iac.ansible"
+],
+"labs":[
+"tech-devops-iac.terraform.l1",
+"tech-devops-iac.tf-troubleshoot.l2",
+"tech-devops-iac.ansible.l1"
+],
+"milestone":"Terraform plan/apply with a fixed state problem."
+},
+{
+"title":"Kubernetes",
+"weeks":4,
+"courses":[
+"tech-devops-k8s.basics",
+"tech-devops-k8s.troubleshooting",
+"tech-devops-k8s.helm"
+],
+"labs":[
+"tech-devops-k8s.basics.l2",
+"tech-devops-k8s.troubleshooting.l1",
+"tech-devops-k8s.helm.l1"
+],
+"milestone":"A Helm release you can roll back."
+},
+{
+"title":"SRE & DevSecOps",
+"weeks":4,
+"courses":[
+"tech-devops-sre.observability",
+"tech-devops-sre.slo",
+"tech-devops-sre.oncall",
+"tech-devops-secfinal.devsecops",
+"tech-devops-secfinal.final",
+"career-interview-it-infra.devops-sre"
+],
+"labs":[
+"tech-devops-sre.observability.l2",
+"tech-devops-sre.oncall.l2",
+"tech-devops-secfinal.devsecops.l3"
+],
+"milestone":"An SLO with an error budget, and the DevOps mock interview + final exam."
+}
+]
+},
+{
+"id":"data-analyst",
+"title":"Data Analyst",
+"category":"Tech careers",
+"icon":"📊",
+"color":"#1098ad",
+"audience":"Graduates of any stream",
+"duration":"4–5 months · ~8 h/week",
+"summary":"Excel, SQL, Python and statistics, BI and storytelling, three capstones and the analyst interview.",
+"outcomes":[
+"Clean, join and summarise data in Excel, SQL and Python",
+"Run honest A/B tests and regressions",
+"Build dashboards and present decisions",
+"Pass analyst interviews"
+],
+"minutes":1724,
+"final":false,
+"stages":[
+{
+"title":"Excel",
+"weeks":4,
+"courses":[
+"tech-da-excel.foundations",
+"tech-da-excel.lookups-text-dates",
+"tech-da-excel.pivots-cleaning",
+"tech-da-excel.whatif-finance",
+"tech-da-excel.advanced-dynamic"
+],
+"labs":[
+"tech-da-excel.foundations.l3",
+"tech-da-excel.lookups-text-dates.l2",
+"tech-da-excel.pivots-cleaning.l2"
+],
+"milestone":"A cleaned sales file with a pivot and a what-if."
+},
+{
+"title":"SQL",
+"weeks":4,
+"courses":[
+"tech-da-sql.foundations",
+"tech-da-sql.joins",
+"tech-da-sql.subqueries-ctes",
+"tech-da-sql.window-functions",
+"tech-da-sql.analytics-patterns"
+],
+"labs":[
+"tech-da-sql.foundations.l1",
+"tech-da-sql.joins.l1",
+"tech-da-sql.subqueries-ctes.l1"
+],
+"milestone":"Window functions answering a cohort question."
+},
+{
+"title":"Python & statistics",
+"weeks":5,
+"courses":[
+"tech-da-python.basics",
+"tech-da-python.collections",
+"tech-da-python.csv-parsing",
+"tech-da-python.functions-pipelines",
+"tech-da-python.numpy-pandas",
+"tech-da-stats.descriptive",
+"tech-da-stats.probability",
+"tech-da-stats.inference",
+"tech-da-stats.hypothesis-ab",
+"tech-da-stats.regression"
+],
+"labs":[
+"tech-da-python.basics.l1",
+"tech-da-python.collections.l1",
+"tech-da-python.csv-parsing.l1"
+],
+"milestone":"An A/B test with a confidence interval and a plain-English verdict."
+},
+{
+"title":"BI & storytelling",
+"weeks":3,
+"courses":[
+"tech-da-bi.data-model",
+"tech-da-bi.dax",
+"tech-da-bi.tableau-concepts",
+"tech-da-bi.visual-choice",
+"tech-da-story.storytelling",
+"tech-da-story.dashboard-design",
+"tech-da-story.communication-ethics"
+],
+"labs":[
+"tech-da-bi.dax.l5",
+"tech-da-bi.visual-choice.l2",
+"tech-da-story.storytelling.l3"
+],
+"milestone":"A one-page dashboard with defined KPIs."
+},
+{
+"title":"Capstones & interview",
+"weeks":3,
+"courses":[
+"tech-da-capstone.sales-case",
+"tech-da-capstone.hr-attrition-case",
+"tech-da-capstone.ecommerce-funnel-case",
+"tech-da-interview.sql-interview",
+"tech-da-interview.excel-stats-interview",
+"tech-da-interview.case-behavioral"
+],
+"labs":[
+"tech-da-capstone.sales-case.l1",
+"tech-da-capstone.hr-attrition-case.l1",
+"tech-da-capstone.ecommerce-funnel-case.l1"
+],
+"milestone":"Three capstones done and the SQL + case interviews passed."
+}
+]
+},
+{
+"id":"data-scientist",
+"title":"Data Scientist",
+"category":"Tech careers",
+"icon":"🧮",
+"color":"#5c7cfa",
+"audience":"Analysts, engineers, science graduates",
+"duration":"7–8 months · ~10 h/week",
+"summary":"Python and maths, EDA and features, ML from scratch, evaluation, deep learning, time series, MLOps and responsible AI.",
+"outcomes":[
+"Explore and engineer features without leakage",
+"Build models from scratch and evaluate honestly",
+"Use deep learning for text and images",
+"Deploy and monitor models responsibly"
+],
+"minutes":1786,
+"final":false,
+"stages":[
+{
+"title":"Python & maths",
+"weeks":5,
+"courses":[
+"tech-ds-python.data-handling",
+"tech-ds-python.pipelines",
+"tech-ds-python.stats-scratch",
+"tech-ds-python.text-json",
+"tech-ds-python.quality-perf",
+"tech-ds-maths.vectors",
+"tech-ds-maths.matrices",
+"tech-ds-maths.calculus",
+"tech-ds-maths.probability",
+"tech-ds-maths.normal-optim"
+],
+"labs":[
+"tech-ds-python.data-handling.l1",
+"tech-ds-python.pipelines.l1",
+"tech-ds-python.stats-scratch.l1"
+],
+"milestone":"Descriptive stats and a gradient computed by hand and in code."
+},
+{
+"title":"EDA & features",
+"weeks":4,
+"courses":[
+"tech-ds-eda.eda-workflow",
+"tech-ds-eda.eda-analysis",
+"tech-ds-eda.feature-eng",
+"tech-ds-eda.selection-dimred",
+"tech-ds-eda.imbalance-leakage"
+],
+"labs":[
+"tech-ds-eda.eda-workflow.l1",
+"tech-ds-eda.eda-analysis.l1",
+"tech-ds-eda.feature-eng.l1"
+],
+"milestone":"A clean, leakage-free feature table."
+},
+{
+"title":"ML from scratch & evaluation",
+"weeks":5,
+"courses":[
+"tech-ds-ml-scratch.linreg",
+"tech-ds-ml-scratch.logreg",
+"tech-ds-ml-scratch.knn-nb",
+"tech-ds-ml-scratch.trees",
+"tech-ds-ml-scratch.kmeans",
+"tech-ds-evaluation.confusion",
+"tech-ds-evaluation.roc-pr",
+"tech-ds-evaluation.cv",
+"tech-ds-evaluation.regression-metrics",
+"tech-ds-evaluation.tuning-ab"
+],
+"labs":[
+"tech-ds-ml-scratch.linreg.l1",
+"tech-ds-ml-scratch.logreg.l2",
+"tech-ds-ml-scratch.knn-nb.l1"
+],
+"milestone":"Logistic regression from scratch with ROC/PR curves."
+},
+{
+"title":"Deep learning",
+"weeks":4,
+"courses":[
+"tech-ds-dl-nlp-cv.perceptron",
+"tech-ds-dl-nlp-cv.backprop",
+"tech-ds-dl-nlp-cv.training",
+"tech-ds-dl-nlp-cv.nlp",
+"tech-ds-dl-nlp-cv.vision"
+],
+"labs":[
+"tech-ds-dl-nlp-cv.perceptron.l1",
+"tech-ds-dl-nlp-cv.backprop.l2",
+"tech-ds-dl-nlp-cv.training.l1"
+],
+"milestone":"Backprop by hand on a tiny network."
+},
+{
+"title":"Time series, MLOps & capstones",
+"weeks":5,
+"courses":[
+"tech-ds-ts-ops.ts-basics",
+"tech-ds-ts-ops.ts-models",
+"tech-ds-ts-ops.mlops-serving",
+"tech-ds-ts-ops.mlops-monitoring",
+"tech-ds-ts-ops.fairness",
+"tech-ds-ts-ops.privacy-explain",
+"tech-ds-ts-ops.capstone-tabular",
+"tech-ds-ts-ops.capstone-text-forecast",
+"tech-da-interview.sql-interview",
+"tech-da-interview.excel-stats-interview",
+"tech-da-interview.case-behavioral"
+],
+"labs":[
+"tech-ds-ts-ops.mlops-serving.l3",
+"tech-ds-ts-ops.ts-basics.l1",
+"tech-ds-ts-ops.ts-models.l1"
+],
+"milestone":"Two capstones and a monitoring plan for drift."
+}
+]
+},
+{
+"id":"ml-engineer",
+"title":"Machine Learning Engineer",
+"category":"Tech careers",
+"icon":"🧠",
+"color":"#4c6ef5",
+"audience":"Software engineers, data scientists",
+"duration":"7 months · ~10 h/week",
+"summary":"University-grade ML and deep learning, then MLOps, serving and system design for ML.",
+"outcomes":[
+"Train and tune classical and deep models",
+"Package, serve and monitor models",
+"Design ML systems at scale"
+],
+"minutes":2663,
+"final":true,
+"stages":[
+{
+"title":"Python & maths for ML",
+"weeks":4,
+"courses":[
+"tech-ds-python.data-handling",
+"tech-ds-python.pipelines",
+"tech-ds-python.stats-scratch",
+"tech-ds-python.text-json",
+"tech-ds-python.quality-perf",
+"tech-ai-engineer.maths-for-ml"
+],
+"labs":[
+"tech-ds-python.data-handling.l1",
+"tech-ds-python.pipelines.l1",
+"tech-ds-python.stats-scratch.l1"
+],
+"milestone":"Vectorised linear regression with tests."
+},
+{
+"title":"Machine learning",
+"weeks":5,
+"courses":[
+"uni-cse-ml.foundations",
+"uni-cse-ml.regression",
+"uni-cse-ml.classification",
+"uni-cse-ml.evaluation",
+"uni-cse-ml.unsupervised",
+"uni-cse-ml.revision"
+],
+"labs":[
+"uni-cse-ml.foundations.l3",
+"uni-cse-ml.regression.l1",
+"uni-cse-ml.classification.l1"
+],
+"milestone":"A tuned classifier with honest evaluation."
+},
+{
+"title":"Deep learning",
+"weeks":5,
+"courses":[
+"uni-cse-dl.nn",
+"uni-cse-dl.training",
+"uni-cse-dl.cnn",
+"uni-cse-dl.seq",
+"uni-cse-dl.revision",
+"tech-ds-dl-nlp-cv.perceptron",
+"tech-ds-dl-nlp-cv.backprop",
+"tech-ds-dl-nlp-cv.training",
+"tech-ds-dl-nlp-cv.nlp",
+"tech-ds-dl-nlp-cv.vision"
+],
+"labs":[
+"uni-cse-dl.nn.l1",
+"uni-cse-dl.training.l1",
+"uni-cse-dl.cnn.l1"
+],
+"milestone":"A small CNN and a transformer explained layer by layer."
+},
+{
+"title":"MLOps",
+"weeks":3,
+"courses":[
+"tech-ds-ts-ops.mlops-serving",
+"tech-ds-ts-ops.mlops-monitoring",
+"tech-devops-git-cicd.docker"
+],
+"labs":[
+"tech-ds-ts-ops.mlops-serving.l3",
+"tech-devops-git-cicd.docker.l1",
+"tech-ds-ts-ops.mlops-monitoring.l1"
+],
+"milestone":"A containerised model API with drift alerts."
+},
+{
+"title":"System design & interviews",
+"weeks":3,
+"courses":[
+"tech-data-systems.system-design-interviews",
+"tech-swe-dsa-b.final"
+],
+"labs":[
+"tech-swe-dsa-b.final.l4",
+"tech-data-systems.system-design-interviews.l4",
+"tech-swe-dsa-b.final.l1"
+],
+"milestone":"Design a recommendation service and pass the final mock interview."
+}
+]
+},
+{
+"id":"ai-engineer",
+"title":"AI Engineer (LLMs, RAG, agents)",
+"category":"Tech careers",
+"icon":"🤖",
+"color":"#7048e8",
+"audience":"Developers",
+"duration":"4–5 months · ~8 h/week",
+"summary":"From ML basics to LLM engineering: tokens and embeddings, RAG, vector databases, agents and tool use, evaluation and cost.",
+"outcomes":[
+"Explain how LLMs generate text",
+"Build and evaluate a RAG system",
+"Design safe agents with tools",
+"Control cost and latency"
+],
+"minutes":1240,
+"final":true,
+"stages":[
+{
+"title":"Programming & APIs",
+"weeks":3,
+"courses":[
+"tech-programming.python-from-zero",
+"tech-dev-api.rest-fundamentals"
+],
+"labs":[
+"tech-dev-api.rest-fundamentals.l1",
+"tech-programming.python-from-zero.l5",
+"tech-dev-api.rest-fundamentals.l2"
+],
+"milestone":"Call a REST API from Python and handle errors."
+},
+{
+"title":"ML & deep learning",
+"weeks":4,
+"courses":[
+"tech-ai-engineer.maths-for-ml",
+"tech-ai-engineer.classical-ml",
+"tech-ai-engineer.deep-learning"
+],
+"labs":[
+"tech-ai-engineer.classical-ml.l4",
+"tech-ai-engineer.maths-for-ml.l1",
+"tech-ai-engineer.deep-learning.l2"
+],
+"milestone":"Explain attention to a colleague."
+},
+{
+"title":"LLM foundations",
+"weeks":3,
+"courses":[
+"tech-aieng-llm-foundations.tokens-context",
+"tech-aieng-llm-foundations.embeddings-similarity",
+"tech-aieng-llm-foundations.sampling-decoding",
+"tech-aieng-llm-foundations.api-cost-latency"
+],
+"labs":[
+"tech-aieng-llm-foundations.tokens-context.l2",
+"tech-aieng-llm-foundations.embeddings-similarity.l2",
+"tech-aieng-llm-foundations.sampling-decoding.l2"
+],
+"milestone":"Estimate tokens and cost for a feature."
+},
+{
+"title":"RAG, agents & LLM engineering",
+"weeks":5,
+"courses":[
+"tech-aieng-rag-retrieval.rag-pipeline",
+"tech-aieng-rag-retrieval.retrieval-ranking",
+"tech-aieng-rag-retrieval.agents-tools",
+"tech-aieng-rag-retrieval.vector-indexing",
+"tech-ai-engineer.llm-engineering"
+],
+"labs":[
+"tech-aieng-rag-retrieval.rag-pipeline.l2",
+"tech-aieng-rag-retrieval.retrieval-ranking.l2",
+"tech-aieng-rag-retrieval.agents-tools.l2"
+],
+"milestone":"A RAG pipeline with measured retrieval quality."
+},
+{
+"title":"Interview prep",
+"weeks":2,
+"courses":[
+"tech-dev-system-design.final-mock-interviews"
+],
+"labs":[
+"tech-dev-system-design.final-mock-interviews.l4",
+"tech-dev-system-design.final-mock-interviews.l1",
+"tech-dev-system-design.final-mock-interviews.l2"
+],
+"milestone":"Pass the final mock interview."
+}
+]
+},
+{
+"id":"prompt-engineer",
+"title":"Prompt Engineer",
+"category":"Tech careers",
+"icon":"💬",
+"color":"#ae3ec9",
+"audience":"Anyone who works with AI assistants",
+"duration":"6–8 weeks · ~5 h/week",
+"summary":"Use AI assistants well and safely, then understand context, sampling, embeddings and retrieval.",
+"outcomes":[
+"Write clear, structured, testable prompts",
+"Verify outputs and avoid leaking private data",
+"Tune sampling and context",
+"Ground answers with retrieval and tools"
+],
+"minutes":816,
+"final":false,
+"stages":[
+{
+"title":"Using assistants well",
+"weeks":2,
+"courses":[
+"tech-aitools-assistants.what-are-assistants",
+"tech-aitools-assistants.good-prompting",
+"tech-aitools-assistants.verify-facts",
+"tech-aitools-assistants.privacy-dos-donts",
+"tech-aitools-assistants.learn-research-with-ai",
+"tech-aitools-assistants.choose-compare-assistants"
+],
+"labs":[
+"tech-aitools-assistants.good-prompting.l3",
+"tech-aitools-assistants.learn-research-with-ai.l3",
+"tech-aitools-assistants.verify-facts.l2"
+],
+"milestone":"A prompt library with before/after examples."
+},
+{
+"title":"How models work",
+"weeks":2,
+"courses":[
+"tech-aieng-llm-foundations.tokens-context",
+"tech-aieng-llm-foundations.embeddings-similarity",
+"tech-aieng-llm-foundations.sampling-decoding",
+"tech-aieng-llm-foundations.api-cost-latency"
+],
+"labs":[
+"tech-aieng-llm-foundations.tokens-context.l2",
+"tech-aieng-llm-foundations.embeddings-similarity.l2",
+"tech-aieng-llm-foundations.sampling-decoding.l2"
+],
+"milestone":"Explain temperature and context windows."
+},
+{
+"title":"Retrieval & tools",
+"weeks":3,
+"courses":[
+"tech-aieng-rag-retrieval.rag-pipeline",
+"tech-aieng-rag-retrieval.agents-tools",
+"tech-ai-engineer.llm-engineering"
+],
+"labs":[
+"tech-aieng-rag-retrieval.rag-pipeline.l2",
+"tech-aieng-rag-retrieval.agents-tools.l2",
+"tech-ai-engineer.llm-engineering.l2"
+],
+"milestone":"A grounded Q&A prompt with citations and an eval set."
+}
+]
+},
+{
+"id":"forward-deployed-engineer",
+"title":"Forward Deployed Engineer",
+"category":"Tech careers",
+"icon":"🛰️",
+"color":"#2f9e44",
+"audience":"Developers who like customers",
+"duration":"6 months · ~8 h/week",
+"summary":"The engineer who sits with the customer: code fast, integrate APIs and data, ship LLM features and explain trade-offs.",
+"outcomes":[
+"Build integrations quickly in Python and JS",
+"Model and query customer data",
+"Ship retrieval-backed AI features",
+"Communicate clearly with stakeholders"
+],
+"minutes":1910,
+"final":true,
+"stages":[
+{
+"title":"Code & data",
+"weeks":4,
+"courses":[
+"tech-programming.python-from-zero",
+"tech-da-sql.foundations",
+"tech-da-sql.joins",
+"tech-da-sql.subqueries-ctes",
+"tech-da-sql.window-functions",
+"tech-da-sql.analytics-patterns",
+"tech-ds-python.text-json"
+],
+"labs":[
+"tech-da-sql.foundations.l1",
+"tech-da-sql.joins.l1",
+"tech-da-sql.subqueries-ctes.l1"
+],
+"milestone":"Parse a messy customer export into clean tables."
+},
+{
+"title":"APIs & backends",
+"weeks":4,
+"courses":[
+"tech-dev-api.rest-fundamentals",
+"tech-dev-api.graphql-essentials",
+"tech-dev-api.api-security-limits",
+"tech-dev-api.robust-endpoints",
+"tech-dev-api.openapi-contracts",
+"tech-dev-backend.node-async-essentials",
+"tech-dev-backend.express-middleware",
+"tech-dev-backend.python-backend-basics",
+"tech-dev-backend.python-service-design",
+"tech-dev-backend.queues-and-caching"
+],
+"labs":[
+"tech-dev-api.rest-fundamentals.l1",
+"tech-dev-api.graphql-essentials.l1",
+"tech-dev-api.api-security-limits.l2"
+],
+"milestone":"An idempotent, paginated API with auth."
+},
+{
+"title":"AI integration",
+"weeks":4,
+"courses":[
+"tech-aieng-llm-foundations.tokens-context",
+"tech-aieng-llm-foundations.embeddings-similarity",
+"tech-aieng-llm-foundations.sampling-decoding",
+"tech-aieng-llm-foundations.api-cost-latency",
+"tech-aieng-rag-retrieval.rag-pipeline",
+"tech-aieng-rag-retrieval.retrieval-ranking",
+"tech-aieng-rag-retrieval.agents-tools",
+"tech-aieng-rag-retrieval.vector-indexing"
+],
+"labs":[
+"tech-aieng-llm-foundations.tokens-context.l2",
+"tech-aieng-llm-foundations.embeddings-similarity.l2",
+"tech-aieng-llm-foundations.sampling-decoding.l2"
+],
+"milestone":"A RAG demo on customer documents."
+},
+{
+"title":"Design & communication",
+"weeks":3,
+"courses":[
+"tech-dev-system-design.case-url-shortener",
+"tech-dev-system-design.case-scaling-toolkit",
+"tech-dev-system-design.case-feed-chat-notifications",
+"tech-dev-system-design.final-mock-interviews",
+"corporate-communication.business-writing",
+"corporate-communication.presenting-data-stories",
+"corporate-communication.cross-cultural"
+],
+"labs":[
+"tech-dev-system-design.case-url-shortener.l1",
+"tech-dev-system-design.case-scaling-toolkit.l1",
+"tech-dev-system-design.case-feed-chat-notifications.l1"
+],
+"milestone":"Present a design to a non-technical buyer and pass the final mock interview."
+}
+]
+},
+{
+"id":"full-stack-developer",
+"title":"Full-stack Developer",
+"category":"Tech careers",
+"icon":"🌐",
+"color":"#f76707",
+"audience":"Beginners and career switchers",
+"duration":"7–8 months · ~10 h/week",
+"summary":"HTML, CSS and JavaScript to React, Node, APIs, SQL and MongoDB, testing, security and system design.",
+"outcomes":[
+"Build accessible, fast UIs",
+"Design APIs and data models",
+"Test and secure your app",
+"Deploy a MERN project"
+],
+"minutes":3377,
+"final":true,
+"stages":[
+{
+"title":"Programming & web basics",
+"weeks":5,
+"courses":[
+"tech-programming.think-like-a-coder",
+"tech-programming.javascript-from-zero",
+"uni-cse-web.html5",
+"uni-cse-web.css",
+"uni-cse-web.js",
+"uni-cse-web.async",
+"uni-cse-web.revision"
+],
+"labs":[
+"uni-cse-web.html5.l1",
+"uni-cse-web.css.l3",
+"uni-cse-web.js.l1"
+],
+"milestone":"A responsive page with working JS."
+},
+{
+"title":"Front-end",
+"weeks":4,
+"courses":[
+"tech-dev-typescript.types-in-practice",
+"tech-dev-typescript.rest-api-design",
+"tech-dev-testing-state.tdd-unit-testing",
+"tech-dev-testing-state.test-strategy-quality",
+"tech-dev-testing-state.react-state-patterns",
+"tech-dev-testing-state.reactivity-under-the-hood",
+"tech-dev-web-quality.web-performance",
+"tech-dev-web-quality.web-accessibility",
+"tech-dev-web-quality.injection-xss-defence",
+"tech-dev-web-quality.auth-sessions-secrets",
+"tech-dev-web-quality.owasp-defensive-review"
+],
+"labs":[
+"tech-dev-typescript.types-in-practice.l1",
+"tech-dev-typescript.rest-api-design.l5",
+"tech-dev-testing-state.tdd-unit-testing.l1"
+],
+"milestone":"A typed React-style app with tests and an a11y audit."
+},
+{
+"title":"Back-end & databases",
+"weeks":5,
+"courses":[
+"tech-dev-backend.node-async-essentials",
+"tech-dev-backend.express-middleware",
+"tech-dev-backend.python-backend-basics",
+"tech-dev-backend.python-service-design",
+"tech-dev-backend.queues-and-caching",
+"tech-dev-api.rest-fundamentals",
+"tech-dev-api.graphql-essentials",
+"tech-dev-api.api-security-limits",
+"tech-dev-api.robust-endpoints",
+"tech-dev-api.openapi-contracts",
+"tech-dev-databases.sql-querying-basics",
+"tech-dev-databases.sql-joins",
+"tech-dev-databases.sql-aggregation",
+"tech-dev-databases.sql-windows-ctes",
+"tech-dev-databases.schema-indexes-transactions"
+],
+"labs":[
+"tech-dev-backend.node-async-essentials.l1",
+"tech-dev-backend.express-middleware.l1",
+"tech-dev-backend.python-backend-basics.l1"
+],
+"milestone":"A REST API with SQL and caching."
+},
+{
+"title":"MERN project",
+"weeks":4,
+"courses":[
+"uni-cse-mern.react",
+"uni-cse-mern.node",
+"uni-cse-mern.mongo",
+"uni-cse-mern.fullstack",
+"uni-cse-mern.revision"
+],
+"labs":[
+"uni-cse-mern.react.l1",
+"uni-cse-mern.node.l1",
+"uni-cse-mern.mongo.l1"
+],
+"milestone":"A deployed full-stack app with auth."
+},
+{
+"title":"System design & interview",
+"weeks":3,
+"courses":[
+"tech-dev-system-design.case-url-shortener",
+"tech-dev-system-design.case-scaling-toolkit",
+"tech-dev-system-design.case-feed-chat-notifications",
+"tech-dev-system-design.final-mock-interviews",
+"career-ready-general.resume-linkedin-cover",
+"career-ready-general.interview-skills"
+],
+"labs":[
+"tech-dev-system-design.case-url-shortener.l1",
+"tech-dev-system-design.case-scaling-toolkit.l1",
+"tech-dev-system-design.case-feed-chat-notifications.l1"
+],
+"milestone":"Pass the system-design mock interview."
+}
+]
+},
+{
+"id":"mobile-flutter-developer",
+"title":"Mobile / Flutter Developer",
+"category":"Tech careers",
+"icon":"📱",
+"color":"#1098ad",
+"audience":"Web developers, students",
+"duration":"3–4 months · ~8 h/week",
+"summary":"Programming basics, Dart and Flutter, native Android/iOS basics, mobile UX and store release.",
+"outcomes":[
+"Build Flutter apps with state and navigation",
+"Read Kotlin/Compose and SwiftUI",
+"Make apps fast and accessible",
+"Ship to the stores"
+],
+"minutes":702,
+"final":false,
+"stages":[
+{
+"title":"Programming basics",
+"weeks":3,
+"courses":[
+"tech-programming.think-like-a-coder",
+"tech-programming.oop-debugging-git"
+],
+"labs":[
+"tech-programming.think-like-a-coder.l3",
+"tech-programming.oop-debugging-git.l4",
+"tech-programming.think-like-a-coder.l1"
+],
+"milestone":"Classes, tests and a Git repo."
+},
+{
+"title":"Dart & Flutter",
+"weeks":4,
+"courses":[
+"tech-mobile-dart.basics",
+"tech-mobile-flutter.widgets-layout",
+"tech-mobile-flutter-app.state-navigation"
+],
+"labs":[
+"tech-mobile-dart.basics.l3",
+"tech-mobile-flutter.widgets-layout.l2",
+"tech-mobile-flutter-app.state-navigation.l1"
+],
+"milestone":"A two-screen app with shared state."
+},
+{
+"title":"Native & APIs",
+"weeks":3,
+"courses":[
+"tech-mobile-android.kotlin-compose",
+"tech-mobile-ios.swift-swiftui",
+"tech-dev-api.rest-fundamentals"
+],
+"labs":[
+"tech-dev-api.rest-fundamentals.l1",
+"tech-mobile-android.kotlin-compose.l3",
+"tech-mobile-ios.swift-swiftui.l3"
+],
+"milestone":"Read and explain a Compose screen and a SwiftUI view."
+},
+{
+"title":"UX, release & interview",
+"weeks":2,
+"courses":[
+"tech-mobile-ux.ux-performance",
+"tech-mobile-release.ship-it",
+"career-ready-general.resume-linkedin-cover",
+"career-ready-general.interview-skills"
+],
+"labs":[
+"career-ready-general.interview-skills.l4",
+"tech-mobile-ux.ux-performance.l1",
+"tech-mobile-release.ship-it.l2"
+],
+"milestone":"A store-ready build with screenshots and privacy notes."
+}
+]
+},
+{
+"id":"qa-tester",
+"title":"Software QA Tester",
+"category":"Tech careers",
+"icon":"🐞",
+"color":"#e64980",
+"audience":"Graduates of any stream",
+"duration":"2–3 months · ~6 h/week",
+"summary":"Manual testing and test design, bug reports, automation and API testing concepts, and the QA interview.",
+"outcomes":[
+"Write test cases from requirements",
+"Report and triage bugs",
+"Explain Selenium/Playwright and API tests",
+"Pass QA interviews"
+],
+"minutes":585,
+"final":true,
+"stages":[
+{
+"title":"Software basics",
+"weeks":2,
+"courses":[
+"tech-programming.think-like-a-coder",
+"uni-cse-se.u1-process-models",
+"uni-cse-se.u5-testing"
+],
+"labs":[
+"uni-cse-se.u5-testing.l3",
+"tech-programming.think-like-a-coder.l3",
+"uni-cse-se.u1-process-models.l3"
+],
+"milestone":"Explain the SDLC and where testing fits."
+},
+{
+"title":"Manual testing",
+"weeks":3,
+"courses":[
+"career-ready-qa-tester.qa-manual-testing",
+"career-ready-qa-tester.qa-bugs-and-triage"
+],
+"labs":[
+"career-ready-qa-tester.qa-bugs-and-triage.l1",
+"career-ready-qa-tester.qa-manual-testing.l2",
+"career-ready-qa-tester.qa-bugs-and-triage.l4"
+],
+"milestone":"A test plan and five well-written bug reports."
+},
+{
+"title":"Automation & API",
+"weeks":3,
+"courses":[
+"career-ready-qa-tester.qa-automation-concepts",
+"career-ready-qa-tester.qa-api-postman",
+"tech-dev-testing-state.tdd-unit-testing"
+],
+"labs":[
+"career-ready-qa-tester.qa-automation-concepts.l3",
+"career-ready-qa-tester.qa-api-postman.l2",
+"tech-dev-testing-state.tdd-unit-testing.l1"
+],
+"milestone":"An API test collection with assertions."
+},
+{
+"title":"Interview",
+"weeks":1,
+"courses":[
+"career-ready-qa-tester.qa-interview-resume-plan",
+"career-ready-general.resume-linkedin-cover",
+"career-ready-general.interview-skills"
+],
+"labs":[
+"career-ready-general.interview-skills.l4",
+"career-ready-general.resume-linkedin-cover.l4",
+"career-ready-qa-tester.qa-interview-resume-plan.l4"
+],
+"milestone":"Pass the QA mock interview."
+}
+]
+},
+{
+"id":"software-engineer",
+"title":"Software Engineer (DSA + system design)",
+"category":"Tech careers",
+"icon":"🧱",
+"color":"#364fc7",
+"audience":"CS students, developers preparing for interviews",
+"duration":"7–9 months · ~10 h/week",
+"summary":"Programming foundations, interview DSA by pattern, clean code and testing, architecture and ten system designs.",
+"outcomes":[
+"Solve interview problems by pattern",
+"Write clean, tested code",
+"Design scalable systems",
+"Interview with confidence"
+],
+"minutes":5880,
+"final":true,
+"stages":[
+{
+"title":"Programming foundations",
+"weeks":4,
+"courses":[
+"tech-programming.think-like-a-coder",
+"tech-programming.python-from-zero",
+"tech-programming.javascript-from-zero",
+"tech-programming.oop-debugging-git",
+"uni-cse-oop.u6-design"
+],
+"labs":[
+"uni-cse-oop.u6-design.l2",
+"tech-programming.think-like-a-coder.l3",
+"tech-programming.javascript-from-zero.l4"
+],
+"milestone":"A small OOP project with tests and Git history."
+},
+{
+"title":"DSA I",
+"weeks":6,
+"courses":[
+"tech-swe-dsa-a.arrays",
+"tech-swe-dsa-a.strings",
+"tech-swe-dsa-a.hashing",
+"tech-swe-dsa-a.two-pointers",
+"tech-swe-dsa-a.sliding-window",
+"tech-swe-dsa-a.stacks-queues",
+"tech-swe-dsa-a.linked-lists"
+],
+"labs":[
+"tech-swe-dsa-a.arrays.l1",
+"tech-swe-dsa-a.strings.l1",
+"tech-swe-dsa-a.hashing.l1"
+],
+"milestone":"Solve arrays, strings, hashing and window problems on time."
+},
+{
+"title":"DSA II",
+"weeks":6,
+"courses":[
+"tech-swe-dsa-b.trees",
+"tech-swe-dsa-b.graphs",
+"tech-swe-dsa-b.heaps",
+"tech-swe-dsa-b.dynamic-programming",
+"tech-swe-dsa-b.greedy",
+"tech-swe-dsa-b.backtracking",
+"tech-swe-dsa-b.bit-manipulation",
+"tech-swe-dsa-b.final"
+],
+"labs":[
+"tech-swe-dsa-b.trees.l1",
+"tech-swe-dsa-b.graphs.l1",
+"tech-swe-dsa-b.heaps.l1"
+],
+"milestone":"Trees, graphs and DP under interview pressure."
+},
+{
+"title":"Craft",
+"weeks":4,
+"courses":[
+"tech-swe-craft.clean-code-refactoring",
+"tech-swe-craft.solid-patterns",
+"tech-swe-craft.testing-strategy",
+"tech-swe-craft.debugging",
+"tech-swe-craft.performance-profiling",
+"tech-swe-craft.code-review",
+"tech-swe-craft.version-control-workflows"
+],
+"labs":[
+"tech-swe-craft.debugging.l2",
+"tech-swe-craft.version-control-workflows.l2",
+"tech-swe-craft.testing-strategy.l4"
+],
+"milestone":"Refactor a messy module and add a test suite."
+},
+{
+"title":"Architecture & system design",
+"weeks":5,
+"courses":[
+"tech-swe-architecture.software-architecture",
+"tech-swe-architecture.domain-driven-design",
+"tech-swe-architecture.api-design",
+"tech-swe-architecture.reliability",
+"tech-swe-architecture.requirements-estimation",
+"tech-swe-architecture.documentation",
+"tech-swe-architecture.open-source",
+"tech-swe-architecture.final",
+"tech-swe-sysdesign.autocomplete-notifications",
+"tech-swe-sysdesign.kv-store-crawler",
+"tech-swe-sysdesign.video-ridehailing",
+"tech-swe-sysdesign.filesync-payments",
+"tech-swe-sysdesign.booking-monitoring",
+"tech-swe-sysdesign.final"
+],
+"labs":[
+"tech-swe-architecture.open-source.l1",
+"tech-swe-sysdesign.booking-monitoring.l4",
+"tech-swe-architecture.reliability.l3"
+],
+"milestone":"Two full system designs and the final mock interviews."
+}
+]
+},
+{
+"id":"itsm-servicenow",
+"title":"ITSM / ServiceNow Administrator",
+"category":"Tech careers",
+"icon":"🎛️",
+"color":"#5c940d",
+"audience":"Service-desk staff, freshers",
+"duration":"3 months · ~6 h/week",
+"summary":"ITIL 4 practices, service-desk craft, ticket handling and the ITSM interview.",
+"outcomes":[
+"Explain ITIL 4 value streams",
+"Run incident, problem and change",
+"Handle SLAs and escalations",
+"Pass an ITSM interview"
+],
+"minutes":933,
+"final":true,
+"stages":[
+{
+"title":"Service desk basics",
+"weeks":2,
+"courses":[
+"career-ready-support.support-day-one",
+"career-ready-support.escalation-tickets",
+"career-ready-support.helpdesk-l1-triage"
+],
+"labs":[
+"career-ready-support.escalation-tickets.l1",
+"career-ready-support.helpdesk-l1-triage.l1",
+"career-ready-support.support-day-one.l1"
+],
+"milestone":"Log, categorise and prioritise ten tickets."
+},
+{
+"title":"ITIL foundation",
+"weeks":3,
+"courses":[
+"corp-itil-foundation.value-and-svs",
+"corp-itil-foundation.principles",
+"corp-itil-foundation.dimensions-and-chain"
+],
+"labs":[
+"corp-itil-foundation.value-and-svs.l3",
+"corp-itil-foundation.principles.l4",
+"corp-itil-foundation.dimensions-and-chain.l4"
+],
+"milestone":"Explain the SVS and guiding principles."
+},
+{
+"title":"Practices",
+"weeks":4,
+"courses":[
+"corp-itil-incident.incident-management",
+"corp-itil-incident.major-incident",
+"corp-itil-problem-change.problem-rca",
+"corp-itil-problem-change.change-enablement",
+"corp-itil-problem-change.slm-numericals",
+"corp-itil-problem-change.cmdb"
+],
+"labs":[
+"corp-itil-incident.incident-management.l3",
+"corp-itil-problem-change.problem-rca.l4",
+"corp-itil-problem-change.change-enablement.l4"
+],
+"milestone":"Run a major incident and a change through CAB."
+},
+{
+"title":"Improve & interview",
+"weeks":2,
+"courses":[
+"corp-itil-improve.knowledge",
+"corp-itil-improve.csi",
+"corp-itil-improve.exam-practice",
+"corp-itil-improve.final",
+"career-interview-it-infra.itsm-servicenow"
+],
+"labs":[
+"corp-itil-improve.final.l3",
+"career-interview-it-infra.itsm-servicenow.l1",
+"corp-itil-improve.csi.l4"
+],
+"milestone":"Foundation-style exam practice and the ITSM mock interview."
+}
+]
+},
+{
+"id":"sap-consultant",
+"title":"SAP Consultant (functional basics)",
+"category":"Tech careers",
+"icon":"🏭",
+"color":"#1864ab",
+"audience":"Commerce/MBA graduates, accountants",
+"duration":"3 months · ~6 h/week",
+"summary":"Accounting and business processes, ERP concepts, SAP FI/CO and the P2P / O2C cycles.",
+"outcomes":[
+"Explain double entry and cost centres",
+"Map P2P and O2C to SAP modules",
+"Talk to business users about processes"
+],
+"minutes":512,
+"final":false,
+"stages":[
+{
+"title":"Business & accounting basics",
+"weeks":4,
+"courses":[
+"uni-bcom-a.fa-process",
+"uni-mba-core-fin.cost-management-accounting",
+"career-ready-accounts.acc-tally-basics"
+],
+"labs":[
+"career-ready-accounts.acc-tally-basics.l4",
+"uni-bcom-a.fa-process.l1",
+"uni-mba-core-fin.cost-management-accounting.l1"
+],
+"milestone":"Post a set of transactions to a trial balance."
+},
+{
+"title":"ERP concepts",
+"weeks":2,
+"courses":[
+"uni-mba-it-1.erp",
+"uni-mba-ops-1.procurement"
+],
+"labs":[
+"uni-mba-it-1.erp.l4",
+"uni-mba-ops-1.procurement.l4",
+"uni-mba-it-1.erp.l3"
+],
+"milestone":"Draw your company’s order-to-cash flow."
+},
+{
+"title":"SAP FI/CO, MM & SD",
+"weeks":3,
+"courses":[
+"tech-ent-sap.erp-fico",
+"tech-ent-sap.p2p-o2c"
+],
+"labs":[
+"tech-ent-sap.p2p-o2c.l3",
+"tech-ent-sap.erp-fico.l2",
+"tech-ent-sap.p2p-o2c.l2"
+],
+"milestone":"Explain each step of P2P and O2C with SAP terms."
+},
+{
+"title":"Interview",
+"weeks":1,
+"courses":[
+"career-ready-general.resume-linkedin-cover",
+"career-ready-general.interview-skills"
+],
+"labs":[
+"career-ready-general.interview-skills.l4",
+"career-ready-general.resume-linkedin-cover.l4",
+"career-ready-general.interview-skills.l1"
+],
+"milestone":"Answer ten functional interview questions."
+}
+]
+},
+{
+"id":"cybersecurity",
+"title":"Cybersecurity Analyst",
+"category":"Tech careers",
+"icon":"🔐",
+"color":"#c92a2a",
+"audience":"IT staff, CS students",
+"duration":"5–6 months · ~8 h/week",
+"summary":"Security foundations, networking, Linux, AppSec and OWASP, SOC operations and incident response.",
+"outcomes":[
+"Explain threats, risk and controls",
+"Find and fix OWASP issues",
+"Triage alerts and respond to incidents",
+"Work within Indian cyber law"
+],
+"minutes":2062,
+"final":true,
+"stages":[
+{
+"title":"Foundations",
+"weeks":3,
+"courses":[
+"tech-security-devops.security-foundations",
+"corp-cyber.ch1-foundations",
+"corp-cyber.ch2-phishing",
+"corp-cyber.ch3-identity",
+"corp-cyber.ch4-devices-incidents",
+"corp-cyber.revision"
+],
+"labs":[
+"tech-security-devops.security-foundations.l3",
+"corp-cyber.ch1-foundations.l4",
+"corp-cyber.ch2-phishing.l4"
+],
+"milestone":"A personal security checklist you actually follow."
+},
+{
+"title":"Systems & networks",
+"weeks":4,
+"courses":[
+"tech-linux-foundations.permissions-acls",
+"tech-net-foundations.models-encapsulation",
+"tech-net-foundations.binary-ipv4",
+"tech-net-foundations.subnetting-core",
+"tech-net-foundations.vlsm-summarisation",
+"tech-net-foundations.subnet-speed-drills",
+"tech-net-foundations.ethernet-arp-icmp-toolbox",
+"tech-linux-network.firewalls"
+],
+"labs":[
+"tech-linux-foundations.permissions-acls.l2",
+"tech-net-foundations.models-encapsulation.l3",
+"tech-net-foundations.ethernet-arp-icmp-toolbox.l2"
+],
+"milestone":"Harden a Linux host and explain every open port."
+},
+{
+"title":"University security",
+"weeks":4,
+"courses":[
+"uni-cse-security.foundations",
+"uni-cse-security.identity-crypto",
+"uni-cse-security.network-cloud",
+"uni-cse-security.secure-software",
+"uni-cse-security.ir-law-ethics"
+],
+"labs":[
+"uni-cse-security.foundations.l4",
+"uni-cse-security.secure-software.l3",
+"uni-cse-security.ir-law-ethics.l1"
+],
+"milestone":"A threat model and an IR plan."
+},
+{
+"title":"AppSec",
+"weeks":3,
+"courses":[
+"tech-security-devops.appsec-owasp",
+"tech-dev-web-quality.injection-xss-defence",
+"tech-dev-web-quality.owasp-defensive-review"
+],
+"labs":[
+"tech-dev-web-quality.injection-xss-defence.l1",
+"tech-dev-web-quality.owasp-defensive-review.l1",
+"tech-security-devops.appsec-owasp.l4"
+],
+"milestone":"Fix an injection and an XSS in sample code."
+},
+{
+"title":"Operations & interview",
+"weeks":4,
+"courses":[
+"tech-soc-foundations.soc-siem-basics",
+"tech-soc-foundations.log-analysis-shell",
+"tech-soc-foundations.phishing-triage",
+"tech-soc-foundations.threat-intel-basics",
+"tech-soc-foundations.network-security-monitoring",
+"tech-soc-response.incident-response-playbooks",
+"tech-soc-response.vulnerability-management",
+"tech-soc-response.digital-forensics-basics",
+"tech-soc-response.windows-event-detection",
+"tech-soc-response.soc-operations-metrics",
+"career-interview-it-infra.soc-analyst"
+],
+"labs":[
+"tech-soc-foundations.soc-siem-basics.l3",
+"tech-soc-foundations.log-analysis-shell.l2",
+"tech-soc-foundations.phishing-triage.l2"
+],
+"milestone":"Pass the SOC mock interview."
+}
+]
+},
+{
+"id":"cloud-security",
+"title":"Cloud Security Engineer",
+"category":"Tech careers",
+"icon":"☁️",
+"color":"#862e9c",
+"audience":"Cloud engineers, security analysts",
+"duration":"5 months · ~8 h/week",
+"summary":"Cloud foundations, identity, network and data protection on AWS, Azure and Google Cloud, plus DevSecOps.",
+"outcomes":[
+"Design least-privilege IAM across clouds",
+"Encrypt and manage secrets",
+"Detect misconfigurations and threats",
+"Shift security left in pipelines"
+],
+"minutes":1438,
+"final":true,
+"stages":[
+{
+"title":"Cloud & security basics",
+"weeks":3,
+"courses":[
+"corp-cloud.ch1-concepts",
+"corp-cloud.ch2-compute",
+"corp-cloud.ch3-storage-db",
+"corp-cloud.ch4-networking",
+"corp-cloud.ch5-security",
+"corp-cloud.ch6-cost-architecture",
+"corp-cloud.revision",
+"uni-cse-cloud.security"
+],
+"labs":[
+"corp-cloud.ch4-networking.l1",
+"uni-cse-cloud.security.l4",
+"corp-cloud.ch2-compute.l3"
+],
+"milestone":"Explain shared responsibility per service model."
+},
+{
+"title":"AWS security",
+"weeks":3,
+"courses":[
+"tech-aws-foundations.iam-zero-to-hero",
+"tech-aws-architect.security-kms-secrets-guardduty"
+],
+"labs":[
+"tech-aws-foundations.iam-zero-to-hero.l1",
+"tech-aws-architect.security-kms-secrets-guardduty.l1",
+"tech-aws-foundations.iam-zero-to-hero.l4"
+],
+"milestone":"A KMS-encrypted bucket with a tight policy."
+},
+{
+"title":"Azure & Google Cloud security",
+"weeks":4,
+"courses":[
+"tech-azure-admin.entra-id",
+"tech-azure-admin.policy-rbac",
+"tech-gcp-data-security.org-policy-scc",
+"tech-gcp-data-security.security-engineer"
+],
+"labs":[
+"tech-azure-admin.entra-id.l1",
+"tech-azure-admin.policy-rbac.l1",
+"tech-gcp-data-security.org-policy-scc.l1"
+],
+"milestone":"Policies that block public exposure on both clouds."
+},
+{
+"title":"DevSecOps",
+"weeks":3,
+"courses":[
+"tech-devops-secfinal.devsecops",
+"tech-devops-secfinal.final",
+"tech-security-devops.appsec-owasp"
+],
+"labs":[
+"tech-devops-secfinal.devsecops.l3",
+"tech-devops-secfinal.final.l3",
+"tech-security-devops.appsec-owasp.l4"
+],
+"milestone":"A pipeline with secret scanning and SAST."
+},
+{
+"title":"Interview",
+"weeks":1,
+"courses":[
+"career-interview-it-infra.cloud-engineer",
+"career-interview-it-infra.soc-analyst"
+],
+"labs":[
+"career-interview-it-infra.cloud-engineer.l1",
+"career-interview-it-infra.soc-analyst.l1",
+"career-interview-it-infra.cloud-engineer.l2"
+],
+"milestone":"Pass both mock interviews."
+}
+]
+},
+{
+"id":"semiconductor-vlsi-engineer",
+"title":"Semiconductor / VLSI Engineer",
+"category":"Tech careers",
+"icon":"💾",
+"color":"#5f3dc4",
+"audience":"ECE/EE students and engineers",
+"duration":"6–7 months · ~8 h/week",
+"summary":"Digital electronics and device physics, Verilog and CMOS, the design flow, fabrication, test and packaging.",
+"outcomes":[
+"Explain MOSFET and FinFET operation",
+"Read RTL and reason about timing",
+"Walk spec → tape-out",
+"Explain every fab and packaging step"
+],
+"minutes":2977,
+"final":true,
+"stages":[
+{
+"title":"Digital & analog electronics",
+"weeks":5,
+"courses":[
+"uni-ece-core.de-u1-numbers-boolean",
+"uni-ece-core.de-u2-combinational",
+"uni-ece-core.de-u3-sequential",
+"uni-ece-core.de-u4-families-memories-converters",
+"uni-ece-core.de-revision",
+"uni-ece-core.ae-u1-diodes",
+"uni-ece-core.ae-u3-fet"
+],
+"labs":[
+"uni-ece-core.de-u1-numbers-boolean.l1",
+"uni-ece-core.de-u2-combinational.l1",
+"uni-ece-core.de-u3-sequential.l4"
+],
+"milestone":"Design a counter and bias a MOSFET."
+},
+{
+"title":"Device physics",
+"weeks":3,
+"courses":[
+"tech-semi-physics.bands-intrinsic",
+"tech-semi-physics.doping-carriers",
+"tech-semi-physics.pn-junction",
+"tech-semi-physics.mosfet",
+"tech-semi-physics.bench-devices"
+],
+"labs":[
+"tech-semi-physics.bench-devices.l4",
+"tech-semi-physics.bands-intrinsic.l2",
+"tech-semi-physics.doping-carriers.l2"
+],
+"milestone":"Explain threshold voltage with a band diagram."
+},
+{
+"title":"VLSI design",
+"weeks":5,
+"courses":[
+"uni-vlsi-core.digital-design",
+"uni-vlsi-core.verilog",
+"uni-vlsi-core.cmos",
+"tech-semi-design-flow.flow-overview",
+"tech-semi-design-flow.verilog-reading",
+"tech-semi-design-flow.verification",
+"tech-semi-design-flow.synthesis-dft",
+"tech-semi-design-flow.pnr-sta",
+"tech-semi-design-flow.signoff-tapeout"
+],
+"labs":[
+"tech-semi-design-flow.synthesis-dft.l1",
+"tech-semi-design-flow.verification.l4",
+"tech-semi-design-flow.signoff-tapeout.l2"
+],
+"milestone":"Close timing on a small block (on paper)."
+},
+{
+"title":"Fabrication",
+"weeks":4,
+"courses":[
+"tech-semi-fab-a.sand-to-polysilicon",
+"tech-semi-fab-a.czochralski",
+"tech-semi-fab-a.wafering",
+"tech-semi-fab-a.cleanroom",
+"tech-semi-fab-a.oxidation",
+"tech-semi-fab-a.photolithography",
+"tech-semi-fab-b.etching",
+"tech-semi-fab-b.deposition",
+"tech-semi-fab-b.ion-implantation",
+"tech-semi-fab-b.cmp-metallisation",
+"tech-semi-fab-b.finfet-gaa",
+"tech-semi-fab-b.process-integration"
+],
+"labs":[
+"tech-semi-fab-a.wafering.l4",
+"tech-semi-fab-a.cleanroom.l4",
+"tech-semi-fab-a.oxidation.l4"
+],
+"milestone":"Draw the CMOS process flow from memory."
+},
+{
+"title":"Back-end, industry & interview",
+"weeks":3,
+"courses":[
+"tech-semi-backend.wafer-test",
+"tech-semi-backend.dicing-thinning",
+"tech-semi-backend.packaging-classic",
+"tech-semi-backend.advanced-packaging",
+"tech-semi-backend.final-test-reliability",
+"tech-semi-backend.yield-models",
+"tech-semi-industry.business-models",
+"tech-semi-industry.supply-chain",
+"tech-semi-industry.india-semiconductor",
+"tech-semi-industry.final-interviews"
+],
+"labs":[
+"tech-semi-backend.wafer-test.l4",
+"tech-semi-backend.final-test-reliability.l4",
+"tech-semi-industry.final-interviews.l1"
+],
+"milestone":"Yield and cost per good die computed, and the final mock interview passed."
+}
+]
+},
+{
+"id":"quantum-computing",
+"title":"Quantum Computing",
+"category":"Tech careers",
+"icon":"⚛️",
+"color":"#3b5bdb",
+"audience":"Physics/CS students, curious engineers",
+"duration":"3–4 months · ~6 h/week",
+"summary":"Linear algebra and qubits, gates and entanglement, algorithms from Deutsch–Jozsa to Shor, hardware, QEC and post-quantum crypto.",
+"outcomes":[
+"Simulate circuits with state vectors",
+"Explain Grover, QFT and Shor",
+"Discuss noise, QEC and hardware honestly",
+"Plan for post-quantum cryptography"
+],
+"minutes":1575,
+"final":true,
+"stages":[
+{
+"title":"Maths you need",
+"weeks":2,
+"courses":[
+"university-maths-stats.linear-algebra",
+"uni-common-sciences-a.phy-u3-quantum"
+],
+"labs":[
+"university-maths-stats.linear-algebra.l1",
+"uni-common-sciences-a.phy-u3-quantum.l1",
+"university-maths-stats.linear-algebra.l4"
+],
+"milestone":"Multiply complex matrices by hand."
+},
+{
+"title":"Foundations",
+"weeks":4,
+"courses":[
+"tech-quantum-foundations.linear-algebra-qc",
+"tech-quantum-foundations.qubits-bloch",
+"tech-quantum-foundations.gates",
+"tech-quantum-foundations.measurement",
+"tech-quantum-foundations.entanglement",
+"tech-quantum-foundations.circuits",
+"tech-scenes-showcase.bloch-sphere"
+],
+"labs":[
+"tech-quantum-foundations.circuits.l4",
+"tech-scenes-showcase.bloch-sphere.l1",
+"tech-quantum-foundations.linear-algebra-qc.l1"
+],
+"milestone":"Prepare a Bell state and explain the measurement statistics."
+},
+{
+"title":"Algorithms",
+"weeks":4,
+"courses":[
+"tech-quantum-algorithms.statevector-sim",
+"tech-quantum-algorithms.oracle-algorithms",
+"tech-quantum-algorithms.grover",
+"tech-quantum-algorithms.qft-qpe",
+"tech-quantum-algorithms.shor",
+"tech-quantum-algorithms.variational"
+],
+"labs":[
+"tech-quantum-algorithms.statevector-sim.l1",
+"tech-quantum-algorithms.oracle-algorithms.l2",
+"tech-quantum-algorithms.grover.l2"
+],
+"milestone":"Your own state-vector simulator runs Grover on 3 qubits."
+},
+{
+"title":"Practice & careers",
+"weeks":3,
+"courses":[
+"tech-quantum-practice.hardware",
+"tech-quantum-practice.noise-qec",
+"tech-quantum-practice.qiskit-reading",
+"tech-quantum-practice.quantum-crypto",
+"tech-quantum-practice.pqc",
+"tech-quantum-practice.careers",
+"tech-quantum-practice.final"
+],
+"labs":[
+"tech-quantum-practice.pqc.l3",
+"tech-quantum-practice.noise-qec.l2",
+"tech-quantum-practice.quantum-crypto.l1"
+],
+"milestone":"Pass the quantum final mock interview + exam."
+}
+]
+},
+{
+"id":"mba-finance",
+"title":"MBA — Finance",
+"category":"Business",
+"icon":"💹",
+"color":"#364fc7",
+"audience":"Graduates and working professionals",
+"duration":"2 years · ~10 h/week",
+"summary":"MBA core year, then a Finance specialisation with numericals, cases and labs.",
+"outcomes":[
+"Read financial statements and use statistics for decisions",
+"Lead teams with OB and HR basics",
+"Build DCF and relative valuations",
+"Manage portfolios and explain derivatives"
+],
+"minutes":1896,
+"final":false,
+"stages":[
+{
+"title":"Management, economics & statistics",
+"weeks":12,
+"courses":[
+"uni-mba-core-people.principles-of-management",
+"uni-mba-core-people.organisational-behaviour",
+"uni-mba-core-quant.managerial-economics",
+"uni-mba-core-quant.business-statistics"
+],
+"labs":[
+"uni-mba-core-people.principles-of-management.l4",
+"uni-mba-core-people.organisational-behaviour.l3",
+"uni-mba-core-quant.managerial-economics.l1"
+],
+"milestone":"Explain a business decision with data and an OB lens."
+},
+{
+"title":"Accounting, finance, marketing & operations",
+"weeks":12,
+"courses":[
+"uni-mba-core-fin.financial-accounting",
+"uni-mba-core-fin.cost-management-accounting",
+"uni-mba-core-fin.corporate-finance",
+"uni-mba-core-quant.marketing-management",
+"uni-mba-core-quant.operations-management",
+"uni-mba-core-people.human-resource-management",
+"uni-mba-core-people.strategic-management"
+],
+"labs":[
+"uni-mba-core-people.strategic-management.l4",
+"uni-mba-core-fin.financial-accounting.l1",
+"uni-mba-core-fin.cost-management-accounting.l1"
+],
+"milestone":"A one-page strategy with a financial case."
+},
+{
+"title":"Finance I",
+"weeks":12,
+"courses":[
+"uni-mba-fin-a.tvm-capital-budgeting",
+"uni-mba-fin-a.financial-statement-analysis",
+"uni-mba-fin-a.dcf-financial-modelling",
+"uni-mba-fin-a.cost-of-capital-capital-structure",
+"uni-mba-fin-a.relative-valuation-multiples"
+],
+"labs":[
+"uni-mba-fin-a.tvm-capital-budgeting.l2",
+"uni-mba-fin-a.financial-statement-analysis.l2",
+"uni-mba-fin-a.dcf-financial-modelling.l2"
+],
+"milestone":"A DCF model with a cost-of-capital estimate."
+},
+{
+"title":"Finance II",
+"weeks":12,
+"courses":[
+"uni-mba-fin-b.portfolio-management",
+"uni-mba-fin-b.bonds-fixed-income",
+"uni-mba-fin-b.derivatives-futures-options",
+"uni-mba-fin-b.banking-and-nbfcs-india",
+"uni-mba-fin-b.fintech-payments-lending",
+"uni-mba-fin-b.taxation-india-basics",
+"uni-mba-fin-b.mergers-acquisitions",
+"uni-fin-cfa.quant",
+"uni-fin-cfa.fsa",
+"uni-fin-cfa.corpfin",
+"uni-fin-cfa.valuation-portfolio"
+],
+"labs":[
+"uni-mba-fin-b.banking-and-nbfcs-india.l4",
+"uni-mba-fin-b.fintech-payments-lending.l4",
+"uni-mba-fin-b.mergers-acquisitions.l4"
+],
+"milestone":"Price an option and value an M&A deal."
+},
+{
+"title":"Placement",
+"weeks":4,
+"courses":[
+"corporate-careers.resume-interviews",
+"corporate-careers.salary-switching",
+"career-ready-general.interview-skills"
+],
+"labs":[
+"corporate-careers.salary-switching.l2",
+"career-ready-general.interview-skills.l4",
+"corporate-careers.resume-interviews.l3"
+],
+"milestone":"A placement-ready CV and three mock interviews."
+}
+]
+},
+{
+"id":"mba-marketing",
+"title":"MBA — Marketing",
+"category":"Business",
+"icon":"📣",
+"color":"#364fc7",
+"audience":"Graduates and working professionals",
+"duration":"2 years · ~10 h/week",
+"summary":"MBA core year, then a Marketing specialisation with numericals, cases and labs.",
+"outcomes":[
+"Read financial statements and use statistics for decisions",
+"Lead teams with OB and HR basics",
+"Plan brands, digital campaigns and pricing",
+"Measure marketing with A/B tests and CLV"
+],
+"minutes":1683,
+"final":false,
+"stages":[
+{
+"title":"Management, economics & statistics",
+"weeks":12,
+"courses":[
+"uni-mba-core-people.principles-of-management",
+"uni-mba-core-people.organisational-behaviour",
+"uni-mba-core-quant.managerial-economics",
+"uni-mba-core-quant.business-statistics"
+],
+"labs":[
+"uni-mba-core-people.principles-of-management.l4",
+"uni-mba-core-people.organisational-behaviour.l3",
+"uni-mba-core-quant.managerial-economics.l1"
+],
+"milestone":"Explain a business decision with data and an OB lens."
+},
+{
+"title":"Accounting, finance, marketing & operations",
+"weeks":12,
+"courses":[
+"uni-mba-core-fin.financial-accounting",
+"uni-mba-core-fin.cost-management-accounting",
+"uni-mba-core-fin.corporate-finance",
+"uni-mba-core-quant.marketing-management",
+"uni-mba-core-quant.operations-management",
+"uni-mba-core-people.human-resource-management",
+"uni-mba-core-people.strategic-management"
+],
+"labs":[
+"uni-mba-core-people.strategic-management.l4",
+"uni-mba-core-fin.financial-accounting.l1",
+"uni-mba-core-fin.cost-management-accounting.l1"
+],
+"milestone":"A one-page strategy with a financial case."
+},
+{
+"title":"Marketing I",
+"weeks":12,
+"courses":[
+"uni-mba-mkt-a.consumer-behaviour",
+"uni-mba-mkt-a.brand-management",
+"uni-mba-mkt-a.digital-marketing-seo-sem",
+"uni-mba-mkt-a.sales-distribution-management",
+"uni-mba-mkt-a.marketing-analytics"
+],
+"labs":[
+"uni-mba-mkt-a.brand-management.l3",
+"uni-mba-mkt-a.consumer-behaviour.l2",
+"uni-mba-mkt-a.digital-marketing-seo-sem.l2"
+],
+"milestone":"A brand plan with CLV and attribution."
+},
+{
+"title":"Marketing II",
+"weeks":12,
+"courses":[
+"uni-mba-mkt-b.b2b-marketing",
+"uni-mba-mkt-b.retail-management",
+"uni-mba-mkt-b.rural-marketing-india",
+"uni-mba-mkt-b.pricing-strategy",
+"uni-mba-mkt-b.market-research-stp",
+"career-ready-sales-marketing.dm-seo",
+"career-ready-sales-marketing.dm-analytics"
+],
+"labs":[
+"career-ready-sales-marketing.dm-seo.l3",
+"career-ready-sales-marketing.dm-analytics.l3",
+"uni-mba-mkt-b.b2b-marketing.l4"
+],
+"milestone":"A pricing and rural go-to-market plan."
+},
+{
+"title":"Placement",
+"weeks":4,
+"courses":[
+"corporate-careers.resume-interviews",
+"corporate-careers.salary-switching",
+"career-ready-general.interview-skills"
+],
+"labs":[
+"corporate-careers.salary-switching.l2",
+"career-ready-general.interview-skills.l4",
+"corporate-careers.resume-interviews.l3"
+],
+"milestone":"A placement-ready CV and three mock interviews."
+}
+]
+},
+{
+"id":"mba-hr",
+"title":"MBA — Human Resources",
+"category":"Business",
+"icon":"👥",
+"color":"#364fc7",
+"audience":"Graduates and working professionals",
+"duration":"2 years · ~10 h/week",
+"summary":"MBA core year, then a Human Resources specialisation with numericals, cases and labs.",
+"outcomes":[
+"Read financial statements and use statistics for decisions",
+"Lead teams with OB and HR basics",
+"Run hiring, pay and performance systems",
+"Apply Indian labour codes and HR analytics"
+],
+"minutes":1582,
+"final":false,
+"stages":[
+{
+"title":"Management, economics & statistics",
+"weeks":12,
+"courses":[
+"uni-mba-core-people.principles-of-management",
+"uni-mba-core-people.organisational-behaviour",
+"uni-mba-core-quant.managerial-economics",
+"uni-mba-core-quant.business-statistics"
+],
+"labs":[
+"uni-mba-core-people.principles-of-management.l4",
+"uni-mba-core-people.organisational-behaviour.l3",
+"uni-mba-core-quant.managerial-economics.l1"
+],
+"milestone":"Explain a business decision with data and an OB lens."
+},
+{
+"title":"Accounting, finance, marketing & operations",
+"weeks":12,
+"courses":[
+"uni-mba-core-fin.financial-accounting",
+"uni-mba-core-fin.cost-management-accounting",
+"uni-mba-core-fin.corporate-finance",
+"uni-mba-core-quant.marketing-management",
+"uni-mba-core-quant.operations-management",
+"uni-mba-core-people.human-resource-management",
+"uni-mba-core-people.strategic-management"
+],
+"labs":[
+"uni-mba-core-people.strategic-management.l4",
+"uni-mba-core-fin.financial-accounting.l1",
+"uni-mba-core-fin.cost-management-accounting.l1"
+],
+"milestone":"A one-page strategy with a financial case."
+},
+{
+"title":"Human Resources I",
+"weeks":12,
+"courses":[
+"uni-mba-hr-a.talent-acquisition",
+"uni-mba-hr-a.compensation-benefits",
+"uni-mba-hr-a.performance-management",
+"uni-mba-hr-a.learning-development",
+"uni-mba-hr-a.hr-analytics"
+],
+"labs":[
+"uni-mba-hr-a.talent-acquisition.l4",
+"uni-mba-hr-a.performance-management.l4",
+"uni-mba-hr-a.learning-development.l4"
+],
+"milestone":"A hiring funnel and a pay structure."
+},
+{
+"title":"Human Resources II",
+"weeks":12,
+"courses":[
+"uni-mba-hr-b.labour-laws-india",
+"uni-mba-hr-b.employee-relations",
+"uni-mba-hr-b.workforce-planning",
+"uni-mba-hr-b.engagement-culture-change",
+"career-ready-people-creative.hr-recruiting"
+],
+"labs":[
+"uni-mba-hr-b.employee-relations.l4",
+"uni-mba-hr-b.engagement-culture-change.l4",
+"career-ready-people-creative.hr-recruiting.l2"
+],
+"milestone":"A labour-code compliance checklist and a change plan."
+},
+{
+"title":"Placement",
+"weeks":4,
+"courses":[
+"corporate-careers.resume-interviews",
+"corporate-careers.salary-switching",
+"career-ready-general.interview-skills"
+],
+"labs":[
+"corporate-careers.salary-switching.l2",
+"career-ready-general.interview-skills.l4",
+"corporate-careers.resume-interviews.l3"
+],
+"milestone":"A placement-ready CV and three mock interviews."
+}
+]
+},
+{
+"id":"mba-operations",
+"title":"MBA — Operations & Supply Chain",
+"category":"Business",
+"icon":"🚚",
+"color":"#364fc7",
+"audience":"Graduates and working professionals",
+"duration":"2 years · ~10 h/week",
+"summary":"MBA core year, then a Operations & Supply Chain specialisation with numericals, cases and labs.",
+"outcomes":[
+"Read financial statements and use statistics for decisions",
+"Lead teams with OB and HR basics",
+"Forecast, plan and control inventory",
+"Improve processes with Lean and Six Sigma"
+],
+"minutes":1377,
+"final":false,
+"stages":[
+{
+"title":"Management, economics & statistics",
+"weeks":12,
+"courses":[
+"uni-mba-core-people.principles-of-management",
+"uni-mba-core-people.organisational-behaviour",
+"uni-mba-core-quant.managerial-economics",
+"uni-mba-core-quant.business-statistics"
+],
+"labs":[
+"uni-mba-core-people.principles-of-management.l4",
+"uni-mba-core-people.organisational-behaviour.l3",
+"uni-mba-core-quant.managerial-economics.l1"
+],
+"milestone":"Explain a business decision with data and an OB lens."
+},
+{
+"title":"Accounting, finance, marketing & operations",
+"weeks":12,
+"courses":[
+"uni-mba-core-fin.financial-accounting",
+"uni-mba-core-fin.cost-management-accounting",
+"uni-mba-core-fin.corporate-finance",
+"uni-mba-core-quant.marketing-management",
+"uni-mba-core-quant.operations-management",
+"uni-mba-core-people.human-resource-management",
+"uni-mba-core-people.strategic-management"
+],
+"labs":[
+"uni-mba-core-people.strategic-management.l4",
+"uni-mba-core-fin.financial-accounting.l1",
+"uni-mba-core-fin.cost-management-accounting.l1"
+],
+"milestone":"A one-page strategy with a financial case."
+},
+{
+"title":"Operations & Supply Chain I",
+"weeks":12,
+"courses":[
+"uni-mba-ops-1.planning",
+"uni-mba-ops-1.inventory",
+"uni-mba-ops-1.lean-sixsigma"
+],
+"labs":[
+"uni-mba-ops-1.planning.l1",
+"uni-mba-ops-1.inventory.l1",
+"uni-mba-ops-1.lean-sixsigma.l1"
+],
+"milestone":"EOQ, safety stock and a forecast for a real SKU."
+},
+{
+"title":"Operations & Supply Chain II",
+"weeks":12,
+"courses":[
+"uni-mba-ops-1.logistics",
+"uni-mba-ops-1.procurement",
+"career-ready-ops-roles.logistics-warehouse-ops"
+],
+"labs":[
+"career-ready-ops-roles.logistics-warehouse-ops.l4",
+"uni-mba-ops-1.procurement.l4",
+"uni-mba-ops-1.logistics.l1"
+],
+"milestone":"A supplier scorecard and a warehouse layout."
+},
+{
+"title":"Placement",
+"weeks":4,
+"courses":[
+"corporate-careers.resume-interviews",
+"corporate-careers.salary-switching",
+"career-ready-general.interview-skills"
+],
+"labs":[
+"corporate-careers.salary-switching.l2",
+"career-ready-general.interview-skills.l4",
+"corporate-careers.resume-interviews.l3"
+],
+"milestone":"A placement-ready CV and three mock interviews."
+}
+]
+},
+{
+"id":"mba-business-analytics",
+"title":"MBA — Business Analytics",
+"category":"Business",
+"icon":"📊",
+"color":"#364fc7",
+"audience":"Graduates and working professionals",
+"duration":"2 years · ~10 h/week",
+"summary":"MBA core year, then a Business Analytics specialisation with numericals, cases and labs.",
+"outcomes":[
+"Read financial statements and use statistics for decisions",
+"Lead teams with OB and HR basics",
+"Model, forecast and optimise with data",
+"Present analytics to leadership"
+],
+"minutes":1495,
+"final":false,
+"stages":[
+{
+"title":"Management, economics & statistics",
+"weeks":12,
+"courses":[
+"uni-mba-core-people.principles-of-management",
+"uni-mba-core-people.organisational-behaviour",
+"uni-mba-core-quant.managerial-economics",
+"uni-mba-core-quant.business-statistics"
+],
+"labs":[
+"uni-mba-core-people.principles-of-management.l4",
+"uni-mba-core-people.organisational-behaviour.l3",
+"uni-mba-core-quant.managerial-economics.l1"
+],
+"milestone":"Explain a business decision with data and an OB lens."
+},
+{
+"title":"Accounting, finance, marketing & operations",
+"weeks":12,
+"courses":[
+"uni-mba-core-fin.financial-accounting",
+"uni-mba-core-fin.cost-management-accounting",
+"uni-mba-core-fin.corporate-finance",
+"uni-mba-core-quant.marketing-management",
+"uni-mba-core-quant.operations-management",
+"uni-mba-core-people.human-resource-management",
+"uni-mba-core-people.strategic-management"
+],
+"labs":[
+"uni-mba-core-people.strategic-management.l4",
+"uni-mba-core-fin.financial-accounting.l1",
+"uni-mba-core-fin.cost-management-accounting.l1"
+],
+"milestone":"A one-page strategy with a financial case."
+},
+{
+"title":"Business Analytics I",
+"weeks":12,
+"courses":[
+"uni-mba-ba-1.excel",
+"uni-mba-ba-1.sql",
+"uni-mba-ba-1.regression"
+],
+"labs":[
+"uni-mba-ba-1.sql.l1",
+"uni-mba-ba-1.regression.l3",
+"uni-mba-ba-1.excel.l1"
+],
+"milestone":"A regression forecast with SQL-pulled data."
+},
+{
+"title":"Business Analytics II",
+"weeks":12,
+"courses":[
+"uni-mba-ba-1.optimisation",
+"uni-mba-ba-1.dashboards",
+"tech-da-capstone.sales-case",
+"tech-da-capstone.hr-attrition-case",
+"tech-da-capstone.ecommerce-funnel-case"
+],
+"labs":[
+"tech-da-capstone.sales-case.l1",
+"tech-da-capstone.hr-attrition-case.l1",
+"tech-da-capstone.ecommerce-funnel-case.l1"
+],
+"milestone":"An LP model and a board dashboard."
+},
+{
+"title":"Placement",
+"weeks":4,
+"courses":[
+"corporate-careers.resume-interviews",
+"corporate-careers.salary-switching",
+"career-ready-general.interview-skills"
+],
+"labs":[
+"corporate-careers.salary-switching.l2",
+"career-ready-general.interview-skills.l4",
+"corporate-careers.resume-interviews.l3"
+],
+"milestone":"A placement-ready CV and three mock interviews."
+}
+]
+},
+{
+"id":"ca-foundation",
+"title":"CA Foundation (study path)",
+"category":"Business",
+"icon":"📒",
+"color":"#1971c2",
+"audience":"Class 12 commerce students",
+"duration":"6–8 months · ~12 h/week",
+"summary":"Accounting, business law, quantitative aptitude and economics — the CA Foundation subject areas, mapped to our courses.",
+"outcomes":[
+"Prepare final accounts and partnership adjustments",
+"Explain contract and company law basics",
+"Solve business maths and statistics",
+"Answer micro and macro questions"
+],
+"minutes":1020,
+"final":false,
+"stages":[
+{
+"title":"Accounting",
+"weeks":8,
+"courses":[
+"school-senior-commerce.accountancy",
+"uni-bcom-a.fa-process",
+"uni-bcom-a.fa-final"
+],
+"labs":[
+"school-senior-commerce.accountancy.l1",
+"uni-bcom-a.fa-process.l1",
+"uni-bcom-a.fa-final.l1"
+],
+"milestone":"Final accounts with adjustments, error-free."
+},
+{
+"title":"Business law",
+"weeks":5,
+"courses":[
+"uni-llb-core.contracts",
+"uni-bcom-b.company-formation"
+],
+"labs":[
+"uni-llb-core.contracts.l4",
+"uni-bcom-b.company-formation.l2",
+"uni-llb-core.contracts.l2"
+],
+"milestone":"Answer five case questions on contracts."
+},
+{
+"title":"Quantitative aptitude",
+"weeks":6,
+"courses":[
+"school-senior-maths.algebra-probability",
+"university-maths-stats.probability",
+"uni-mba-core-quant.business-statistics"
+],
+"labs":[
+"school-senior-maths.algebra-probability.l3",
+"university-maths-stats.probability.l1",
+"uni-mba-core-quant.business-statistics.l1"
+],
+"milestone":"Timed set of 30 aptitude questions."
+},
+{
+"title":"Business economics",
+"weeks":4,
+"courses":[
+"school-senior-commerce.economics",
+"uni-ba-economics.micro-consumer"
+],
+"labs":[
+"school-senior-commerce.economics.l1",
+"uni-ba-economics.micro-consumer.l3"
+],
+"milestone":"Explain elasticity and market forms with graphs."
+},
+{
+"title":"Exam strategy",
+"weeks":2,
+"courses":[
+"entrance-general.exam-strategy",
+"uni-bcom-a.revision"
+],
+"labs":[
+"entrance-general.exam-strategy.l3",
+"uni-bcom-a.revision.l3",
+"entrance-general.exam-strategy.l2"
+],
+"milestone":"A full mock under exam timing."
+}
+]
+},
+{
+"id":"bank-po",
+"title":"Bank PO / Clerk",
+"category":"Government & exams",
+"icon":"🏦",
+"color":"#0b7285",
+"audience":"Graduates",
+"duration":"5–6 months · ~12 h/week",
+"summary":"The bank exam path: role and exam stages, aptitude, reasoning, banking awareness, and the interview.",
+"outcomes":[
+"Explain the PO/clerk roles and exam stages",
+"Solve quant and reasoning sets fast",
+"Explain banking, RBI and payments",
+"Interview confidently"
+],
+"minutes":698,
+"final":false,
+"stages":[
+{
+"title":"Know the job",
+"weeks":1,
+"courses":[
+"career-ready-bank-freelance.bank-roles-exams",
+"uni-fin-bank-actuarial.banking-careers"
+],
+"labs":[
+"uni-fin-bank-actuarial.banking-careers.l2",
+"career-ready-bank-freelance.bank-roles-exams.l3",
+"career-ready-bank-freelance.bank-roles-exams.l2"
+],
+"milestone":"A study calendar for prelims and mains."
+},
+{
+"title":"Quant & reasoning",
+"weeks":8,
+"courses":[
+"school-skills-mental-maths.mental-basics",
+"school-skills-mental-maths.vedic-tricks",
+"school-skills-mental-maths.abacus",
+"school-skills-mental-maths.percent-estimation",
+"school-skills-mental-maths.tables-squares",
+"school-skills-olympiad.reasoning",
+"entrance-general.cat"
+],
+"labs":[
+"entrance-general.cat.l3",
+"school-skills-mental-maths.mental-basics.l1",
+"school-skills-mental-maths.vedic-tricks.l1"
+],
+"milestone":"Timed sectional mocks at target accuracy."
+},
+{
+"title":"Banking & economy awareness",
+"weeks":4,
+"courses":[
+"uni-fin-bank-actuarial.banking-ops",
+"uni-fin-fintech-scams.rbi-payments",
+"uni-fin-fintech-scams.upi-npci",
+"entrance-govt-upsc-gs-b.economy"
+],
+"labs":[
+"uni-fin-fintech-scams.upi-npci.l2",
+"entrance-govt-upsc-gs-b.economy.l4",
+"uni-fin-bank-actuarial.banking-ops.l1"
+],
+"milestone":"Explain repo, CRR and UPI flow from memory."
+},
+{
+"title":"Branch operations & interview",
+"weeks":2,
+"courses":[
+"career-ready-bank-freelance.bank-branch-operations",
+"career-ready-bank-freelance.bank-interview-resume-plan",
+"entrance-general.exam-strategy"
+],
+"labs":[
+"career-ready-bank-freelance.bank-branch-operations.l3",
+"career-ready-bank-freelance.bank-interview-resume-plan.l2",
+"entrance-general.exam-strategy.l3"
+],
+"milestone":"A mock interview for the PO panel."
+}
+]
+},
+{
+"id":"entrepreneur",
+"title":"Entrepreneur",
+"category":"Business",
+"icon":"🚀",
+"color":"#e8590c",
+"audience":"Anyone with an idea",
+"duration":"4–5 months · ~6 h/week",
+"summary":"Validate an idea, get the unit economics right, set up in India, raise money, sell and manage money.",
+"outcomes":[
+"Validate demand before building",
+"Compute CAC, LTV and contribution",
+"Register and stay compliant",
+"Sell, negotiate and manage cash"
+],
+"minutes":821,
+"final":false,
+"stages":[
+{
+"title":"Idea & validation",
+"weeks":3,
+"courses":[
+"uni-mba-ent-1.plan-validate",
+"uni-mba-mkt-b.market-research-stp"
+],
+"labs":[
+"uni-mba-mkt-b.market-research-stp.l4",
+"uni-mba-ent-1.plan-validate.l2",
+"uni-mba-mkt-b.market-research-stp.l2"
+],
+"milestone":"Ten customer interviews and a go/no-go decision."
+},
+{
+"title":"Numbers",
+"weeks":3,
+"courses":[
+"uni-mba-ent-1.unit-economics",
+"corporate-business.finance-non-finance",
+"uni-mba-mkt-b.pricing-strategy"
+],
+"labs":[
+"uni-mba-ent-1.unit-economics.l1",
+"corporate-business.finance-non-finance.l2",
+"uni-mba-mkt-b.pricing-strategy.l2"
+],
+"milestone":"A unit-economics sheet that breaks even."
+},
+{
+"title":"Setting up in India",
+"weeks":2,
+"courses":[
+"uni-mba-ent-1.startup-india",
+"uni-bcom-b.gst",
+"career-ready-bank-freelance.freelance-contracts-payments-tax"
+],
+"labs":[
+"career-ready-bank-freelance.freelance-contracts-payments-tax.l4",
+"uni-mba-ent-1.startup-india.l1",
+"uni-bcom-b.gst.l3"
+],
+"milestone":"Entity chosen, GST understood, contracts ready."
+},
+{
+"title":"Selling & marketing",
+"weeks":3,
+"courses":[
+"corporate-business.negotiation-sales",
+"career-ready-sales-marketing.dm-ads-social",
+"career-ready-sales-marketing.sales-calls-objections"
+],
+"labs":[
+"corporate-business.negotiation-sales.l2",
+"career-ready-sales-marketing.dm-ads-social.l4",
+"career-ready-sales-marketing.sales-calls-objections.l4"
+],
+"milestone":"First ten paying customers (or a clear reason why not)."
+},
+{
+"title":"Funding & growth",
+"weeks":3,
+"courses":[
+"uni-mba-ent-1.fundraising",
+"uni-mba-ent-1.family-business",
+"corporate-leadership.ambiguity-crisis"
+],
+"labs":[
+"uni-mba-ent-1.family-business.l2",
+"corporate-leadership.ambiguity-crisis.l2",
+"uni-mba-ent-1.fundraising.l1"
+],
+"milestone":"A pitch deck and a 12-month cash plan."
+}
+]
+},
+{
+"id":"content-creator",
+"title":"Content Creator",
+"category":"Business",
+"icon":"🎬",
+"color":"#d6336c",
+"audience":"Students, hobbyists, freelancers",
+"duration":"3 months · ~5 h/week",
+"summary":"Write, design and present well; grow with SEO, social and analytics; get paid and stay safe and legal online.",
+"outcomes":[
+"Write and design content people finish",
+"Grow an audience with SEO and social",
+"Read analytics honestly",
+"Get paid, sign contracts and stay safe online"
+],
+"minutes":787,
+"final":false,
+"stages":[
+{
+"title":"Craft: writing & design",
+"weeks":3,
+"courses":[
+"career-ready-people-creative.content-writing-craft",
+"career-ready-people-creative.design-junior-craft",
+"corporate-communication.business-writing"
+],
+"labs":[
+"career-ready-people-creative.content-writing-craft.l4",
+"career-ready-people-creative.design-junior-craft.l4",
+"corporate-communication.business-writing.l2"
+],
+"milestone":"Five finished posts with a consistent look."
+},
+{
+"title":"Presenting & storytelling",
+"weeks":2,
+"courses":[
+"corporate-communication.presenting-data-stories",
+"wellbeing-never-fear.stage-and-public-speaking",
+"arts-acting-visual.acting-basics"
+],
+"labs":[
+"wellbeing-never-fear.stage-and-public-speaking.l2",
+"wellbeing-never-fear.stage-and-public-speaking.l3"
+],
+"milestone":"A two-minute video you are proud of."
+},
+{
+"title":"Growth",
+"weeks":3,
+"courses":[
+"career-ready-sales-marketing.dm-seo",
+"career-ready-sales-marketing.dm-ads-social",
+"career-ready-sales-marketing.dm-analytics"
+],
+"labs":[
+"career-ready-sales-marketing.dm-seo.l3",
+"career-ready-sales-marketing.dm-analytics.l3",
+"career-ready-sales-marketing.dm-ads-social.l4"
+],
+"milestone":"A month of posting with a UTM-tracked report."
+},
+{
+"title":"Money, law & safety",
+"weeks":2,
+"courses":[
+"career-ready-bank-freelance.freelance-clients-pricing",
+"career-ready-bank-freelance.freelance-contracts-payments-tax",
+"well-unusual-legal.online-phone-law",
+"life-digital.accounts-security",
+"life-digital.scams-deepfakes",
+"life-digital.privacy-wellbeing"
+],
+"labs":[
+"career-ready-bank-freelance.freelance-contracts-payments-tax.l4",
+"well-unusual-legal.online-phone-law.l4",
+"life-digital.accounts-security.l4"
+],
+"milestone":"A rate card, a contract template and privacy settings locked down."
+}
+]
+},
+{
+"id":"doctor-mbbs",
+"title":"Doctor (NEET → MBBS)",
+"category":"Health",
+"icon":"🩺",
+"color":"#e03131",
+"audience":"Class 11–12 PCB students and MBBS students",
+"duration":"6½ years (2 school + 4½ MBBS)",
+"summary":"NEET preparation, then MBBS phase by phase: pre-clinical, para-clinical and clinical subjects with emergencies.",
+"outcomes":[
+"Crack NEET concepts in biology, physics and chemistry",
+"Master the basic medical sciences",
+"Reason through common clinical cases",
+"Handle emergencies with a structured approach"
+],
+"minutes":5409,
+"final":false,
+"stages":[
+{
+"title":"NEET preparation",
+"weeks":52,
+"courses":[
+"school-senior-biology.cell-genetics",
+"school-senior-biology.physiology",
+"school-senior-biology.reproduction-health",
+"school-senior-biology.biotech-ecology",
+"school-senior-chemistry.physical",
+"school-senior-chemistry.organic",
+"school-senior-chemistry.inorganic",
+"school-senior-physics.mechanics",
+"school-senior-physics.rotation-thermo",
+"school-senior-physics.electricity-magnetism",
+"school-senior-physics.optics-modern",
+"entrance-neet.biology",
+"entrance-neet.physics",
+"entrance-neet.chemistry",
+"entrance-neet.strategy"
+],
+"labs":[
+"school-senior-biology.cell-genetics.l3",
+"school-senior-biology.reproduction-health.l4",
+"school-senior-chemistry.organic.l4"
+],
+"milestone":"NEET-style mocks at your target score."
+},
+{
+"title":"MBBS Phase 1 · Pre-clinical",
+"weeks":52,
+"courses":[
+"uni-mbbs-anatomy.upper-limb",
+"uni-mbbs-anatomy.histology",
+"uni-mbbs-anatomy.embryology",
+"uni-mbbs-anatomy.neuroanatomy",
+"uni-mbbs-physiology.cardiovascular",
+"uni-mbbs-physiology.respiratory",
+"uni-mbbs-physiology.renal-acid-base",
+"uni-mbbs-physiology.endocrine",
+"uni-mbbs-biochemistry.enzymes",
+"uni-mbbs-biochemistry.carbohydrate",
+"uni-mbbs-biochemistry.lipids",
+"uni-mbbs-biochemistry.vitamins-nutrition"
+],
+"labs":[
+"uni-mbbs-anatomy.upper-limb.l3",
+"uni-mbbs-anatomy.histology.l3",
+"uni-mbbs-anatomy.embryology.l3"
+],
+"milestone":"Explain any organ from structure to function to biochemistry."
+},
+{
+"title":"MBBS Phase 2 · Para-clinical",
+"weeks":52,
+"courses":[
+"uni-mbbs-pathology.cell-injury-inflammation",
+"uni-mbbs-pathology.haemodynamics",
+"uni-mbbs-pathology.neoplasia",
+"uni-mbbs-pathology.haematology",
+"uni-mbbs-microbiology.general-microbiology",
+"uni-mbbs-microbiology.immunology",
+"uni-mbbs-microbiology.systemic-bacteriology",
+"uni-mbbs-microbiology.virology-parasitology",
+"uni-mbbs-pharmacology.general-pharmacology",
+"uni-mbbs-pharmacology.autonomic",
+"uni-mbbs-pharmacology.antimicrobials",
+"uni-mbbs-pharmacology.cardiovascular-drugs",
+"uni-mbbs-forensic.thanatology",
+"uni-mbbs-forensic.injuries",
+"uni-mbbs-forensic.toxicology",
+"uni-mbbs-forensic.medicolegal-ethics"
+],
+"labs":[
+"uni-mbbs-pathology.cell-injury-inflammation.l3",
+"uni-mbbs-pathology.haemodynamics.l2",
+"uni-mbbs-pathology.neoplasia.l3"
+],
+"milestone":"Pathology-to-treatment reasoning for ten common diseases."
+},
+{
+"title":"MBBS Phase 3 · Clinical",
+"weeks":78,
+"courses":[
+"uni-mbbs-community-medicine.measures-of-disease",
+"uni-mbbs-community-medicine.screening",
+"uni-mbbs-community-medicine.study-designs",
+"uni-mbbs-community-medicine.health-programmes",
+"uni-mbbs-ortho-ent-ophthal.ortho-trauma",
+"uni-mbbs-ortho-ent-ophthal.joints-spine",
+"uni-mbbs-ortho-ent-ophthal.ent",
+"uni-mbbs-ortho-ent-ophthal.ophthalmology",
+"uni-mbbs-derm-psych.derm-morphology",
+"uni-mbbs-derm-psych.derm-infections-emergencies",
+"uni-mbbs-derm-psych.psych-assessment",
+"uni-mbbs-derm-psych.psych-emergencies",
+"uni-mbbs-medicine.cardiology",
+"uni-mbbs-medicine.respiratory-abg",
+"uni-mbbs-medicine.endo-renal",
+"uni-mbbs-medicine.neuro-tropical",
+"uni-mbbs-surgery.acute-abdomen",
+"uni-mbbs-surgery.trauma-burns",
+"uni-mbbs-surgery.periop",
+"uni-mbbs-surgery.osce",
+"uni-mbbs-obg.antenatal",
+"uni-mbbs-obg.labour",
+"uni-mbbs-obg.emergencies",
+"uni-mbbs-obg.gynaecology",
+"uni-mbbs-paediatrics.growth-development",
+"uni-mbbs-paediatrics.neonatology",
+"uni-mbbs-paediatrics.dehydration-nutrition",
+"uni-mbbs-paediatrics.emergencies"
+],
+"labs":[
+"uni-mbbs-community-medicine.measures-of-disease.l4",
+"uni-mbbs-community-medicine.health-programmes.l4",
+"uni-mbbs-ortho-ent-ophthal.ortho-trauma.l2"
+],
+"milestone":"Present a full case on a ward round."
+},
+{
+"title":"Emergencies & OSCE",
+"weeks":12,
+"courses":[
+"uni-mbbs-emergency.resuscitation",
+"uni-mbbs-emergency.shock-anaphylaxis-sepsis",
+"uni-mbbs-emergency.toxicology-india",
+"uni-mbbs-emergency.triage-ed",
+"uni-mbbs-anaesthesia-radiology.airway-preop",
+"uni-mbbs-anaesthesia-radiology.local-anaesthesia",
+"uni-mbbs-anaesthesia-radiology.chest-xray",
+"uni-mbbs-anaesthesia-radiology.imaging-choice"
+],
+"labs":[
+"uni-mbbs-emergency.resuscitation.l4",
+"uni-mbbs-emergency.shock-anaphylaxis-sepsis.l1",
+"uni-mbbs-emergency.toxicology-india.l2"
+],
+"milestone":"Run BLS/ALS and pass OSCE-style stations."
+}
+]
+},
+{
+"id":"dentist",
+"title":"Dentist (BDS)",
+"category":"Health",
+"icon":"🦷",
+"color":"#0c8599",
+"audience":"PCB students and BDS students",
+"duration":"5 years",
+"summary":"Dental anatomy and oral pathology, periodontics and orthodontics, restorative dentistry, oral surgery and community dentistry.",
+"outcomes":[
+"Chart and recognise oral conditions",
+"Plan perio, ortho and restorative care",
+"Give LA and extract safely",
+"Run community oral-health work"
+],
+"minutes":1661,
+"final":false,
+"stages":[
+{
+"title":"Basic sciences",
+"weeks":26,
+"courses":[
+"uni-mbbs-anatomy.upper-limb",
+"uni-mbbs-anatomy.histology",
+"uni-mbbs-anatomy.embryology",
+"uni-mbbs-anatomy.neuroanatomy",
+"uni-mbbs-physiology.cardiovascular",
+"uni-mbbs-physiology.respiratory",
+"uni-mbbs-physiology.renal-acid-base",
+"uni-mbbs-physiology.endocrine",
+"uni-mbbs-biochemistry.enzymes"
+],
+"labs":[
+"uni-mbbs-anatomy.upper-limb.l3",
+"uni-mbbs-anatomy.histology.l3",
+"uni-mbbs-anatomy.embryology.l3"
+],
+"milestone":"Head-and-neck anatomy on demand."
+},
+{
+"title":"Dental foundations",
+"weeks":26,
+"courses":[
+"uni-bds-foundations.dental-anatomy",
+"uni-bds-foundations.oral-histology",
+"uni-bds-foundations.oral-path-lesions",
+"uni-bds-foundations.oral-path-infections"
+],
+"labs":[
+"uni-bds-foundations.oral-path-lesions.l3",
+"uni-bds-foundations.oral-path-infections.l4",
+"uni-bds-foundations.dental-anatomy.l2"
+],
+"milestone":"Identify teeth by notation and describe common lesions."
+},
+{
+"title":"Periodontics & orthodontics",
+"weeks":26,
+"courses":[
+"uni-bds-perio-ortho.perio-diagnosis",
+"uni-bds-perio-ortho.perio-therapy",
+"uni-bds-perio-ortho.ortho-diagnosis",
+"uni-bds-perio-ortho.ortho-appliances"
+],
+"labs":[
+"uni-bds-perio-ortho.perio-diagnosis.l2",
+"uni-bds-perio-ortho.ortho-diagnosis.l2",
+"uni-bds-perio-ortho.perio-therapy.l2"
+],
+"milestone":"Chart a periodontal case and classify a malocclusion."
+},
+{
+"title":"Restorative & prosthodontics",
+"weeks":26,
+"courses":[
+"uni-bds-restorative.operative",
+"uni-bds-restorative.endodontics",
+"uni-bds-restorative.prostho-complete",
+"uni-bds-restorative.prostho-fixed-rpd"
+],
+"labs":[
+"uni-bds-restorative.operative.l4",
+"uni-bds-restorative.endodontics.l4",
+"uni-bds-restorative.prostho-fixed-rpd.l4"
+],
+"milestone":"Plan a restoration and an RCT."
+},
+{
+"title":"Surgery, paediatric & community",
+"weeks":26,
+"courses":[
+"uni-bds-surgery-community.omfs-exodontia",
+"uni-bds-surgery-community.omfs-trauma-emergencies",
+"uni-bds-surgery-community.paedo",
+"uni-bds-surgery-community.public-health-dentistry",
+"uni-mbbs-emergency.resuscitation"
+],
+"labs":[
+"uni-bds-surgery-community.omfs-exodontia.l4",
+"uni-bds-surgery-community.omfs-trauma-emergencies.l4",
+"uni-bds-surgery-community.paedo.l1"
+],
+"milestone":"Manage a dental emergency calmly."
+}
+]
+},
+{
+"id":"pharmacist",
+"title":"Pharmacist (B.Pharm)",
+"category":"Health",
+"icon":"💊",
+"color":"#9c36b5",
+"audience":"PCB/PCM students, pharmacy students",
+"duration":"4 years",
+"summary":"Pharmaceutics and calculations, medicinal chemistry, pharmacokinetics, pharmacology and safe dispensing.",
+"outcomes":[
+"Calculate doses and explain dosage forms",
+"Explain drug classes and interactions",
+"Dispense and counsel safely",
+"Know pharmacy regulations in general terms"
+],
+"minutes":967,
+"final":false,
+"stages":[
+{
+"title":"Pharmaceutical sciences",
+"weeks":20,
+"courses":[
+"uni-pharm-sciences.pharmaceutics-calcs",
+"uni-pharm-sciences.pharmacognosy",
+"uni-pharm-sciences.pharm-chem"
+],
+"labs":[
+"uni-pharm-sciences.pharmacognosy.l4",
+"uni-pharm-sciences.pharmaceutics-calcs.l2",
+"uni-pharm-sciences.pharm-chem.l2"
+],
+"milestone":"Error-free calculation set."
+},
+{
+"title":"Pharmacokinetics",
+"weeks":10,
+"courses":[
+"uni-pharm-sciences.pharmacokinetics",
+"uni-mbbs-pharmacology.general-pharmacology"
+],
+"labs":[
+"uni-mbbs-pharmacology.general-pharmacology.l4",
+"uni-pharm-sciences.pharmacokinetics.l1",
+"uni-pharm-sciences.pharmacokinetics.l2"
+],
+"milestone":"Compute a loading and maintenance dose."
+},
+{
+"title":"Pharmacology",
+"weeks":20,
+"courses":[
+"uni-pharm-practice.pharmacology-ans-cvs",
+"uni-pharm-practice.pharmacology-cns-antimicrobials",
+"life-medicines-antibiotics-vaccines.how-antibiotics-work",
+"life-medicines-antibiotics-vaccines.amr",
+"life-medicines-antibiotics-vaccines.vaccines",
+"life-medicines-antibiotics-vaccines.uip"
+],
+"labs":[
+"uni-pharm-practice.pharmacology-ans-cvs.l4",
+"uni-pharm-practice.pharmacology-cns-antimicrobials.l4",
+"life-medicines-antibiotics-vaccines.how-antibiotics-work.l4"
+],
+"milestone":"Explain ten common drugs and their key risks."
+},
+{
+"title":"Practice & law",
+"weeks":10,
+"courses":[
+"uni-pharm-practice.dispensing-practice",
+"uni-pharm-practice.pharmacy-law-general",
+"life-medicines-safety.labels-prescriptions",
+"life-medicines-safety.storage-expiry",
+"life-medicines-safety.interactions",
+"life-medicines-safety.pregnancy-children",
+"life-medicines-safety.self-medication"
+],
+"labs":[
+"uni-pharm-practice.dispensing-practice.l4",
+"uni-pharm-practice.pharmacy-law-general.l4",
+"life-medicines-safety.pregnancy-children.l4"
+],
+"milestone":"Counsel a patient on a new prescription."
+}
+]
+},
+{
+"id":"nurse",
+"title":"Nurse (B.Sc Nursing)",
+"category":"Health",
+"icon":"👩‍⚕️",
+"color":"#d6336c",
+"audience":"PCB students, nursing students",
+"duration":"4 years",
+"summary":"Fundamentals and procedures, drug calculations, med-surg, community, maternal, child and mental-health nursing.",
+"outcomes":[
+"Take vitals and follow infection control",
+"Calculate and give medicines safely",
+"Care for surgical, diabetic and cardiac patients",
+"Support mothers, children and people in crisis"
+],
+"minutes":1291,
+"final":false,
+"stages":[
+{
+"title":"Fundamentals",
+"weeks":16,
+"courses":[
+"uni-nursing-core.fundamentals",
+"uni-nursing-core.procedures",
+"well-anatomy.cells-tissues-systems",
+"well-anatomy.skeleton-muscles",
+"well-anatomy.digestion-nutrition",
+"well-anatomy.heart-circulation",
+"well-anatomy.breathing-lungs",
+"well-anatomy.kidneys-skin",
+"well-anatomy.nerves-senses-hormones",
+"well-anatomy.immunity-hygiene",
+"well-anatomy.sleep-body-clock",
+"well-anatomy.revision-practice"
+],
+"labs":[
+"well-anatomy.heart-circulation.l4",
+"well-anatomy.breathing-lungs.l4",
+"well-anatomy.immunity-hygiene.l4"
+],
+"milestone":"A full set of vitals and a hand-hygiene audit."
+},
+{
+"title":"Medicines & med-surg",
+"weeks":16,
+"courses":[
+"uni-nursing-core.drug-calculations",
+"uni-nursing-core.med-surg",
+"life-medicines-safety.labels-prescriptions",
+"life-medicines-safety.storage-expiry",
+"life-medicines-safety.interactions",
+"life-medicines-safety.pregnancy-children",
+"life-medicines-safety.self-medication"
+],
+"labs":[
+"uni-nursing-core.med-surg.l4",
+"life-medicines-safety.pregnancy-children.l4",
+"life-medicines-safety.self-medication.l2"
+],
+"milestone":"A drug-calculation test at 100 %."
+},
+{
+"title":"Community & mental health",
+"weeks":16,
+"courses":[
+"uni-nursing-community-family.community-health",
+"uni-nursing-community-family.mental-health"
+],
+"labs":[
+"uni-nursing-community-family.mental-health.l4",
+"uni-nursing-community-family.community-health.l4",
+"uni-nursing-community-family.mental-health.l3"
+],
+"milestone":"A home-visit plan and a risk assessment."
+},
+{
+"title":"Maternal & child health",
+"weeks":16,
+"courses":[
+"uni-nursing-community-family.maternal-health",
+"uni-nursing-community-family.child-health",
+"uni-mbbs-emergency.resuscitation"
+],
+"labs":[
+"uni-nursing-community-family.maternal-health.l4",
+"uni-mbbs-emergency.resuscitation.l4",
+"uni-nursing-community-family.child-health.l2"
+],
+"milestone":"Recognise newborn danger signs and do BLS."
+}
+]
+},
+{
+"id":"civil-engineer",
+"title":"Civil Engineer",
+"category":"Engineering",
+"icon":"🏗️",
+"color":"#9a7432",
+"audience":"Diploma/B.Tech students, site engineers",
+"duration":"4 years (or 12 months revision)",
+"summary":"Engineering basics, surveying and structures, geotechnics and transportation, RCC and steel design, site practice and GATE.",
+"outcomes":[
+"Survey and set out a site",
+"Analyse and design structures to IS codes",
+"Estimate, plan and run a safe site",
+"Practise GATE numericals"
+],
+"minutes":4229,
+"final":true,
+"stages":[
+{
+"title":"Engineering basics",
+"weeks":12,
+"courses":[
+"uni-common-maths-a.m1-u1-differential-calculus",
+"uni-common-maths-a.m1-u2-multivariable-calculus",
+"uni-common-maths-a.m1-u3-integral-calculus",
+"uni-common-maths-a.m1-u4-matrices",
+"uni-common-maths-a.m1-u5-sequences-series",
+"uni-common-maths-a.m1-revision",
+"uni-common-sciences-d.mech-u1-force-systems",
+"uni-common-sciences-d.mech-u2-trusses-friction",
+"uni-common-sciences-d.mech-u3-centroid-moi",
+"uni-common-sciences-d.mech-u4-dynamics",
+"uni-common-sciences-d.mech-revision",
+"uni-common-sciences-d.eg-u1-basics-curves",
+"uni-common-sciences-d.eg-u2-projections-points-lines-planes",
+"uni-common-sciences-d.eg-u3-solids-sections-development",
+"uni-common-sciences-d.eg-u4-isometric-cad",
+"uni-common-sciences-d.eg-revision"
+],
+"labs":[
+"uni-common-maths-a.m1-u1-differential-calculus.l2",
+"uni-common-maths-a.m1-u2-multivariable-calculus.l1",
+"uni-common-maths-a.m1-u3-integral-calculus.l1"
+],
+"milestone":"Solve force systems and draw projections."
+},
+{
+"title":"Surveying & structures",
+"weeks":12,
+"courses":[
+"uni-civil-core-a.sur-u1-chain-compass",
+"uni-civil-core-a.sur-u2-levelling-contouring",
+"uni-civil-core-a.sur-u3-theodolite-traverse-tacheometry",
+"uni-civil-core-a.sur-u4-curves-modern",
+"uni-civil-core-a.sur-revision",
+"uni-civil-core-a.sa-u1-determinacy-trusses-arches",
+"uni-civil-core-a.sa-u2-deflection-energy",
+"uni-civil-core-a.sa-u3-influence-lines",
+"uni-civil-core-a.sa-u4-indeterminate",
+"uni-civil-core-a.sa-revision",
+"uni-civil-x-survey.levelling",
+"uni-civil-x-survey.traverse-curves",
+"uni-civil-x-struct.determinate",
+"uni-civil-x-struct.indeterminate"
+],
+"labs":[
+"uni-civil-core-a.sur-u1-chain-compass.l1",
+"uni-civil-core-a.sur-u2-levelling-contouring.l1",
+"uni-civil-core-a.sur-u3-theodolite-traverse-tacheometry.l1"
+],
+"milestone":"Level a route and draw an influence line."
+},
+{
+"title":"Geotechnics & transportation",
+"weeks":12,
+"courses":[
+"uni-civil-core-b.geo-u1-index-classification",
+"uni-civil-core-b.geo-u2-permeability-seepage-stress",
+"uni-civil-core-b.geo-u3-compaction-consolidation",
+"uni-civil-core-b.geo-u4-shear-earth-pressure-bearing",
+"uni-civil-core-b.geo-revision",
+"uni-civil-core-b.trn-u1-highway-geometric",
+"uni-civil-core-b.trn-u2-pavements",
+"uni-civil-core-b.trn-u3-traffic",
+"uni-civil-core-b.trn-u4-rail-air",
+"uni-civil-core-b.trn-revision",
+"uni-civil-x-geo.soil-basics",
+"uni-civil-x-geo.strength-found",
+"uni-civil-x-transport.geometric",
+"uni-civil-x-transport.traffic",
+"uni-civil-x-hydro.hydrology",
+"uni-civil-x-hydro.channels"
+],
+"labs":[
+"uni-civil-core-b.geo-u1-index-classification.l1",
+"uni-civil-core-b.geo-u2-permeability-seepage-stress.l1",
+"uni-civil-core-b.geo-u3-compaction-consolidation.l1"
+],
+"milestone":"Bearing capacity and a pavement design."
+},
+{
+"title":"Design",
+"weeks":8,
+"courses":[
+"uni-civil-x-rcc.beam-flexure",
+"uni-civil-x-rcc.shear-bond",
+"uni-civil-x-rcc.columns-slabs",
+"uni-civil-x-steel.tension-bolts",
+"uni-civil-x-steel.beams-welds"
+],
+"labs":[
+"uni-civil-x-rcc.beam-flexure.l4",
+"uni-civil-x-rcc.shear-bond.l1",
+"uni-civil-x-rcc.columns-slabs.l2"
+],
+"milestone":"Design a beam, slab and column."
+},
+{
+"title":"Site practice",
+"weeks":6,
+"courses":[
+"uni-civil-x-est.quantities",
+"uni-civil-x-est.rates",
+"uni-civil-x-cpm.cpm",
+"uni-civil-x-cpm.pert",
+"uni-civil-x-safety.site",
+"uni-civil-x-safety.lifting",
+"uni-civil-x-env.water",
+"uni-civil-x-env.wastewater",
+"tech-cad-autocad.start-drawing",
+"tech-cad-autocad.modify-tools",
+"tech-cad-autocad.layers-text-dims",
+"tech-cad-autocad.blocks-layouts-plot",
+"tech-cad-autocad.exercises-floor-plan"
+],
+"labs":[
+"uni-civil-x-safety.site.l3",
+"uni-civil-x-est.quantities.l1",
+"uni-civil-x-est.rates.l1"
+],
+"milestone":"A BOQ, a CPM schedule and a safety plan."
+},
+{
+"title":"GATE & final",
+"weeks":6,
+"courses":[
+"uni-civil-x-gate.set1",
+"uni-civil-x-gate.set2",
+"uni-civil-x-final.final"
+],
+"labs":[
+"uni-civil-x-gate.set1.l1",
+"uni-civil-x-gate.set2.l1",
+"uni-civil-x-final.final.l5"
+],
+"milestone":"GATE practice sets and the civil mock interview + final exam."
+}
+]
+},
+{
+"id":"mechanical-engineer",
+"title":"Mechanical Engineer",
+"category":"Engineering",
+"icon":"⚙️",
+"color":"#e8590c",
+"audience":"Diploma/B.Tech students, shop-floor engineers",
+"duration":"4 years (or 12 months revision)",
+"summary":"Engineering basics, thermo and fluids, SOM and manufacturing, design, thermal systems, CNC, robotics and safety.",
+"outcomes":[
+"Apply thermodynamics and fluids to machines",
+"Design machine elements",
+"Program CNC and plan production",
+"Run a safe, efficient shop floor"
+],
+"minutes":4060,
+"final":true,
+"stages":[
+{
+"title":"Engineering basics",
+"weeks":12,
+"courses":[
+"uni-common-maths-a.m1-u1-differential-calculus",
+"uni-common-maths-a.m1-u2-multivariable-calculus",
+"uni-common-maths-a.m1-u3-integral-calculus",
+"uni-common-maths-a.m1-u4-matrices",
+"uni-common-maths-a.m1-u5-sequences-series",
+"uni-common-maths-a.m1-revision",
+"uni-common-sciences-d.mech-u1-force-systems",
+"uni-common-sciences-d.mech-u2-trusses-friction",
+"uni-common-sciences-d.mech-u3-centroid-moi",
+"uni-common-sciences-d.mech-u4-dynamics",
+"uni-common-sciences-d.mech-revision",
+"uni-common-sciences-d.eg-u1-basics-curves",
+"uni-common-sciences-d.eg-u2-projections-points-lines-planes",
+"uni-common-sciences-d.eg-u3-solids-sections-development",
+"uni-common-sciences-d.eg-u4-isometric-cad",
+"uni-common-sciences-d.eg-revision"
+],
+"labs":[
+"uni-common-maths-a.m1-u1-differential-calculus.l2",
+"uni-common-maths-a.m1-u2-multivariable-calculus.l1",
+"uni-common-maths-a.m1-u3-integral-calculus.l1"
+],
+"milestone":"Free-body diagrams and projections without errors."
+},
+{
+"title":"Thermo, fluids & SOM",
+"weeks":14,
+"courses":[
+"uni-me-core-a.td-u1-basics-work-heat",
+"uni-me-core-a.td-u2-first-law",
+"uni-me-core-a.td-u3-second-law-entropy",
+"uni-me-core-a.td-u4-pure-substances-cycles",
+"uni-me-core-a.td-revision",
+"uni-me-core-a.fm-u1-properties-statics",
+"uni-me-core-a.fm-u2-kinematics-dynamics",
+"uni-me-core-a.fm-u3-viscous-pipe-flow",
+"uni-me-core-a.fm-u4-dimensional-bl-turbo",
+"uni-me-core-a.fm-revision",
+"uni-me-core-b.som-u1-stress-strain",
+"uni-me-core-b.som-u2-sfd-bmd",
+"uni-me-core-b.som-u3-bending-shear-torsion",
+"uni-me-core-b.som-u4-deflection-columns-complex",
+"uni-me-core-b.som-revision"
+],
+"labs":[
+"uni-me-core-a.td-u1-basics-work-heat.l2",
+"uni-me-core-a.td-u2-first-law.l1",
+"uni-me-core-a.td-u3-second-law-entropy.l2"
+],
+"milestone":"A Rankine cycle and a beam deflection."
+},
+{
+"title":"Manufacturing",
+"weeks":8,
+"courses":[
+"uni-me-core-b.mfg-u1-casting",
+"uni-me-core-b.mfg-u2-welding",
+"uni-me-core-b.mfg-u3-forming",
+"uni-me-core-b.mfg-u4-machining-modern",
+"uni-me-core-b.mfg-revision",
+"uni-me-x-mfg.machining-mechanics",
+"uni-me-x-mfg.metrology",
+"uni-me-x-mfg.casting-design",
+"uni-me-x-mfg.welding-science",
+"uni-me-x-cnc.milling",
+"uni-me-x-cnc.turning"
+],
+"labs":[
+"uni-me-x-cnc.milling.l2",
+"uni-me-x-cnc.turning.l3",
+"uni-me-core-b.mfg-u1-casting.l1"
+],
+"milestone":"A CNC program for a simple part."
+},
+{
+"title":"Design & thermal systems",
+"weeks":10,
+"courses":[
+"uni-me-x-design.shafts-keys",
+"uni-me-x-design.bearings",
+"uni-me-x-design.gears",
+"uni-me-x-design.springs",
+"uni-me-x-design.fatigue-fasteners",
+"uni-me-x-ht.conduction",
+"uni-me-x-ht.convection-hx",
+"uni-me-x-fm.turbines",
+"uni-me-x-fm.pumps",
+"uni-me-x-ic.cycles",
+"uni-me-x-ic.combustion",
+"uni-me-x-rac.refrigeration",
+"uni-me-x-rac.psychro"
+],
+"labs":[
+"uni-me-x-design.shafts-keys.l1",
+"uni-me-x-design.bearings.l1",
+"uni-me-x-design.gears.l1"
+],
+"milestone":"Design a shaft with bearings and a gear pair."
+},
+{
+"title":"Industry & final",
+"weeks":6,
+"courses":[
+"uni-me-x-ie.planning",
+"uni-me-x-ie.workstudy",
+"uni-me-x-robo.kinematics",
+"uni-me-x-robo.control",
+"uni-me-x-safety.process",
+"uni-me-x-safety.machinery",
+"tech-cad-3d-bim.gdt",
+"uni-me-x-final.final"
+],
+"labs":[
+"uni-me-x-ie.planning.l1",
+"uni-me-x-ie.workstudy.l1",
+"uni-me-x-robo.kinematics.l1"
+],
+"milestone":"The ME mock interview + final exam."
+}
+]
+},
+{
+"id":"architect",
+"title":"Architect",
+"category":"Engineering",
+"icon":"🏛️",
+"color":"#868e96",
+"audience":"B.Arch aspirants and students",
+"duration":"5 years",
+"summary":"Drawing and CAD, 3D and BIM, structures for architects, estimation and site, climate and sustainability.",
+"outcomes":[
+"Draw to standards by hand and in AutoCAD",
+"Model in 3D and BIM",
+"Understand structure and load paths",
+"Design for climate and cost"
+],
+"minutes":1468,
+"final":false,
+"stages":[
+{
+"title":"Drawing",
+"weeks":8,
+"courses":[
+"uni-common-sciences-d.eg-u1-basics-curves",
+"uni-common-sciences-d.eg-u2-projections-points-lines-planes",
+"uni-common-sciences-d.eg-u3-solids-sections-development",
+"uni-common-sciences-d.eg-u4-isometric-cad",
+"uni-common-sciences-d.eg-revision"
+],
+"labs":[
+"uni-common-sciences-d.eg-u1-basics-curves.l2",
+"uni-common-sciences-d.eg-u2-projections-points-lines-planes.l3",
+"uni-common-sciences-d.eg-u3-solids-sections-development.l4"
+],
+"milestone":"A set of orthographic and isometric drawings."
+},
+{
+"title":"CAD & BIM",
+"weeks":8,
+"courses":[
+"tech-cad-autocad.start-drawing",
+"tech-cad-autocad.modify-tools",
+"tech-cad-autocad.layers-text-dims",
+"tech-cad-autocad.blocks-layouts-plot",
+"tech-cad-autocad.exercises-floor-plan",
+"tech-cad-3d-bim.modelling-3d",
+"tech-cad-3d-bim.parametric",
+"tech-cad-3d-bim.revit-bim",
+"tech-cad-3d-bim.drawing-standards",
+"tech-cad-3d-bim.gdt"
+],
+"labs":[
+"tech-cad-autocad.start-drawing.l2",
+"tech-cad-autocad.modify-tools.l1",
+"tech-cad-autocad.layers-text-dims.l2"
+],
+"milestone":"A floor plan in AutoCAD and a BIM model."
+},
+{
+"title":"Structures for architects",
+"weeks":8,
+"courses":[
+"uni-civil-x-struct.determinate",
+"uni-civil-x-struct.indeterminate",
+"uni-civil-x-rcc.beam-flexure",
+"uni-civil-x-rcc.shear-bond",
+"uni-civil-x-rcc.columns-slabs"
+],
+"labs":[
+"uni-civil-x-rcc.beam-flexure.l4",
+"uni-civil-x-struct.determinate.l1",
+"uni-civil-x-struct.indeterminate.l1"
+],
+"milestone":"Explain the load path in your design."
+},
+{
+"title":"Site, cost & safety",
+"weeks":6,
+"courses":[
+"uni-civil-x-est.quantities",
+"uni-civil-x-est.rates",
+"uni-civil-x-cpm.cpm",
+"uni-civil-x-cpm.pert",
+"uni-civil-x-safety.site",
+"uni-civil-x-safety.lifting"
+],
+"labs":[
+"uni-civil-x-safety.site.l3",
+"uni-civil-x-est.quantities.l1",
+"uni-civil-x-est.rates.l1"
+],
+"milestone":"A BOQ and a schedule."
+},
+{
+"title":"Climate & sustainability",
+"weeks":4,
+"courses":[
+"uni-sci-x-climate.radiation-balance",
+"uni-env-core.waste-climate",
+"tech-frontier-space-energy.hydrogen-renewables"
+],
+"labs":[
+"uni-sci-x-climate.radiation-balance.l1",
+"uni-env-core.waste-climate.l1",
+"tech-frontier-space-energy.hydrogen-renewables.l1"
+],
+"milestone":"A passive-cooling strategy for your city."
+}
+]
+},
+{
+"id":"lawyer",
+"title":"Lawyer (LLB path)",
+"category":"Government & exams",
+"icon":"⚖️",
+"color":"#9a7432",
+"audience":"Graduates and CLAT aspirants",
+"duration":"3 years",
+"summary":"Everyday law and the Constitution, contracts, torts and criminal law, CPC and moot court.",
+"outcomes":[
+"Explain your rights and the Constitution",
+"Analyse contract, tort and criminal problems",
+"Draft and argue a moot",
+"Prepare for legal interviews"
+],
+"minutes":1375,
+"final":true,
+"stages":[
+{
+"title":"Law for everyone",
+"weeks":4,
+"courses":[
+"law-india-everyday.consumer-rti",
+"law-india-everyday.home-road-online",
+"law-india-everyday.family-property-inheritance",
+"law-india-everyday.work-courts-legal-aid",
+"law-india-constitution.rules-rights-kids",
+"law-india-constitution.preamble-rights-duties",
+"law-india-constitution.parliament-government-elections",
+"law-india-constitution.courts-federalism-local",
+"law-india-protection.child-teen-protection",
+"law-india-protection.women-workplace-home",
+"law-india-protection.dignity-equality-laws",
+"law-india-protection.bns-bnss-bsa-new-criminal-laws"
+],
+"labs":[
+"law-india-everyday.consumer-rti.l2",
+"law-india-everyday.home-road-online.l2",
+"law-india-everyday.work-courts-legal-aid.l4"
+],
+"milestone":"Explain FIR, bail and consumer rights to a friend."
+},
+{
+"title":"Core law",
+"weeks":12,
+"courses":[
+"uni-llb-core.contracts",
+"uni-llb-core.torts",
+"uni-llb-core.criminal-bns"
+],
+"labs":[
+"uni-llb-core.contracts.l4",
+"uni-llb-core.torts.l4",
+"uni-llb-core.criminal-bns.l4"
+],
+"milestone":"Answer contract, tort and BNS problem questions."
+},
+{
+"title":"Constitution & procedure",
+"weeks":10,
+"courses":[
+"uni-llb-adv.constitution",
+"uni-llb-adv.cpc",
+"law-world.human-rights-udhr",
+"law-world.legal-systems-compared",
+"law-world.international-law-un",
+"law-world.privacy-and-comparative-snapshots"
+],
+"labs":[
+"uni-llb-adv.constitution.l4",
+"law-world.international-law-un.l2",
+"uni-llb-adv.cpc.l4"
+],
+"milestone":"Argue a fundamental-rights question with cases."
+},
+{
+"title":"Moot & final",
+"weeks":6,
+"courses":[
+"uni-llb-adv.moot",
+"uni-llb-adv.final"
+],
+"labs":[
+"uni-llb-adv.final.l1",
+"uni-llb-adv.moot.l2",
+"uni-llb-adv.final.l2"
+],
+"milestone":"A moot memorial and the LLB mock interview + exam."
+}
+]
+},
+{
+"id":"upsc-aspirant",
+"title":"UPSC Civil Services aspirant",
+"category":"Government & exams",
+"icon":"🏛️",
+"color":"#e5484d",
+"audience":"Graduates",
+"duration":"12–18 months · ~25 h/week",
+"summary":"Prelims foundations, GS I–IV in exam style, essay and answer writing, and exam strategy.",
+"outcomes":[
+"Cover the prelims syllabus with NCERT depth",
+"Write structured GS answers",
+"Handle ethics case studies",
+"Manage time and stress"
+],
+"minutes":1938,
+"final":false,
+"stages":[
+{
+"title":"Foundations",
+"weeks":8,
+"courses":[
+"entrance-general.upsc-prelims",
+"school-c10-social-a.h1-nationalism-europe",
+"school-c10-social-a.h2-nationalism-india",
+"school-c10-social-a.h3-global-world",
+"school-c10-social-a.h4-industrialisation",
+"school-c10-social-a.h5-print-culture",
+"school-c10-social-a.g1-resources-development",
+"school-c10-social-a.g2-forest-wildlife",
+"school-c10-social-a.g3-water-resources",
+"school-c10-social-b.g4-agriculture",
+"school-c10-social-b.g5-minerals-energy",
+"school-c10-social-b.g6-manufacturing",
+"school-c10-social-b.g7-lifelines",
+"school-c10-social-b.p1-power-sharing",
+"school-c10-social-b.p2-federalism",
+"school-c10-social-b.p3-gender-religion-caste",
+"school-c10-social-b.p4-political-parties",
+"school-c10-social-b.p5-outcomes-democracy"
+],
+"labs":[
+"entrance-general.upsc-prelims.l5",
+"school-c10-social-b.p1-power-sharing.l4",
+"school-c10-social-b.p5-outcomes-democracy.l3"
+],
+"milestone":"Finish NCERT-level basics with notes."
+},
+{
+"title":"GS I · History, culture & geography",
+"weeks":12,
+"courses":[
+"entrance-govt-upsc-gs-a.polity",
+"entrance-govt-upsc-gs-a.modern-history",
+"entrance-govt-upsc-gs-a.ancient-medieval",
+"entrance-govt-upsc-gs-a.art-culture",
+"entrance-govt-upsc-gs-a.geo-india",
+"entrance-govt-upsc-gs-a.geo-world"
+],
+"labs":[
+"entrance-govt-upsc-gs-a.polity.l4",
+"entrance-govt-upsc-gs-a.modern-history.l4",
+"entrance-govt-upsc-gs-a.geo-india.l4"
+],
+"milestone":"Timed prelims sets in GS I."
+},
+{
+"title":"GS II & III · Polity, economy, environment, S&T, IR, security",
+"weeks":14,
+"courses":[
+"entrance-govt-upsc-gs-b.economy",
+"entrance-govt-upsc-gs-b.environment",
+"entrance-govt-upsc-gs-b.sci-tech",
+"entrance-govt-upsc-gs-b.intl-relations",
+"entrance-govt-upsc-gs-b.internal-security",
+"uni-hum-x-politics.ir-theory",
+"uni-hum-x-politics.indian-foreign-policy",
+"uni-hum-x-politics.un-system",
+"uni-hum-x-politics.geopolitics",
+"uni-hum-x-politics.economic-history"
+],
+"labs":[
+"entrance-govt-upsc-gs-b.economy.l4",
+"entrance-govt-upsc-gs-b.environment.l4",
+"entrance-govt-upsc-gs-b.intl-relations.l4"
+],
+"milestone":"Ten mains answers reviewed against model points."
+},
+{
+"title":"GS IV, essay & answer writing",
+"weeks":8,
+"courses":[
+"entrance-govt-upsc-gs-b.ethics-gs4",
+"entrance-govt-upsc-gs-b.essay-answer-writing"
+],
+"labs":[
+"entrance-govt-upsc-gs-b.ethics-gs4.l2",
+"entrance-govt-upsc-gs-b.essay-answer-writing.l2",
+"entrance-govt-upsc-gs-b.ethics-gs4.l3"
+],
+"milestone":"Two full essays and ethics case studies."
+},
+{
+"title":"Strategy",
+"weeks":2,
+"courses":[
+"entrance-general.exam-strategy",
+"wellbeing-never-fear.exams-and-failure"
+],
+"labs":[
+"entrance-general.exam-strategy.l3",
+"wellbeing-never-fear.exams-and-failure.l4",
+"wellbeing-never-fear.exams-and-failure.l3"
+],
+"milestone":"A revision calendar and an exam-day routine."
+}
+]
+},
+{
+"id":"teacher",
+"title":"Teacher",
+"category":"Government & exams",
+"icon":"🧑‍🏫",
+"color":"#1c7ed6",
+"audience":"Graduates aiming for B.Ed/CTET or tutoring",
+"duration":"4–5 months · ~6 h/week",
+"summary":"The craft of teaching, child development and psychology, safeguarding, communication and subject depth.",
+"outcomes":[
+"Plan and run engaging lessons",
+"Use child development to teach better",
+"Keep children safe and handle sensitive questions",
+"Communicate with parents"
+],
+"minutes":1226,
+"final":false,
+"stages":[
+{
+"title":"The craft",
+"weeks":4,
+"courses":[
+"careers-teaching-social.teaching-craft",
+"careers-teaching-social.choosing-career"
+],
+"labs":[
+"careers-teaching-social.teaching-craft.l3",
+"careers-teaching-social.choosing-career.l4",
+"careers-teaching-social.teaching-craft.l2"
+],
+"milestone":"Teach a 20-minute lesson and reflect."
+},
+{
+"title":"Child development & psychology",
+"weeks":4,
+"courses":[
+"university-psychology.cognitive-developmental",
+"early-parents.milestones-0-6",
+"careers-psychology-counselling.good-listener"
+],
+"labs":[
+"university-psychology.cognitive-developmental.l3",
+"early-parents.milestones-0-6.l3",
+"careers-psychology-counselling.good-listener.l3"
+],
+"milestone":"A learner profile for three different children."
+},
+{
+"title":"Safety & sensitive topics",
+"weeks":2,
+"courses":[
+"well-safety.my-body-belongs-to-me",
+"well-safety.consent-and-safety-primary",
+"well-safety.body-autonomy-abuse-awareness",
+"well-safety.online-safety-sextortion",
+"well-safety.bullying-and-ragging",
+"well-safety.revision-practice",
+"early-parents.awkward-questions",
+"wellbeing-bullying.if-you-are-bullied",
+"wellbeing-bullying.if-you-bully",
+"wellbeing-bullying.bystander-to-upstander",
+"wellbeing-bullying.cyberbullying",
+"wellbeing-bullying.ragging-is-illegal"
+],
+"labs":[
+"well-safety.consent-and-safety-primary.l3",
+"well-safety.online-safety-sextortion.l5",
+"well-safety.bullying-and-ragging.l4"
+],
+"milestone":"A class safety plan and an anti-bullying script."
+},
+{
+"title":"Subject depth & communication",
+"weeks":4,
+"courses":[
+"school-skills-olympiad.maths-middle",
+"corporate-communication.presenting-data-stories",
+"wellbeing-never-fear.stage-and-public-speaking"
+],
+"labs":[
+"school-skills-olympiad.maths-middle.l1",
+"wellbeing-never-fear.stage-and-public-speaking.l2",
+"school-skills-olympiad.maths-middle.l2"
+],
+"milestone":"A demo class recorded for an interview."
+}
+]
+},
+{
+"id":"class-10-board",
+"title":"Class 10 board-ready",
+"category":"Government & exams",
+"icon":"🔟",
+"color":"#3f7cf5",
+"audience":"Class 10 students",
+"duration":"1 school year · ~1 h/day",
+"summary":"Every Class 10 subject in exam order, then mocks, strategy and calm.",
+"outcomes":[
+"Finish every chapter with practice",
+"Answer board-pattern questions",
+"Manage time and exam stress"
+],
+"minutes":5849,
+"final":false,
+"stages":[
+{
+"title":"Mathematics",
+"weeks":10,
+"courses":[
+"school-c10-maths-a.ch1-real-numbers",
+"school-c10-maths-a.ch2-polynomials",
+"school-c10-maths-a.ch3-linear-equations",
+"school-c10-maths-a.ch4-quadratic-equations",
+"school-c10-maths-a.ch5-arithmetic-progressions",
+"school-c10-maths-a.ch6-triangles",
+"school-c10-maths-a.ch7-coordinate-geometry",
+"school-c10-maths-b.ch8-introduction-to-trigonometry",
+"school-c10-maths-b.ch9-applications-of-trigonometry",
+"school-c10-maths-b.ch10-circles",
+"school-c10-maths-b.ch11-areas-related-to-circles",
+"school-c10-maths-b.ch12-surface-areas-and-volumes",
+"school-c10-maths-b.ch13-statistics",
+"school-c10-maths-b.ch14-probability",
+"school-c10-maths-b.revision-and-practice"
+],
+"labs":[
+"school-c10-maths-a.ch3-linear-equations.l5",
+"school-c10-maths-b.ch9-applications-of-trigonometry.l4",
+"school-c10-maths-b.ch14-probability.l4"
+],
+"milestone":"Board-pattern maths mock at 80 %+."
+},
+{
+"title":"Science",
+"weeks":10,
+"courses":[
+"school-c10-science-a.ch1-chemical-reactions-and-equations",
+"school-c10-science-a.ch2-acids-bases-and-salts",
+"school-c10-science-a.ch3-metals-and-non-metals",
+"school-c10-science-a.ch4-carbon-and-its-compounds",
+"school-c10-science-a.ch5-life-processes",
+"school-c10-science-a.ch6-control-and-coordination",
+"school-c10-science-b.ch7-how-do-organisms-reproduce",
+"school-c10-science-b.ch8-heredity",
+"school-c10-science-b.ch9-light-reflection-and-refraction",
+"school-c10-science-b.ch10-human-eye-and-colourful-world",
+"school-c10-science-b.ch11-electricity",
+"school-c10-science-b.ch12-magnetic-effects-of-electric-current",
+"school-c10-science-b.ch13-our-environment",
+"school-c10-science-b.revision-and-practice"
+],
+"labs":[
+"school-c10-science-b.ch9-light-reflection-and-refraction.l3",
+"school-c10-science-b.ch11-electricity.l1",
+"school-c10-science-b.ch13-our-environment.l2"
+],
+"milestone":"Explain every practical and solve numericals."
+},
+{
+"title":"Social science",
+"weeks":8,
+"courses":[
+"school-c10-social-a.h1-nationalism-europe",
+"school-c10-social-a.h2-nationalism-india",
+"school-c10-social-a.h3-global-world",
+"school-c10-social-a.h4-industrialisation",
+"school-c10-social-a.h5-print-culture",
+"school-c10-social-a.g1-resources-development",
+"school-c10-social-a.g2-forest-wildlife",
+"school-c10-social-a.g3-water-resources",
+"school-c10-social-b.g4-agriculture",
+"school-c10-social-b.g5-minerals-energy",
+"school-c10-social-b.g6-manufacturing",
+"school-c10-social-b.g7-lifelines",
+"school-c10-social-b.p1-power-sharing",
+"school-c10-social-b.p2-federalism",
+"school-c10-social-b.p3-gender-religion-caste",
+"school-c10-social-b.p4-political-parties",
+"school-c10-social-b.p5-outcomes-democracy",
+"school-c10-social-c.e1-development",
+"school-c10-social-c.e2-sectors",
+"school-c10-social-c.e3-money-credit",
+"school-c10-social-c.e4-globalisation",
+"school-c10-social-c.e5-consumer-rights",
+"school-c10-social-c.revision-practice"
+],
+"labs":[
+"school-c10-social-b.p1-power-sharing.l4",
+"school-c10-social-b.p5-outcomes-democracy.l3",
+"school-c10-social-c.e2-sectors.l4"
+],
+"milestone":"Map work and answers in the board format."
+},
+{
+"title":"Languages",
+"weeks":6,
+"courses":[
+"school-c10-english-a.ff-letter-to-god",
+"school-c10-english-a.ff-nelson-mandela",
+"school-c10-english-a.ff-two-stories-flying",
+"school-c10-english-a.ff-anne-frank",
+"school-c10-english-a.ff-glimpses-india",
+"school-c10-english-a.ff-mijbil-otter",
+"school-c10-english-a.ff-madam-rides-bus",
+"school-c10-english-a.ff-sermon-benares",
+"school-c10-english-a.ff-the-proposal",
+"school-c10-english-a.ff-poems-1",
+"school-c10-english-a.ff-poems-2",
+"school-c10-english-a.fp-triumph-surgery",
+"school-c10-english-a.fp-thiefs-story",
+"school-c10-english-b.fp-midnight-visitor",
+"school-c10-english-b.fp-question-of-trust",
+"school-c10-english-b.fp-footprints-without-feet",
+"school-c10-english-b.fp-making-scientist",
+"school-c10-english-b.fp-the-necklace",
+"school-c10-english-b.fp-bholi",
+"school-c10-english-b.fp-book-saved-earth",
+"school-c10-english-b.grammar-1-tenses-modals-concord",
+"school-c10-english-b.grammar-2-reported-speech-editing",
+"school-c10-english-b.writing-skills",
+"school-c10-english-b.english-revision-practice",
+"school-c10-english-b.hindi-1-vakya-vachya",
+"school-c10-english-c.hindi-2-pad-padbandh-samas",
+"school-c10-english-c.hindi-3-alankar-muhavare",
+"school-c10-english-c.hindi-revision-practice",
+"school-c10-hindi-a.netaji-ka-chashma",
+"school-c10-hindi-a.balgobin-bhagat",
+"school-c10-hindi-a.lakhnavi-andaz",
+"school-c10-hindi-a.ek-kahani-yah-bhi",
+"school-c10-hindi-a.naubatkhane-mein-ibadat",
+"school-c10-hindi-a.sanskriti",
+"school-c10-hindi-b.surdas-ke-pad",
+"school-c10-hindi-b.ram-lakshman-parshuram-samvad",
+"school-c10-hindi-b.atmakathya",
+"school-c10-hindi-b.utsah-at-nahi-rahi",
+"school-c10-hindi-b.danturit-muskan-fasal",
+"school-c10-hindi-b.vyakaran",
+"school-c10-sanskrit.vachya",
+"school-c10-sanskrit.samasa",
+"school-c10-sanskrit.shemushi-readings",
+"school-c10-sanskrit.revision"
+],
+"labs":[
+"school-c10-english-b.writing-skills.l3",
+"school-c10-english-a.ff-letter-to-god.l1",
+"school-c10-english-a.ff-nelson-mandela.l3"
+],
+"milestone":"A letter, an essay and a grammar set done right."
+},
+{
+"title":"Exam strategy & calm",
+"weeks":2,
+"courses":[
+"entrance-general.exam-strategy",
+"wellbeing-never-fear.exams-and-failure",
+"well-mind.exam-stress"
+],
+"labs":[
+"entrance-general.exam-strategy.l3",
+"wellbeing-never-fear.exams-and-failure.l4",
+"well-mind.exam-stress.l5"
+],
+"milestone":"A revision calendar and an exam-day routine."
+}
+]
+},
+{
+"id":"class-12-pcm",
+"title":"Class 12 Science — PCM (with JEE)",
+"category":"Government & exams",
+"icon":"📐",
+"color":"#7b5cff",
+"audience":"Class 11–12 PCM students",
+"duration":"2 school years",
+"summary":"Class 11 and 12 physics, chemistry and maths, then JEE problem sets and strategy.",
+"outcomes":[
+"Finish the PCM syllabus with numericals",
+"Solve JEE-level problems",
+"Plan mocks and manage pressure"
+],
+"minutes":10245,
+"final":false,
+"stages":[
+{
+"title":"Class 11 PCM",
+"weeks":30,
+"courses":[
+"school-c11-physics-a.ch1-units-measurement",
+"school-c11-physics-a.ch2-straight-line",
+"school-c11-physics-a.ch3-motion-plane",
+"school-c11-physics-a.ch4-laws-of-motion",
+"school-c11-physics-b.ch5-work-energy-power",
+"school-c11-physics-b.ch6-rotational-motion",
+"school-c11-physics-b.ch7-gravitation",
+"school-c11-physics-b.ch8-solids",
+"school-c11-physics-c.ch9-fluids",
+"school-c11-physics-c.ch10-thermal-properties",
+"school-c11-physics-c.ch11-thermodynamics",
+"school-c11-physics-d.ch12-kinetic-theory",
+"school-c11-physics-d.ch13-oscillations",
+"school-c11-physics-d.ch14-waves",
+"school-c11-physics-d.revision",
+"school-c11-chemistry-a.ch1-basic-concepts",
+"school-c11-chemistry-a.ch2-structure-of-atom",
+"school-c11-chemistry-a.ch3-periodicity",
+"school-c11-chemistry-b.ch4-chemical-bonding",
+"school-c11-chemistry-b.ch5-thermodynamics",
+"school-c11-chemistry-b.ch6-equilibrium",
+"school-c11-chemistry-c.ch7-redox",
+"school-c11-chemistry-c.ch8-organic-basics",
+"school-c11-chemistry-c.ch9-hydrocarbons",
+"school-c11-chemistry-c.revision",
+"school-c11-maths-a.ch01-sets",
+"school-c11-maths-a.ch02-relations-functions",
+"school-c11-maths-a.ch03-trigonometric-functions",
+"school-c11-maths-a.ch04-complex-numbers",
+"school-c11-maths-a.ch05-linear-inequalities",
+"school-c11-maths-a.ch06-permutations-combinations",
+"school-c11-maths-a.ch07-binomial-theorem",
+"school-c11-maths-b.ch08-sequences-series",
+"school-c11-maths-b.ch09-straight-lines",
+"school-c11-maths-b.ch10-conic-sections",
+"school-c11-maths-b.ch11-3d-geometry",
+"school-c11-maths-b.ch12-limits-derivatives",
+"school-c11-maths-b.ch13-statistics",
+"school-c11-maths-b.ch14-probability",
+"school-c11-maths-b.revision-practice"
+],
+"labs":[
+"school-c11-physics-a.ch4-laws-of-motion.l4",
+"school-c11-physics-d.ch14-waves.l4",
+"school-c11-chemistry-b.ch6-equilibrium.l2"
+],
+"milestone":"Class 11 finals at 75 %+."
+},
+{
+"title":"Class 12 PCM",
+"weeks":30,
+"courses":[
+"school-c12-physics-a.ch01-electric-charges-fields",
+"school-c12-physics-a.ch02-potential-capacitance",
+"school-c12-physics-a.ch03-current-electricity",
+"school-c12-physics-a.ch04-moving-charges-magnetism",
+"school-c12-physics-a.ch05-magnetism-matter",
+"school-c12-physics-a.ch06-electromagnetic-induction",
+"school-c12-physics-a.ch07-alternating-current",
+"school-c12-physics-b.ch08-electromagnetic-waves",
+"school-c12-physics-b.ch09-ray-optics",
+"school-c12-physics-b.ch10-wave-optics",
+"school-c12-physics-b.ch11-dual-nature",
+"school-c12-physics-b.ch12-atoms",
+"school-c12-physics-b.ch13-nuclei",
+"school-c12-physics-b.ch14-semiconductor-electronics",
+"school-c12-physics-b.revision-practice",
+"school-c12-chemistry-a.ch01-solutions",
+"school-c12-chemistry-a.ch02-electrochemistry",
+"school-c12-chemistry-a.ch03-chemical-kinetics",
+"school-c12-chemistry-a.ch04-d-f-block",
+"school-c12-chemistry-a.ch05-coordination-compounds",
+"school-c12-chemistry-b.ch06-haloalkanes-haloarenes",
+"school-c12-chemistry-b.ch07-alcohols-phenols-ethers",
+"school-c12-chemistry-b.ch08-aldehydes-ketones-carboxylic-acids",
+"school-c12-chemistry-b.ch09-amines",
+"school-c12-chemistry-b.ch10-biomolecules",
+"school-c12-chemistry-b.revision-practice",
+"school-c12-maths-a.ch01-relations-functions",
+"school-c12-maths-a.ch02-inverse-trig",
+"school-c12-maths-a.ch03-matrices",
+"school-c12-maths-a.ch04-determinants",
+"school-c12-maths-a.ch05-continuity-differentiability",
+"school-c12-maths-a.ch06-application-derivatives",
+"school-c12-maths-b.ch07-integrals",
+"school-c12-maths-b.ch08-application-integrals",
+"school-c12-maths-b.ch09-differential-equations",
+"school-c12-maths-b.ch10-vector-algebra",
+"school-c12-maths-b.ch11-three-dimensional-geometry",
+"school-c12-maths-b.ch12-linear-programming",
+"school-c12-maths-b.ch13-probability",
+"school-c12-maths-b.revision-practice"
+],
+"labs":[
+"school-c12-physics-a.ch06-electromagnetic-induction.l2",
+"school-c12-chemistry-a.ch01-solutions.l5",
+"school-c12-chemistry-b.ch07-alcohols-phenols-ethers.l4"
+],
+"milestone":"Board pre-boards at 85 %+."
+},
+{
+"title":"Senior revision",
+"weeks":6,
+"courses":[
+"school-senior-physics.mechanics",
+"school-senior-physics.rotation-thermo",
+"school-senior-physics.electricity-magnetism",
+"school-senior-physics.optics-modern",
+"school-senior-chemistry.physical",
+"school-senior-chemistry.organic",
+"school-senior-chemistry.inorganic",
+"school-senior-maths.calculus",
+"school-senior-maths.vectors-3d",
+"school-senior-maths.algebra-probability"
+],
+"labs":[
+"school-senior-physics.electricity-magnetism.l3",
+"school-senior-chemistry.organic.l4",
+"school-senior-maths.calculus.l5"
+],
+"milestone":"Formula sheets you made yourself."
+},
+{
+"title":"JEE & strategy",
+"weeks":12,
+"courses":[
+"entrance-jee.physics",
+"entrance-jee.chemistry",
+"entrance-jee.maths",
+"entrance-jee.strategy",
+"well-mind.exam-stress"
+],
+"labs":[
+"entrance-jee.maths.l4",
+"entrance-jee.strategy.l2",
+"well-mind.exam-stress.l5"
+],
+"milestone":"JEE mocks at your target percentile."
+}
+]
+},
+{
+"id":"class-12-pcb",
+"title":"Class 12 Science — PCB (with NEET)",
+"category":"Government & exams",
+"icon":"🧬",
+"color":"#2f9e44",
+"audience":"Class 11–12 PCB students",
+"duration":"2 school years",
+"summary":"Class 11 and 12 physics, chemistry and biology, then NEET drills and strategy.",
+"outcomes":[
+"Finish the PCB syllabus with NCERT depth",
+"Solve NEET-level questions",
+"Plan mocks and manage pressure"
+],
+"minutes":10742,
+"final":false,
+"stages":[
+{
+"title":"Class 11 PCB",
+"weeks":30,
+"courses":[
+"school-c11-physics-a.ch1-units-measurement",
+"school-c11-physics-a.ch2-straight-line",
+"school-c11-physics-a.ch3-motion-plane",
+"school-c11-physics-a.ch4-laws-of-motion",
+"school-c11-physics-b.ch5-work-energy-power",
+"school-c11-physics-b.ch6-rotational-motion",
+"school-c11-physics-b.ch7-gravitation",
+"school-c11-physics-b.ch8-solids",
+"school-c11-physics-c.ch9-fluids",
+"school-c11-physics-c.ch10-thermal-properties",
+"school-c11-physics-c.ch11-thermodynamics",
+"school-c11-physics-d.ch12-kinetic-theory",
+"school-c11-physics-d.ch13-oscillations",
+"school-c11-physics-d.ch14-waves",
+"school-c11-physics-d.revision",
+"school-c11-chemistry-a.ch1-basic-concepts",
+"school-c11-chemistry-a.ch2-structure-of-atom",
+"school-c11-chemistry-a.ch3-periodicity",
+"school-c11-chemistry-b.ch4-chemical-bonding",
+"school-c11-chemistry-b.ch5-thermodynamics",
+"school-c11-chemistry-b.ch6-equilibrium",
+"school-c11-chemistry-c.ch7-redox",
+"school-c11-chemistry-c.ch8-organic-basics",
+"school-c11-chemistry-c.ch9-hydrocarbons",
+"school-c11-chemistry-c.revision",
+"school-c11-biology-a.ch01-living-world",
+"school-c11-biology-a.ch02-biological-classification",
+"school-c11-biology-a.ch03-plant-kingdom",
+"school-c11-biology-a.ch04-animal-kingdom",
+"school-c11-biology-a.ch05-morphology-flowering-plants",
+"school-c11-biology-a.ch06-anatomy-flowering-plants",
+"school-c11-biology-a.ch07-structural-organisation-animals",
+"school-c11-biology-a.ch08-cell-unit-of-life",
+"school-c11-biology-a.ch09-biomolecules",
+"school-c11-biology-a.ch10-cell-cycle-division",
+"school-c11-biology-b.ch11-photosynthesis",
+"school-c11-biology-b.ch12-respiration-plants",
+"school-c11-biology-b.ch13-plant-growth-development",
+"school-c11-biology-b.ch14-breathing-exchange-gases",
+"school-c11-biology-b.ch15-body-fluids-circulation",
+"school-c11-biology-b.ch16-excretory-products",
+"school-c11-biology-b.ch17-locomotion-movement",
+"school-c11-biology-b.ch18-neural-control-coordination",
+"school-c11-biology-b.ch19-chemical-coordination",
+"school-c11-biology-b.revision-practice"
+],
+"labs":[
+"school-c11-physics-a.ch4-laws-of-motion.l4",
+"school-c11-physics-d.ch14-waves.l4",
+"school-c11-chemistry-b.ch6-equilibrium.l2"
+],
+"milestone":"Class 11 finals at 75 %+."
+},
+{
+"title":"Class 12 PCB",
+"weeks":30,
+"courses":[
+"school-c12-physics-a.ch01-electric-charges-fields",
+"school-c12-physics-a.ch02-potential-capacitance",
+"school-c12-physics-a.ch03-current-electricity",
+"school-c12-physics-a.ch04-moving-charges-magnetism",
+"school-c12-physics-a.ch05-magnetism-matter",
+"school-c12-physics-a.ch06-electromagnetic-induction",
+"school-c12-physics-a.ch07-alternating-current",
+"school-c12-physics-b.ch08-electromagnetic-waves",
+"school-c12-physics-b.ch09-ray-optics",
+"school-c12-physics-b.ch10-wave-optics",
+"school-c12-physics-b.ch11-dual-nature",
+"school-c12-physics-b.ch12-atoms",
+"school-c12-physics-b.ch13-nuclei",
+"school-c12-physics-b.ch14-semiconductor-electronics",
+"school-c12-physics-b.revision-practice",
+"school-c12-chemistry-a.ch01-solutions",
+"school-c12-chemistry-a.ch02-electrochemistry",
+"school-c12-chemistry-a.ch03-chemical-kinetics",
+"school-c12-chemistry-a.ch04-d-f-block",
+"school-c12-chemistry-a.ch05-coordination-compounds",
+"school-c12-chemistry-b.ch06-haloalkanes-haloarenes",
+"school-c12-chemistry-b.ch07-alcohols-phenols-ethers",
+"school-c12-chemistry-b.ch08-aldehydes-ketones-carboxylic-acids",
+"school-c12-chemistry-b.ch09-amines",
+"school-c12-chemistry-b.ch10-biomolecules",
+"school-c12-chemistry-b.revision-practice",
+"school-c12-biology-a.ch01-sexual-reproduction-flowering-plants",
+"school-c12-biology-a.ch02-human-reproduction",
+"school-c12-biology-a.ch03-reproductive-health",
+"school-c12-biology-a.ch04-inheritance-variation",
+"school-c12-biology-a.ch05-molecular-basis-inheritance",
+"school-c12-biology-a.ch06-evolution",
+"school-c12-biology-b.ch07-human-health-disease",
+"school-c12-biology-b.ch08-microbes-human-welfare",
+"school-c12-biology-b.ch09-biotech-principles-processes",
+"school-c12-biology-b.ch10-biotech-applications",
+"school-c12-biology-b.ch11-organisms-populations",
+"school-c12-biology-b.ch12-ecosystem",
+"school-c12-biology-b.ch13-biodiversity-conservation",
+"school-c12-biology-b.revision-practice"
+],
+"labs":[
+"school-c12-physics-a.ch06-electromagnetic-induction.l2",
+"school-c12-chemistry-a.ch01-solutions.l5",
+"school-c12-chemistry-b.ch07-alcohols-phenols-ethers.l4"
+],
+"milestone":"Board pre-boards at 85 %+."
+},
+{
+"title":"Senior revision",
+"weeks":6,
+"courses":[
+"school-senior-biology.cell-genetics",
+"school-senior-biology.physiology",
+"school-senior-biology.reproduction-health",
+"school-senior-biology.biotech-ecology",
+"school-senior-chemistry.physical",
+"school-senior-chemistry.organic",
+"school-senior-chemistry.inorganic",
+"school-senior-physics.mechanics",
+"school-senior-physics.rotation-thermo",
+"school-senior-physics.electricity-magnetism",
+"school-senior-physics.optics-modern"
+],
+"labs":[
+"school-senior-biology.cell-genetics.l3",
+"school-senior-biology.reproduction-health.l4",
+"school-senior-chemistry.organic.l4"
+],
+"milestone":"NCERT line-by-line biology notes."
+},
+{
+"title":"NEET & strategy",
+"weeks":12,
+"courses":[
+"entrance-neet.biology",
+"entrance-neet.physics",
+"entrance-neet.chemistry",
+"entrance-neet.strategy",
+"well-mind.exam-stress"
+],
+"labs":[
+"entrance-neet.strategy.l2",
+"well-mind.exam-stress.l5",
+"entrance-neet.physics.l1"
+],
+"milestone":"NEET mocks at your target score."
+}
+]
+},
+{
+"id":"class-12-commerce",
+"title":"Class 12 Commerce",
+"category":"Government & exams",
+"icon":"💼",
+"color":"#3a6ea5",
+"audience":"Class 11–12 commerce students",
+"duration":"2 school years",
+"summary":"Accountancy, business studies and economics for Classes 11 and 12, with maths/CS options and CUET/CA next steps.",
+"outcomes":[
+"Prepare accounts and partnership adjustments",
+"Explain management and marketing",
+"Answer micro and macro questions",
+"Plan CUET or CA Foundation"
+],
+"minutes":6490,
+"final":false,
+"stages":[
+{
+"title":"Class 11 commerce",
+"weeks":30,
+"courses":[
+"school-c11-accountancy-a.ch01-introduction",
+"school-c11-accountancy-a.ch02-theory-base",
+"school-c11-accountancy-a.ch03-recording-1",
+"school-c11-accountancy-a.ch04-recording-2",
+"school-c11-accountancy-a.ch05-brs",
+"school-c11-accountancy-b.ch06-trial-balance-rectification",
+"school-c11-accountancy-b.ch07-depreciation-provisions-reserves",
+"school-c11-accountancy-b.ch08-financial-statements-1",
+"school-c11-accountancy-b.ch09-financial-statements-2",
+"school-c11-accountancy-b.revision-practice",
+"school-c11-business-a.ch01-business-trade-commerce",
+"school-c11-business-a.ch02-forms-of-organisation",
+"school-c11-business-a.ch03-private-public-global",
+"school-c11-business-a.ch04-business-services",
+"school-c11-business-a.ch05-emerging-modes",
+"school-c11-business-a.ch06-social-responsibility-ethics",
+"school-c11-business-b.ch07-sources-of-finance",
+"school-c11-business-b.ch08-small-business-entrepreneurship",
+"school-c11-business-b.ch09-internal-trade",
+"school-c11-business-b.ch10-international-business",
+"school-c11-business-b.revision-practice",
+"school-c11-economics-a.stats-ch01-introduction",
+"school-c11-economics-a.stats-ch02-collection-of-data",
+"school-c11-economics-a.stats-ch03-organisation-of-data",
+"school-c11-economics-a.stats-ch04-presentation-of-data",
+"school-c11-economics-a.stats-ch05-central-tendency",
+"school-c11-economics-a.stats-ch06-correlation",
+"school-c11-economics-a.stats-ch07-index-numbers",
+"school-c11-economics-a.stats-revision-practice",
+"school-c11-economics-b.ied-ch01-eve-of-independence",
+"school-c11-economics-b.ied-ch02-economy-1950-1990",
+"school-c11-economics-b.ied-ch03-lpg",
+"school-c11-economics-b.ied-ch04-human-capital",
+"school-c11-economics-b.ied-ch05-rural-development",
+"school-c11-economics-b.ied-ch06-employment",
+"school-c11-economics-b.ied-ch07-environment-sustainable",
+"school-c11-economics-b.ied-ch08-comparative-development",
+"school-c11-economics-b.ied-revision-practice"
+],
+"labs":[
+"school-c11-business-a.ch02-forms-of-organisation.l6",
+"school-c11-business-a.ch03-private-public-global.l5",
+"school-c11-business-a.ch05-emerging-modes.l3"
+],
+"milestone":"Class 11 finals at 75 %+."
+},
+{
+"title":"Class 12 commerce",
+"weeks":30,
+"courses":[
+"school-c12-accountancy-a.partnership-basics",
+"school-c12-accountancy-a.goodwill",
+"school-c12-accountancy-a.change-in-ratio",
+"school-c12-accountancy-a.admission",
+"school-c12-accountancy-a.retirement-death",
+"school-c12-accountancy-a.dissolution",
+"school-c12-accountancy-b.share-capital",
+"school-c12-accountancy-b.debentures",
+"school-c12-accountancy-b.company-fs",
+"school-c12-accountancy-b.analysis-fs",
+"school-c12-accountancy-b.ratios",
+"school-c12-accountancy-b.cash-flow",
+"school-c12-accountancy-b.revision-practice",
+"school-c12-business-a.nature-significance-management",
+"school-c12-business-a.principles-of-management",
+"school-c12-business-a.business-environment",
+"school-c12-business-a.planning",
+"school-c12-business-a.organising",
+"school-c12-business-a.staffing",
+"school-c12-business-a.directing",
+"school-c12-business-a.controlling",
+"school-c12-business-b.financial-management",
+"school-c12-business-b.financial-markets",
+"school-c12-business-b.marketing",
+"school-c12-business-b.consumer-protection",
+"school-c12-business-b.revision-practice",
+"school-c12-economics-a.macro-introduction",
+"school-c12-economics-a.national-income",
+"school-c12-economics-a.money-banking",
+"school-c12-economics-a.income-determination",
+"school-c12-economics-a.government-budget",
+"school-c12-economics-a.open-economy",
+"school-c12-economics-b.eve-of-independence",
+"school-c12-economics-b.economy-1950-1990",
+"school-c12-economics-b.lpg-appraisal",
+"school-c12-economics-b.human-capital",
+"school-c12-economics-b.rural-development",
+"school-c12-economics-b.employment",
+"school-c12-economics-b.environment-sustainable",
+"school-c12-economics-b.comparative-development",
+"school-c12-economics-b.revision-practice"
+],
+"labs":[
+"school-c12-business-a.directing.l4",
+"school-c12-business-a.controlling.l4",
+"school-c12-accountancy-a.partnership-basics.l2"
+],
+"milestone":"Board pre-boards at 85 %+."
+},
+{
+"title":"Senior revision",
+"weeks":6,
+"courses":[
+"school-senior-commerce.accountancy",
+"school-senior-commerce.business-studies",
+"school-senior-commerce.economics"
+],
+"labs":[
+"school-senior-commerce.business-studies.l3",
+"school-senior-commerce.accountancy.l1",
+"school-senior-commerce.economics.l1"
+],
+"milestone":"A one-page summary per chapter."
+},
+{
+"title":"Next steps",
+"weeks":4,
+"courses":[
+"entrance-general.cuet",
+"entrance-general.exam-strategy",
+"careers-teaching-social.choosing-career"
+],
+"labs":[
+"entrance-general.exam-strategy.l3",
+"careers-teaching-social.choosing-career.l4",
+"entrance-general.cuet.l1"
+],
+"milestone":"A CUET mock and a shortlist of courses."
+}
+]
+},
+{
+"id":"phone-laptop-repair",
+"title":"Phone & laptop repair technician",
+"category":"Trades",
+"icon":"🔧",
+"color":"#b0612d",
+"audience":"School leavers, hobbyists, shop owners",
+"duration":"3–4 months · ~8 h/week",
+"summary":"Electronics basics and safety, phone and laptop repair, and running an honest repair shop.",
+"outcomes":[
+"Work safely with batteries and mains",
+"Diagnose with a multimeter",
+"Replace screens, batteries and ports",
+"Run a repair shop with fair quotes"
+],
+"minutes":1546,
+"final":true,
+"stages":[
+{
+"title":"Electronics & safety",
+"weeks":3,
+"courses":[
+"trades-electronics-foundations.components-reading",
+"trades-electronics-foundations.ohms-law-labs",
+"trades-electronics-foundations.soldering-lab",
+"trades-electronics-foundations.testing-components",
+"trades-electronics-foundations.mains-safety"
+],
+"labs":[
+"trades-electronics-foundations.ohms-law-labs.l2",
+"trades-electronics-foundations.testing-components.l3",
+"trades-electronics-foundations.soldering-lab.l3"
+],
+"milestone":"Solder a joint that passes inspection."
+},
+{
+"title":"Phone repair",
+"weeks":4,
+"courses":[
+"trades-phone-foundations.safety-esd-battery",
+"trades-phone-foundations.tools-disassembly",
+"trades-phone-foundations.multimeter-diagnosis",
+"trades-phone-foundations.no-power-charge-network",
+"trades-phone-foundations.microsoldering-basics",
+"trades-phone-service.screen-replacement",
+"trades-phone-service.battery-charging-port",
+"trades-phone-service.camera-audio-sensors",
+"trades-phone-service.software-safe-mode-reset",
+"trades-phone-service.adb-fastboot"
+],
+"labs":[
+"trades-phone-service.adb-fastboot.l1",
+"trades-phone-foundations.no-power-charge-network.l2",
+"trades-phone-service.camera-audio-sensors.l4"
+],
+"milestone":"A no-charge fault diagnosed and fixed."
+},
+{
+"title":"Laptop repair",
+"weeks":4,
+"courses":[
+"trades-laptop-foundations.post-beep-codes",
+"trades-laptop-foundations.bios-uefi",
+"trades-laptop-foundations.ram-ssd-upgrades",
+"trades-laptop-foundations.os-reinstall",
+"trades-laptop-foundations.data-backup-ethics",
+"trades-laptop-hardware.thermal-fans",
+"trades-laptop-hardware.keyboard-hinge-screen",
+"trades-laptop-hardware.power-rails-basics",
+"trades-laptop-hardware.no-power-no-charge",
+"trades-laptop-hardware.liquid-damage-triage",
+"tech-build-pc-dc.no-post"
+],
+"labs":[
+"trades-laptop-foundations.ram-ssd-upgrades.l4",
+"trades-laptop-foundations.os-reinstall.l2",
+"trades-laptop-foundations.data-backup-ethics.l2"
+],
+"milestone":"Upgrade RAM/SSD and reinstall without data loss."
+},
+{
+"title":"Your repair shop",
+"weeks":2,
+"courses":[
+"trades-electronics-appliances-shop.fans-mixers",
+"trades-electronics-appliances-shop.irons-heaters",
+"trades-electronics-appliances-shop.shop-tickets-quotes",
+"trades-electronics-appliances-shop.warranty-customer-rights",
+"trades-electronics-appliances-shop.ewaste-shop-operations",
+"tech-build-pc-dc.final-interviews"
+],
+"labs":[
+"trades-electronics-appliances-shop.fans-mixers.l2",
+"trades-electronics-appliances-shop.shop-tickets-quotes.l3",
+"trades-electronics-appliances-shop.ewaste-shop-operations.l3"
+],
+"milestone":"Intake tickets, quotes and warranty terms ready."
+}
+]
+},
+{
+"id":"electrician",
+"title":"Electrician",
+"category":"Trades",
+"icon":"🔌",
+"color":"#f08c00",
+"audience":"School leavers, ITI students, helpers",
+"duration":"2–3 months · ~8 h/week",
+"summary":"Safety first, house wiring, protection devices, earthing, load calculation, fault-finding, solar and your own business.",
+"outcomes":[
+"Wire and test circuits safely",
+"Choose MCBs, RCCBs and cables",
+"Calculate loads and earthing",
+"Run a service business"
+],
+"minutes":596,
+"final":false,
+"stages":[
+{
+"title":"Safety & basics",
+"weeks":2,
+"courses":[
+"trades-home-technical.electrician-safety-first",
+"trades-electronics-foundations.mains-safety",
+"trades-electronics-foundations.ohms-law-labs"
+],
+"labs":[
+"trades-electronics-foundations.ohms-law-labs.l2",
+"trades-home-technical.electrician-safety-first.l5",
+"trades-electronics-foundations.mains-safety.l3"
+],
+"milestone":"A safe-isolation routine done every time."
+},
+{
+"title":"Wiring & protection",
+"weeks":3,
+"courses":[
+"trades-x-electrician.house-wiring-basics",
+"trades-x-electrician.mcb-rccb-protection",
+"trades-x-electrician.earthing-and-testing"
+],
+"labs":[
+"trades-x-electrician.house-wiring-basics.l4",
+"trades-x-electrician.mcb-rccb-protection.l4",
+"trades-x-electrician.earthing-and-testing.l4"
+],
+"milestone":"A wired and tested board (on paper or practice rig)."
+},
+{
+"title":"Design & fault-finding",
+"weeks":3,
+"courses":[
+"trades-x-electrician.load-calculation",
+"trades-x-electrician.fault-finding-domestic",
+"uni-common-sciences-c.bee-u3-three-phase-installations"
+],
+"labs":[
+"trades-x-electrician.load-calculation.l4",
+"trades-x-electrician.fault-finding-domestic.l4",
+"uni-common-sciences-c.bee-u3-three-phase-installations.l2"
+],
+"milestone":"Find three faults in a practice circuit."
+},
+{
+"title":"Solar, appliances & business",
+"weeks":3,
+"courses":[
+"trades-x-solar-cctv.solar-pv-sizing",
+"trades-home-technical-2.ac-appliance-basics",
+"trades-x-electrician.electrician-business"
+],
+"labs":[
+"trades-x-solar-cctv.solar-pv-sizing.l4",
+"trades-x-electrician.electrician-business.l4",
+"trades-home-technical-2.ac-appliance-basics.l4"
+],
+"milestone":"A rate card and your first solar sizing quote."
+}
+]
+},
+{
+"id":"retirement-second-career",
+"title":"Retirement & second career",
+"category":"Life",
+"icon":"🌅",
+"color":"#e67700",
+"audience":"People in their 50s and 60s",
+"duration":"3 months · ~4 h/week",
+"summary":"Money and legal safety after retirement, health and caregiving, digital confidence and a meaningful second career.",
+"outcomes":[
+"Plan withdrawals and avoid scams",
+"Keep wills, nominations and papers in order",
+"Stay active and digitally confident",
+"Start teaching, freelancing or consulting"
+],
+"minutes":2256,
+"final":false,
+"stages":[
+{
+"title":"Money & legal",
+"weeks":3,
+"courses":[
+"life-senior-money.epf-nps-basics",
+"life-senior-money.safe-savings",
+"life-senior-money.fd-ladder-annuity",
+"life-senior-money.withdrawal-inflation",
+"life-senior-money.senior-health-insurance",
+"life-senior-money.reverse-mortgage-budget",
+"life-senior-legal.will-vs-nomination",
+"life-senior-legal.probate-succession",
+"life-senior-legal.power-of-attorney",
+"life-senior-legal.digital-assets-papers",
+"life-senior-legal.benefits-and-helplines",
+"life-money-x-stages.pre-retirement",
+"uni-fin-fintech-scams.scam-invest"
+],
+"labs":[
+"life-senior-legal.probate-succession.l4",
+"life-senior-legal.power-of-attorney.l2",
+"life-senior-legal.digital-assets-papers.l3"
+],
+"milestone":"A one-page money plan and a will checklist."
+},
+{
+"title":"Health & care",
+"weeks":3,
+"courses":[
+"life-senior-health.bp-diabetes",
+"life-senior-health.joints-falls-exercise",
+"life-senior-health.eyes-ears-teeth",
+"life-senior-health.memory-dementia",
+"life-senior-health.medicines-management",
+"life-senior-health.nutrition-sleep",
+"life-senior-active.second-career-consulting",
+"life-senior-active.volunteer-small-business",
+"life-senior-active.new-hobbies",
+"life-senior-active.loneliness-grief",
+"life-senior-active.living-alone-safely",
+"life-senior-active.family-grandparenting",
+"life-senior-caregiving.dementia-care",
+"life-senior-caregiving.bed-care-mobility",
+"life-senior-caregiving.palliative-care-basics",
+"life-senior-caregiving.caregiver-respite",
+"life-senior-caregiving.elder-abuse-law",
+"life-medicines-chronic.bp",
+"life-medicines-chronic.diabetes-oral",
+"life-medicines-chronic.insulin",
+"life-medicines-chronic.cholesterol",
+"life-medicines-chronic.thyroid"
+],
+"labs":[
+"life-senior-health.bp-diabetes.l2",
+"life-senior-health.memory-dementia.l4",
+"life-senior-active.second-career-consulting.l3"
+],
+"milestone":"A weekly activity routine and a medicines list."
+},
+{
+"title":"Digital confidence",
+"weeks":2,
+"courses":[
+"life-senior-digital.smartphone-basics",
+"life-senior-digital.whatsapp-video",
+"life-senior-digital.upi-banking-safety",
+"life-senior-digital.scam-kyc-otp",
+"life-senior-digital.scam-family-emergency",
+"tech-aitools-assistants.what-are-assistants",
+"corp-cyber.ch2-phishing"
+],
+"labs":[
+"life-senior-digital.whatsapp-video.l2",
+"life-senior-digital.upi-banking-safety.l2",
+"life-senior-digital.scam-kyc-otp.l1"
+],
+"milestone":"Video-call, pay by UPI and spot a phishing message."
+},
+{
+"title":"Second career",
+"weeks":3,
+"courses":[
+"career-ready-general.career-switch-30-40-50",
+"career-ready-bank-freelance.freelance-clients-pricing",
+"careers-teaching-social.teaching-craft",
+"careers-teaching-social.social-work"
+],
+"labs":[
+"career-ready-general.career-switch-30-40-50.l3",
+"careers-teaching-social.teaching-craft.l3",
+"careers-teaching-social.social-work.l4"
+],
+"milestone":"A profile and a first paid or volunteer engagement."
+}
+]
+},
+{
+"id":"parent-newborn",
+"title":"Parent of a newborn (0–3 years)",
+"category":"Life",
+"icon":"👶",
+"color":"#ff8f4d",
+"audience":"New and expecting parents, grandparents",
+"duration":"3 years, a little each week",
+"summary":"Milestones, feeding, sleep, vaccines, safety and first aid, then play, first words and early learning — together with your child.",
+"outcomes":[
+"Know the milestones and when to ask a doctor",
+"Feed, settle and keep baby safe",
+"Play and talk in ways that build the brain",
+"Look after yourself too"
+],
+"minutes":1318,
+"final":false,
+"stages":[
+{
+"title":"The first months",
+"weeks":12,
+"courses":[
+"early-x-parents-guide.milestones",
+"early-x-parents-guide.sleep-routines",
+"early-x-parents-guide.immunisation",
+"early-x-parents-guide.baby-first-aid",
+"early-x-parents-guide.baby-proofing"
+],
+"labs":[
+"early-x-parents-guide.immunisation.l3",
+"early-x-parents-guide.milestones.l2",
+"early-x-parents-guide.sleep-routines.l3"
+],
+"milestone":"A vaccine card, a choking-first-aid drill and a safe-sleep set-up."
+},
+{
+"title":"Play with your baby",
+"weeks":12,
+"courses":[
+"early-x-baby-sensory.high-contrast",
+"early-x-baby-sensory.sounds-voices",
+"early-x-baby-sensory.tummy-time",
+"early-x-baby-sensory.touch-textures",
+"early-x-baby-sensory.treasure-baskets",
+"early-x-baby-sensory.rhythm-counting",
+"early-infant.everyday-things",
+"early-infant.sounds-faces-feelings",
+"early-infant.lullabies-first-words",
+"early-infant.tummy-time-sensory",
+"early-x-rhymes-lullabies.classic-rhymes",
+"early-x-rhymes-lullabies.action-songs",
+"early-x-rhymes-lullabies.indian-lullabies",
+"early-x-rhymes-lullabies.rhythm-instruments"
+],
+"labs":[
+"early-x-baby-sensory.tummy-time.l1",
+"early-x-baby-sensory.touch-textures.l2",
+"early-infant.tummy-time-sensory.l3"
+],
+"milestone":"Five minutes of tummy-time play most days."
+},
+{
+"title":"Food, habits & feelings",
+"weeks":12,
+"courses":[
+"early-x-parents-guide.starting-solids",
+"early-x-parents-guide.toilet-training",
+"early-x-parents-guide.tantrums-behaviour",
+"early-x-parents-guide.screen-time",
+"early-parents.milestones-0-6",
+"early-parents.screens-books-play",
+"early-parents.awkward-questions"
+],
+"labs":[
+"early-x-parents-guide.screen-time.l3",
+"early-parents.milestones-0-6.l3",
+"early-parents.awkward-questions.l3"
+],
+"milestone":"A calm plan for tantrums and screens."
+},
+{
+"title":"Toddler words & world",
+"weeks":24,
+"courses":[
+"early-x-first-words.hindi-first-words",
+"early-x-first-words.english-first-words",
+"early-x-first-words.regional-sampler",
+"early-x-first-words.bhojpuri-maithili",
+"early-x-little-world.animals-of-india",
+"early-x-little-world.numbers-1-20",
+"early-x-little-world.colours-shapes-india",
+"early-x-little-world.family-body-opposites",
+"early-x-little-world.vehicles-journeys",
+"early-x-little-world.fruits-vegetables",
+"early-x-little-world.festivals-of-india",
+"early-toddler.animals-vehicles",
+"early-toddler.colours-shapes-opposites",
+"early-toddler.counting-1-10",
+"early-toddler.body-food-routines",
+"early-x-parents-guide.bilingual-parenting"
+],
+"labs":[
+"early-toddler.body-food-routines.l5",
+"early-x-little-world.vehicles-journeys.l3",
+"early-x-little-world.fruits-vegetables.l3"
+],
+"milestone":"Read and name things together every day."
+},
+{
+"title":"Getting ready for play school",
+"weeks":12,
+"courses":[
+"early-x-skills-and-heart.pre-writing",
+"early-x-skills-and-heart.pre-maths",
+"early-x-skills-and-heart.kindness-sharing",
+"early-x-skills-and-heart.feelings-toolbox",
+"early-x-skills-and-heart.safe-touch",
+"early-play.phonics-a-z",
+"early-play.why-world",
+"early-play.feelings-kindness",
+"early-play.good-habits",
+"early-x-parents-guide.choosing-play-school",
+"well-safety.my-body-belongs-to-me"
+],
+"labs":[
+"early-x-skills-and-heart.kindness-sharing.l3",
+"early-x-skills-and-heart.feelings-toolbox.l3",
+"early-x-skills-and-heart.safe-touch.l3"
+],
+"milestone":"A play school chosen and body-safety words learned."
+}
+]
+}
+]
