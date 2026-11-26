@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   var VV2 = window.VV2 = window.VV2 || {};
-  VV2.version = '2.2.2';
+  VV2.version = '2.3.0';
   VV2._id = 0;
 
   /* ---------- environment ---------- */
@@ -96,6 +96,9 @@
     en: { home: 'Campus', schools: 'Schools', exams: 'Exam hall', labs: 'Labs', games: 'Games', progress: 'Rewards', parents: 'Grown-ups', settings: 'Settings', about: 'About', search: 'Search courses & lessons', roadmaps: 'Roadmaps', handson: 'Lab Hub', searchShort: 'Search', profiles: 'Profiles', continue: 'Continue learning', start: 'Start', next: 'Next', back: 'Back', quickExit: 'Quick exit', sound: 'Sound', mode: 'Mode', lessons: 'lessons', minutes: 'min', level: 'Level', recommended: 'Recommended for you', allSchools: 'All 15 schools', streak: 'day streak', dailyGoal: 'Daily goal', openLab: 'Open lab', playGame: 'Play game', exam: 'Exam', placement: 'Placement test', explore: 'Explore freely anyway', guest: 'Guest', menu: 'Menu', close: 'Close', listen: 'Listen' },
     hi: { home: 'परिसर', schools: 'विद्यालय', exams: 'परीक्षा भवन', labs: 'प्रयोगशाला', games: 'खेल', progress: 'पुरस्कार', parents: 'अभिभावक', settings: 'सेटिंग्स', about: 'परिचय', search: 'पाठ्यक्रम और पाठ खोजें', roadmaps: 'करियर मार्ग', handson: 'प्रयोग केंद्र', searchShort: 'खोजें', profiles: 'प्रोफ़ाइल', continue: 'पढ़ाई जारी रखें', start: 'शुरू करें', next: 'आगे', back: 'पीछे', quickExit: 'तुरंत बाहर', sound: 'ध्वनि', mode: 'रूप', lessons: 'पाठ', minutes: 'मिनट', level: 'स्तर', recommended: 'आपके लिए सुझाव', allSchools: 'सभी 15 विद्यालय', streak: 'दिन लगातार', dailyGoal: 'आज का लक्ष्य', openLab: 'प्रयोगशाला खोलें', playGame: 'खेल खेलें', exam: 'परीक्षा', placement: 'स्तर परीक्षा', explore: 'फिर भी देखें', guest: 'अतिथि', menu: 'मेनू', close: 'बंद करें', listen: 'सुनें' }
   };
+  /* v2.3 navigation keys */
+  DICT.en.programmes = 'Programmes'; DICT.en.askAnything = 'Ask anything'; DICT.en.more = 'More';
+  DICT.hi.programmes = '\u0915\u093e\u0930\u094d\u092f\u0915\u094d\u0930\u092e'; DICT.hi.askAnything = '\u0915\u0941\u091b \u092d\u0940 \u092a\u0942\u091b\u0947\u0902'; DICT.hi.more = '\u0914\u0930';
   VV2.lang = 'en';
   VV2.t = function (k) { var d = DICT[VV2.lang] || DICT.en; return d[k] || DICT.en[k] || k; };
   VV2.applyI18n = function (root) {

@@ -109,7 +109,7 @@
       h('div', { class: 'hero-av', html: VV2.avatarSVG(p.avatar, VV2.mode === 'tiny' ? 120 : 96) }),
       h('div', { class: 'hero-txt' }, [h('p', { class: 'eyebrow' }, VV2.mode === 'tiny' ? '🧸 Tiny campus' : 'VidyaVerse University'), h('h1', { id: 'heroH' }, greet(p)),
         h('p', { class: 'hero-sub' }, VV2.mode === 'tiny' ? 'Tap anything — I will say it out loud.' : VV2.pick(['What shall we learn today?', 'Fifteen schools. Zero fees. Infinite curiosity.', 'A little every day beats a lot someday.', 'Pick a door — every level is open.'])),
-        h('div', { class: 'hero-stats' }, [
+        h('p', { class: 'hero-cat', id: 'heroCat' }), h('div', { class: 'hero-stats' }, [
           h('div', { class: 'hs' }, [h('b', null, 'Lv ' + L.lvl), h('small', null, L.title), h('div', { class: 'xpbar' }, h('i', { style: { width: L.pct + '%' } }))]),
           h('div', { class: 'hs' }, [h('b', null, '🔥 ' + (p.streak.n || 0)), h('small', { 'data-i18n': 'streak' }, VV2.t('streak'))]),
           h('div', { class: 'hs goal', html: VV2.ring(gp, 54, 'var(--gold)', 'Daily goal ' + Math.round(mins) + ' of ' + p.goal + ' minutes') + '<span><b>' + Math.round(mins) + '/' + p.goal + ' min</b><small>' + VV2.esc(VV2.t('dailyGoal')) + '</small></span>' })])])]);
@@ -118,6 +118,7 @@
     /* search */
     var sWrap = h('section', { class: 'home-search', 'aria-label': 'Search' }); w.appendChild(sWrap);
     var rest = h('div', { class: 'home-rest' }); w.appendChild(rest);
+    rest.appendChild(homeTiles());
     /* continue */
     var cont = h('section', { class: 'continue', 'aria-label': VV2.t('continue') }); rest.appendChild(cont);
     /* map */
@@ -138,9 +139,25 @@
       cards(D.recommend(p, VV2.mode === 'tiny' ? 4 : 8), rec, 'The catalogue is empty right now — new courses are being written. Peek at the Labs meanwhile!');
       VV2.$$('.school-card', sch).forEach(function (el) { var id = el.getAttribute('data-school'), n = D.bySchool(id).length, r = el.querySelector('.sc-count'); if (r) r.textContent = n ? n + ' course' + (n === 1 ? '' : 's') : 'opening soon'; var rg = el.querySelector('.sc-ring'); if (rg) rg.innerHTML = VV2.ring(schoolPct(id), 46, VV2.school(id).color); });
       continueBox(cont, p);
+      fillCat();
     });
     VV2.need('worldmap').then(function () { var el = document.getElementById('campusMap'); if (el && VV2.Map) { var m = VV2.Map.mount(el); VV2.onLeave(function () { if (m && m.destroy) m.destroy(); }); } }).catch(function () { var el = document.getElementById('campusMap'); if (el) el.innerHTML = '<p class="muted">The campus map could not load — use the school cards below.</p>'; });
   };
+  /* v2.3: big discoverability tiles + live catalogue numbers (computed from the index, never hard-coded) */
+  function homeTiles() {
+    function tile(href, icon, title, sub, cls) { return h('a', { href: href, class: 'card home-tile ' + (cls || ''), 'data-say': title }, [h('span', { class: 'ht-i', 'aria-hidden': 'true' }, icon), h('span', { class: 'ht-t' }, [h('b', null, title), h('small', null, sub)]), h('span', { class: 'ht-go', 'aria-hidden': 'true' }, '→')]); }
+    return h('section', { class: 'home-tiles', 'aria-label': 'Start here' }, [
+      tile('#/programmes', '🎓', 'Programmes', 'Degrees, Class 1–12 and certificates — every course laid out semester by semester.', 'ht-prog'),
+      tile('#/unaskable', '💬', 'Too awkward to ask? Ask here — privately.', 'Bodies, minds, relationships, substances, the law and medicines. Calm, factual, nothing leaves your device.', 'ht-ask'),
+      tile('#/roadmaps', '🗺️', 'Career roadmaps', 'Zero to job-ready: cloud, data, AI, doctor, lawyer, electrician and more — ending in mock interviews.', 'ht-road')]);
+  }
+  function fillCat() {
+    var el = document.getElementById('heroCat'); if (!el || !D.courses.length) return;
+    var st = D.stats(), A = VV2.approx;
+    var line = function (labs) { el.textContent = A(st.courses) + ' courses · ' + A(st.lessons) + ' lessons · ' + A(Math.round(st.minutes / 60)) + ' hours of guided study' + (labs ? ' · ' + A(labs) + ' labs' : ''); el.title = 'Live from the catalogue. Hours are ≈ estimated guided study time (lessons, labs, quizzes), not video hours.'; };
+    line(0); D.labsCount().then(function (n) { if (n) line(n); });
+  }
+  C.fillCat = fillCat;
   function teaser(href, i, t, d) { return h('a', { href: href, class: 'card teaser' }, [h('span', { class: 'ts-i', 'aria-hidden': 'true' }, i), h('b', null, t), h('small', null, d)]); }
   function schoolPct(fac) { var cs = D.bySchool(fac), tot = 0, done = 0; cs.forEach(function (c) { tot += c.lessons || 0; done += store.courseDone(c.id, c.lessons || 0); }); return tot ? done / tot * 100 : 0; }
   C.schoolPct = schoolPct;
@@ -183,29 +200,63 @@
     var unl = store.unlockedLevel(fac);
     var w = h('div', { class: 'wrap school-page', style: { '--c': s.color } }); main.appendChild(w);
     w.appendChild(h('nav', { class: 'crumbs', 'aria-label': 'Breadcrumb' }, [h('a', { href: '#/' }, '🏛️ ' + VV2.t('home')), h('span', { 'aria-hidden': 'true' }, ' / '), h('span', null, s.name)]));
-    var ring = h('div', { class: 'sh-ring' });
-    w.appendChild(h('header', { class: 'school-hero' }, [h('span', { class: 'sh-i', 'aria-hidden': 'true' }, s.icon), h('div', null, [h('p', { class: 'eyebrow' }, s.en), h('h1', null, [s.name, ' ', h('span', { class: 'sh-hi', lang: 'hi' }, s.hi)]), h('p', { class: 'lead' }, s.tag + '. Every level is open — jump ahead with a short placement test.')]), ring]));
+    var ring = h('div', { class: 'sh-ring' }), meta = h('p', { class: 'sh-meta muted' });
+    w.appendChild(h('header', { class: 'school-hero' }, [h('span', { class: 'sh-i', 'aria-hidden': 'true' }, s.icon), h('div', null, [h('p', { class: 'eyebrow' }, s.en), h('h1', null, [s.name, ' ', h('span', { class: 'sh-hi', lang: 'hi' }, s.hi)]), h('p', { class: 'lead' }, s.tag + '. Every level is open — jump ahead with a short placement test.'), meta]), ring]));
     var ladder = h('div', { class: 'lv-ladder', role: 'list', 'aria-label': 'Levels in this school' }); w.appendChild(ladder);
-    w.appendChild(h('div', { class: 'row school-acts' }, [h('a', { class: 'btn primary', href: '#/ladder/' + fac }, '🪜 Challenge ladder'), h('a', { class: 'btn', href: '#/mock/' + fac }, '⏱️ Mock test'), h('a', { class: 'btn ghost', href: '#/placement/' + fac + '/' + Math.min(10, unl + 1) }, '🚀 Placement test for Level ' + Math.min(10, unl + 1))]));
-    var bandSel = h('div', { class: 'seg band-seg', role: 'group', 'aria-label': 'Filter by band' }); w.appendChild(bandSel);
+    var progLink = { university: 'UG', research: 'PG', school: 'school', tech: 'professional', trades: 'certificate', corporate: 'professional' }[fac];
+    w.appendChild(h('div', { class: 'row school-acts' }, [h('a', { class: 'btn primary', href: '#/ladder/' + fac }, '🪜 Challenge ladder'), h('a', { class: 'btn', href: '#/mock/' + fac }, '⏱️ Mock test'), h('a', { class: 'btn ghost', href: '#/placement/' + fac + '/' + Math.min(10, unl + 1) }, '🚀 Placement test for Level ' + Math.min(10, unl + 1)), progLink ? h('a', { class: 'btn ghost', href: '#/programmes?l=' + progLink }, '🎓 Programmes') : null, fac === 'wellbeing' ? h('a', { class: 'btn ghost', href: '#/unaskable' }, '💬 Ask anything') : null]));
+    var viewSel = h('div', { class: 'seg view-seg', role: 'group', 'aria-label': 'Arrange courses' });
+    var bandSel = h('div', { class: 'seg band-seg', role: 'group', 'aria-label': 'Filter by band' });
+    w.appendChild(h('div', { class: 'school-tools' }, [viewSel, bandSel]));
+    var jump = h('div', { class: 'sg-jump', role: 'navigation', 'aria-label': 'Jump to a programme or track' }); w.appendChild(jump);
     var list = h('div', { class: 'school-levels' }); w.appendChild(list);
     return withIndex(list, function () {
       var cs = D.filter(D.bySchool(fac), {}); ring.innerHTML = VV2.ring(schoolPct(fac), 84, s.color, 'Your progress in ' + s.name);
+      var st = D.stats(cs); meta.textContent = cs.length + ' courses · ' + st.lessons + ' lessons · ' + VV2.hrsLong(st.minutes);
       ladder.innerHTML = '';
       for (var lv = 1; lv <= 10; lv++) { var n = cs.filter(function (c) { return c.level === lv; }).length; ladder.appendChild(h('span', { role: 'listitem', class: 'lv-step' + (lv <= unl || store.isFree(fac) ? ' open' : '') + (n ? '' : ' none'), title: 'Level ' + lv + ': ' + n + ' courses' }, [h('b', null, lv), h('small', null, n ? n : '·')])); }
       var bands = []; cs.forEach(function (c) { if (bands.indexOf(c.band) < 0) bands.push(c.band); });
-      var cur = '';
-      function draw() {
-        list.innerHTML = '';
-        var shown = cs.filter(function (c) { return !cur || c.band === cur; });
-        if (!shown.length) { cards([], list, s.name + ' is still being furnished — courses are on their way. Meanwhile, the Labs are open!'); return; }
+      var cur = '', groupsAll = D.groupCourses(cs), view = groupsAll.length > 1 ? 'group' : 'level';
+      function drawLevels(shown) {
         var lvls = []; shown.forEach(function (c) { if (lvls.indexOf(c.level) < 0) lvls.push(c.level); });
-        lvls.forEach(function (lv) {
+        lvls.sort(function (a, b) { return a - b; }).forEach(function (lv) {
           var g = h('div', { class: 'grid cards' });
           list.appendChild(h('div', { class: 'lv-head' }, [C.levelPill(lv), h('h2', null, 'Level ' + lv), lv > unl && !store.isFree(fac) ? h('a', { class: 'btn small ghost', href: '#/placement/' + fac + '/' + lv }, '🔓 Unlock with placement test') : null]));
           list.appendChild(g); cards(shown.filter(function (c) { return c.level === lv; }), g);
         });
       }
+      function drawGroups(shown) {
+        var groups = D.groupCourses(shown), many = groups.length > 6;
+        groups.forEach(function (gr, gi) {
+          var id = 'sg-' + fac + '-' + gr.key.replace(/[^a-z0-9-]/gi, '');
+          var body = h('div', { class: 'sg-body' }), filled = false;
+          var fill = function () {
+            if (filled) return; filled = true;
+            var sub = gr.packs.length > 1 && gr.courses.length > 6, byLv = function (a, b) { return a.level - b.level; };
+            if (sub) gr.packs.forEach(function (p) {
+              body.appendChild(h('h3', { class: 'sg-sub' }, [p.title, h('small', null, ' · ' + p.courses.length + ' course' + (p.courses.length === 1 ? '' : 's') + ' · ' + VV2.hrs(D.stats(p.courses).minutes))]));
+              var g = h('div', { class: 'grid cards' }); body.appendChild(g); cards(p.courses.slice().sort(byLv), g);
+            });
+            else { var g2 = h('div', { class: 'grid cards' }); body.appendChild(g2); cards(gr.courses.slice().sort(byLv), g2); }
+          };
+          var open = !many || gi < 2;
+          var det = h('details', { class: 'sg-group', id: id, open: open ? true : null }, [h('summary', null, [h('span', { class: 'sg-h' }, gr.label), h('span', { class: 'pill' }, gr.courses.length + ' course' + (gr.courses.length === 1 ? '' : 's')), h('span', { class: 'pill', title: 'Estimated guided study time — not video hours' }, VV2.hrs(D.stats(gr.courses).minutes)), gr.packs.length > 1 ? h('span', { class: 'pill' }, gr.packs.length + ' parts') : null]), body]);
+          det.addEventListener('toggle', function () { if (det.open) fill(); });
+          if (open) fill();
+          list.appendChild(det);
+          jump.appendChild(h('button', { type: 'button', class: 'chip-b', onclick: function () { det.open = true; fill(); if (det.scrollIntoView) det.scrollIntoView({ behavior: VV2.reduced ? 'auto' : 'smooth', block: 'start' }); } }, gr.label + ' (' + gr.courses.length + ')'));
+        });
+        if (many) list.insertBefore(h('div', { class: 'row sg-all' }, [h('button', { type: 'button', class: 'btn small ghost', onclick: function () { VV2.$$('details.sg-group', list).forEach(function (d) { d.open = true; }); } }, '⤵ Expand all'), h('button', { type: 'button', class: 'btn small ghost', onclick: function () { VV2.$$('details.sg-group', list).forEach(function (d) { d.open = false; }); } }, '⤴ Collapse all')]), list.firstChild);
+      }
+      function draw() {
+        list.innerHTML = ''; jump.innerHTML = ''; jump.hidden = view !== 'group';
+        var shown = cs.filter(function (c) { return !cur || c.band === cur; });
+        if (!shown.length) { cards([], list, s.name + ' is still being furnished — courses are on their way. Meanwhile, the Labs are open!'); return; }
+        if (view === 'group') drawGroups(shown); else drawLevels(shown);
+      }
+      if (groupsAll.length > 1) [['group', groupsAll.length > 1 && fac === 'university' ? '🎓 By degree' : fac === 'school' ? '🏫 By class' : '🗂️ By track'], ['level', '🪜 By level']].forEach(function (v) {
+        viewSel.appendChild(h('button', { type: 'button', class: 'seg-b', 'data-v': v[0], 'aria-pressed': v[0] === view ? 'true' : 'false', onclick: function () { view = v[0]; VV2.$$('.seg-b', viewSel).forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-v') === view ? 'true' : 'false'); }); VV2.sfx('tap'); draw(); } }, v[1]));
+      }); else viewSel.hidden = true;
       [''].concat(bands).forEach(function (b) { bandSel.appendChild(h('button', { type: 'button', class: 'seg-b', 'aria-pressed': b === cur ? 'true' : 'false', onclick: function (e) { cur = b; VV2.$$('.seg-b', bandSel).forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); e.currentTarget.setAttribute('aria-pressed', 'true'); VV2.sfx('tap'); draw(); } }, b ? VV2.bandLabel(b) : 'All')); });
       if (bands.length < 2) bandSel.hidden = true;
       draw();

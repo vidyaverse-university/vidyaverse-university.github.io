@@ -208,4 +208,74 @@
     return out;
   };
   D.bySchool = function (fac) { return D.courses.filter(function (c) { return c.faculty === fac; }).sort(function (a, b) { return a.level - b.level || a.title.localeCompare(b.title); }); };
+
+  /* ---------------- v2.3: programmes, live catalogue stats, degree grouping ---------------- */
+  var progP = null, labsN = null;
+  D.progCat = {};
+  D.programmes = function () {
+    if (progP) return progP;
+    progP = VV2.fetchJSON('programmes/index.json').then(function (x) {
+      var list = Array.isArray(x) ? x : (x && x.programmes) || [];
+      D.progCat = (x && x.cat) || {};
+      return list.filter(function (p) { return p && p.id && Array.isArray(p.terms); });
+    }).catch(function (e) { progP = null; throw e; });
+    return progP;
+  };
+  /* the labs index is a small manifest {count, parts}: only that file is fetched here */
+  D.labsCount = function () {
+    if (labsN) return labsN;
+    labsN = VV2.fetchJSON('packs/labs-index.json?v=' + VV2.version).then(function (x) { return Array.isArray(x) ? x.length : (x && +x.count) || 0; }).catch(function () { labsN = null; return 0; });
+    return labsN;
+  };
+  D.stats = function (list) {
+    var m = 0, l = 0; (list || D.courses).forEach(function (c) { m += +c.minutes || 0; l += +c.lessons || 0; });
+    return { courses: (list || D.courses).length, lessons: l, minutes: m };
+  };
+  /* "2,819" -> "2,800+"; numbers under 1,000 stay exact */
+  VV2.approx = function (n) {
+    n = Math.floor(+n || 0); if (n < 1000) return String(n);
+    var p = Math.pow(10, String(n).length - 2); return (Math.floor(n / p) * p).toLocaleString('en-IN') + '+';
+  };
+  /* estimated guided-study time (lesson minutes), never video hours */
+  VV2.hrs = function (min) { var hh = (+min || 0) / 60; return '\u2248 ' + (hh < 1 ? Math.max(1, Math.round(+min || 0)) + ' min' : (hh < 10 ? Math.round(hh * 10) / 10 : Math.round(hh)).toLocaleString('en-IN') + ' h'); };
+  VV2.hrsLong = function (min) { return VV2.hrs(min) + ' of guided study'; };
+
+  /* degree / class / track of a pack, used to group long school pages (same prefix rules as tmp/vv2/build_programmes.py) */
+  var UG = [
+    [/^uni-common-/, 'B.Tech / BE \u00b7 First year (common)', 10], [/^(uni-cse-|university-cs$)/, 'B.Tech \u00b7 Computer Science (CSE)', 11], [/^uni-ece-/, 'B.Tech \u00b7 Electronics & Communication (ECE)', 12],
+    [/^uni-ee-/, 'B.Tech \u00b7 Electrical (EE)', 13], [/^uni-me-/, 'B.Tech \u00b7 Mechanical (ME)', 14], [/^uni-civil-/, 'B.Tech \u00b7 Civil', 15], [/^uni-chem-/, 'B.Tech \u00b7 Chemical', 16],
+    [/^uni-aero-/, 'B.Tech \u00b7 Aerospace', 17], [/^uni-biotech-/, 'B.Tech \u00b7 Biotechnology', 18], [/^uni-vlsi-/, 'B.Tech \u00b7 VLSI / Electronics', 19], [/^uni-env-/, 'B.Tech \u00b7 Environmental', 20],
+    [/^uni-agri-/, 'B.Sc \u00b7 Agriculture', 21], [/^uni-bsc-physics/, 'B.Sc \u00b7 Physics', 22], [/^uni-bsc-chem/, 'B.Sc \u00b7 Chemistry', 23], [/^uni-bsc-math/, 'B.Sc \u00b7 Mathematics', 24], [/^uni-bsc-life/, 'B.Sc \u00b7 Life Sciences', 25], [/^uni-bsc-/, 'B.Sc \u00b7 Other', 26],
+    [/^uni-bca-/, 'BCA', 30], [/^uni-bba-/, 'BBA', 31], [/^uni-bcom-/, 'B.Com', 32], [/^uni-ba-/, 'BA', 33], [/^uni-llb-/, 'LLB', 34],
+    [/^uni-mbbs-/, 'MBBS', 40], [/^uni-bds-/, 'BDS', 41], [/^uni-pharm-/, 'B.Pharm', 42], [/^uni-nursing-/, 'B.Sc Nursing', 43], [/^uni-health-/, 'Allied health (physiotherapy)', 44],
+    [/^uni-hotel-/, 'Hotel Management', 45], [/^uni-mba-/, 'MBA', 50], [/^uni-mca-/, 'MCA', 51], [/^uni-mcom-/, 'M.Com', 52], [/^uni-ma-/, 'MA', 53], [/^uni-msc-/, 'M.Sc', 54], [/^uni-mtech-/, 'M.Tech', 55],
+    [/^uni-fin-/, 'Finance, banking & markets', 60], [/^uni-hum-/, 'Humanities electives', 61], [/^uni-sci-/, 'Science electives', 62], [/^university-/, 'University foundations', 70], [/^research-/, 'Research methods', 71]];
+  var TRACK = { linux: 'Linux', win: 'Windows Server', vmw: 'VMware', net: 'Networking', soc: 'SOC & security operations', security: 'Security & DevOps', aws: 'AWS', azure: 'Azure', gcp: 'Google Cloud', oci: 'Oracle Cloud', oracle: 'Oracle',
+    cloud: 'Cloud basics', devops: 'DevOps & SRE', da: 'Data analytics', ds: 'Data science', ai: 'AI engineering', aieng: 'AI engineering', aitools: 'AI tools', dev: 'Web & software development', swe: 'Software engineering',
+    mobile: 'Mobile apps', semi: 'Semiconductors', quantum: 'Quantum computing', frontier: 'Frontier tech', build: 'How things are built', cad: 'CAD & BIM', dba: 'Databases', data: 'Data systems', ent: 'Enterprise apps (SAP, Salesforce\u2026)', ops: 'IT operations',
+    programming: 'Programming', codelab: 'Code lab', scenes: '3D showcase', itil: 'ITIL & ITSM', fde: 'Forward deployed engineering' };
+  function cap(s) { return String(s || '').replace(/-/g, ' ').replace(/\b\w/g, function (m) { return m.toUpperCase(); }); }
+  D.groupOf = function (packId) {
+    var id = String(packId || ''), m, i;
+    if ((m = /^school-c(\d+)-/.exec(id))) return { key: 'c' + m[1], label: 'Class ' + m[1], order: +m[1] };
+    if ((m = /^school-(primary|middle|secondary|senior)-/.exec(id))) return { key: m[1], label: { primary: 'Primary foundations (Class 1\u20135)', middle: 'Middle foundations (Class 6\u20138)', secondary: 'Secondary foundations (Class 9\u201310)', senior: 'Senior foundations (Class 11\u201312)' }[m[1]], order: 20 + ['primary', 'middle', 'secondary', 'senior'].indexOf(m[1]) };
+    if (/^school-skills-/.test(id)) return { key: 'skills', label: 'Skills & olympiads', order: 30 };
+    for (i = 0; i < UG.length; i++) if (UG[i][0].test(id)) return { key: 'u' + UG[i][2], label: UG[i][1], order: UG[i][2] };
+    var seg = id.split('-');
+    if (seg.length > 1 && TRACK[seg[1]]) return { key: seg[0] + '-' + (seg[1] === 'aieng' ? 'ai' : seg[1]), label: TRACK[seg[1]], order: 100 };
+    return { key: seg.slice(0, 2).join('-'), label: seg.length > 1 ? cap(seg[1]) : cap(seg[0]), order: 200 };
+  };
+  /* group a course list: [{key,label,order,courses,packs:[{id,title,courses}]}] */
+  D.groupCourses = function (list) {
+    var g = {}, out = [];
+    list.forEach(function (c) {
+      var k = D.groupOf(c.pack), e = g[k.key];
+      if (!e) { e = g[k.key] = { key: k.key, label: k.label, order: k.order, courses: [], packs: [], pk: {} }; out.push(e); }
+      e.courses.push(c);
+      var p = e.pk[c.pack]; if (!p) { var pe = D.packs.filter(function (x) { return x.id === c.pack; })[0]; p = e.pk[c.pack] = { id: c.pack, title: (pe && pe.title) || c.pack, courses: [] }; e.packs.push(p); }
+      p.courses.push(c);
+    });
+    out.forEach(function (e) { delete e.pk; });
+    return out.sort(function (a, b) { return a.order - b.order || a.label.localeCompare(b.label); });
+  };
 })();
