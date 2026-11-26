@@ -69,6 +69,7 @@
 
   var cur = null;
   S.render = function (main, langArg) {
+    if (!C.langOf) { main.innerHTML = '<div class="wrap"><p class="muted">Opening Code Studio…</p></div>'; return C.deps().then(function () { return S.render(main, langArg); }); }
     VV2.setTitle('Code Studio'); main.innerHTML = '';
     var w = h('div', { class: 'wrap studio' }); main.appendChild(w);
     var st0 = C.cstore ? C.cstore.get() : { snippets: [] };
