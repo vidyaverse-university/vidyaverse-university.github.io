@@ -62,6 +62,8 @@
     roadmaps: [['roadmaps'], function (a) { return VV2.Roadmaps.render(main, a[0]); }, ['ops']],
     programmes: [['programmes'], function (a, q) { return VV2.Programmes.render(main, a[0], q); }, ['ops']],
     unaskable: [['unaskable'], function () { return VV2.Unaskable.render(main); }],
+    library: [['library'], function (a, q) { return VV2.Library.render(main, q); }, ['library']],
+    read: [['library'], function (a) { return VV2.Library.read(main, a[0]); }, ['library']],
     more: [[], function () { history.replaceState(null, '', '#/'); setTimeout(function () { VV2.moreMenu(); }, 0); return VV2.Campus.home(main); }],
     games: [['hub'], function () { return VV2.Hub.list(main, 'games'); }],
     lab: [['hub'], function (a) { return VV2.Hub.route(main, 'labs', a[0]); }],
@@ -76,7 +78,7 @@
     notfound: [['pages'], function () { return VV2.Pages.notFound(main); }]
   };
   var GATED = { settings: 1, parents: 1, profiles: 1, about: 1, welcome: 1, unaskable: 1 };
-  var NAV = { home: 'home', school: 'home', course: 'home', search: 'home', lesson: 'home', exam: 'exams', exams: 'exams', ladder: 'exams', mock: 'exams', placement: 'exams', labs: 'labs', lab: 'labs', handson: 'labs', roadmaps: 'roadmaps', programmes: 'programmes', unaskable: 'unaskable', code: 'code', games: 'games', game: 'games', progress: 'progress', parents: 'parents', settings: 'progress', profiles: 'progress', about: 'about' };
+  var NAV = { home: 'home', school: 'home', course: 'home', search: 'home', lesson: 'home', exam: 'exams', exams: 'exams', ladder: 'exams', mock: 'exams', placement: 'exams', labs: 'labs', lab: 'labs', handson: 'labs', roadmaps: 'roadmaps', programmes: 'programmes', unaskable: 'unaskable', library: 'library', read: 'library', code: 'code', games: 'games', game: 'games', progress: 'progress', parents: 'parents', settings: 'progress', profiles: 'progress', about: 'about' };
 
   function parse() {
     var raw = (location.hash || '').replace(/^#\/?/, ''), qi = raw.indexOf('?'), q = {};
@@ -150,7 +152,7 @@
   VV2.meMenu = function () {
     var p = store.cur(); if (!p) return;
     var L = store.level(p.xp);
-    var items = [['#/progress', '🏅', 'progress', 'XP, badges, streaks'], ['#/parents', '👪', 'parents', 'Per-profile progress & safety'], ['#/settings', '⚙️', 'settings', 'Sound, text, language, data'], ['#/profiles', '🧑‍🤝‍🧑', 'profiles', 'Switch or add a learner'], ['#/programmes', '🎓', 'programmes', 'Degrees, classes & certificates'], ['#/unaskable', '💬', 'askAnything', 'Too awkward to ask? Privately'], ['#/roadmaps', '🗺️', 'roadmaps', 'Zero to job-ready paths'], ['#/handson', '🧪', 'handson', 'Every hands-on lab'], ['#/about', '🪷', 'about', 'What VidyaVerse is']];
+    var items = [['#/progress', '🏅', 'progress', 'XP, badges, streaks'], ['#/parents', '👪', 'parents', 'Per-profile progress & safety'], ['#/settings', '⚙️', 'settings', 'Sound, text, language, data'], ['#/profiles', '🧑‍🤝‍🧑', 'profiles', 'Switch or add a learner'], ['#/programmes', '🎓', 'programmes', 'Degrees, classes & certificates'], ['#/library', '📚', 'library', 'Long reads & your bookmarks'], ['#/unaskable', '💬', 'askAnything', 'Too awkward to ask? Privately'], ['#/roadmaps', '🗺️', 'roadmaps', 'Zero to job-ready paths'], ['#/handson', '🧪', 'handson', 'Every hands-on lab'], ['#/about', '🪷', 'about', 'What VidyaVerse is']];
     var body = h('div', { class: 'me-menu' }, [
       h('div', { class: 'me-top' }, [h('span', { html: VV2.avatarSVG(p.avatar, 64) }), h('div', null, [h('b', null, p.name), h('small', null, 'Level ' + L.lvl + ' · ' + L.title + ' · ' + p.xp + ' XP'), h('div', { class: 'xpbar', 'aria-hidden': 'true' }, h('i', { style: { width: L.pct + '%' } }))])]),
       h('div', { class: 'me-grid' }, items.map(function (it) { return h('a', { href: it[0], class: 'me-item', onclick: function () { m.close(); } }, [h('span', { class: 'mi-i', 'aria-hidden': 'true' }, it[1]), h('b', { 'data-i18n': it[2] }, VV2.t(it[2])), h('small', null, it[3])]); })),
@@ -161,7 +163,7 @@
   };
   /* "More" sheet: every destination, so nothing is lost when the top nav or the tab bar is narrow */
   VV2.moreMenu = function () {
-    var items = [['#/', '🏛️', 'home', 'Every school, the campus map'], ['#/programmes', '🎓', 'programmes', 'Degrees, classes & certificates'], ['#/unaskable', '💬', 'askAnything', 'Too awkward to ask? Privately'],
+    var items = [['#/', '🏛️', 'home', 'Every school, the campus map'], ['#/library', '📚', 'library', 'Chapter reads, stories, history & more'], ['#/programmes', '🎓', 'programmes', 'Degrees, classes & certificates'], ['#/unaskable', '💬', 'askAnything', 'Too awkward to ask? Privately'],
       ['#/roadmaps', '🗺️', 'roadmaps', 'Zero to job-ready paths'], ['#/handson', '🧪', 'labs', 'Every hands-on lab'], ['#/exams', '📝', 'exams', 'Exams, ladders, mock tests'], ['#/code', '💻', 'Code', 'Code Studio, 12 languages'],
       ['#/games', '🎮', 'games', 'Homework in disguise'], ['#/search', '🔍', 'searchShort', 'Every course and lesson'], ['#/progress', '🏅', 'progress', 'XP, badges, streaks'], ['#/parents', '👪', 'parents', 'Progress & safety'],
       ['#/settings', '⚙️', 'settings', 'Sound, text, language, data'], ['#/about', '🪷', 'about', 'What VidyaVerse is']];

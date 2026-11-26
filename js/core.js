@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   var VV2 = window.VV2 = window.VV2 || {};
-  VV2.version = '2.3.1';
+  VV2.version = '2.4.0';
   VV2._id = 0;
 
   /* ---------- environment ---------- */
@@ -99,6 +99,8 @@
   /* v2.3 navigation keys */
   DICT.en.programmes = 'Programmes'; DICT.en.askAnything = 'Ask anything'; DICT.en.more = 'More';
   DICT.hi.programmes = '\u0915\u093e\u0930\u094d\u092f\u0915\u094d\u0930\u092e'; DICT.hi.askAnything = '\u0915\u0941\u091b \u092d\u0940 \u092a\u0942\u091b\u0947\u0902'; DICT.hi.more = '\u0914\u0930';
+  /* v2.4 */
+  DICT.en.library = 'Library'; DICT.hi.library = '\u092a\u0941\u0938\u094d\u0924\u0915\u093e\u0932\u092f';
   VV2.lang = 'en';
   VV2.t = function (k) { var d = DICT[VV2.lang] || DICT.en; return d[k] || DICT.en[k] || k; };
   VV2.applyI18n = function (root) {

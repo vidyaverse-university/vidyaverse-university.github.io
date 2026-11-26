@@ -149,7 +149,14 @@
     return h('section', { class: 'home-tiles', 'aria-label': 'Start here' }, [
       tile('#/programmes', '🎓', 'Programmes', 'Degrees, Class 1–12 and certificates — every course laid out semester by semester.', 'ht-prog'),
       tile('#/unaskable', '💬', 'Too awkward to ask? Ask here — privately.', 'Bodies, minds, relationships, substances, the law and medicines. Calm, factual, nothing leaves your device.', 'ht-ask'),
-      tile('#/roadmaps', '🗺️', 'Career roadmaps', 'Zero to job-ready: cloud, data, AI, doctor, lawyer, electrician and more — ending in mock interviews.', 'ht-road')]);
+      tile('#/roadmaps', '🗺️', 'Career roadmaps', 'Zero to job-ready: cloud, data, AI, doctor, lawyer, electrician and more — ending in mock interviews.', 'ht-road'),
+      libTile()]);
+  }
+  /* v2.4: the Library tile shows your bookmark when you are part-way through a read */
+  function libTile() {
+    var lr = VV2.Library && VV2.Library.lastRead ? VV2.Library.lastRead() : null;
+    var sub = lr ? '🔖 Continue: ' + (lr.r.t || 'your book') + ' · ' + Math.round(lr.r.pct || 0) + '% read' : 'Book-length reads: every NCERT chapter in full, long stories, Indian history, engineering, work life and guides for seniors.';
+    return h('a', { href: '#/library', class: 'card home-tile ht-lib', 'data-say': 'The Library' }, [h('span', { class: 'ht-i', 'aria-hidden': 'true' }, '📚'), h('span', { class: 'ht-t' }, [h('b', null, 'The Library'), h('small', null, sub)]), h('span', { class: 'ht-go', 'aria-hidden': 'true' }, '→')]);
   }
   function fillCat() {
     var el = document.getElementById('heroCat'); if (!el || !D.courses.length) return;
@@ -309,10 +316,17 @@
       var firstOpen = 0; for (var i = 0; i < cnt; i++) { if (!store.isDone(c.lessons[i].id)) { firstOpen = i; break; } firstOpen = i; }
       var startBtn = h('button', { type: 'button', class: 'btn primary big' }, [h('span', { class: 'shine', 'aria-hidden': 'true' }), done ? (done >= cnt ? '↻ Review lesson 1' : '▶ Continue: lesson ' + (firstOpen + 1)) : '▶ Start the course']);
       startBtn.addEventListener('click', function () { VV2.go('lesson/' + encodeURIComponent(c.lessons[done >= cnt ? 0 : firstOpen].id)); });
+      /* v2.4: "Read the full chapter" when the Library has a long read for this course */
+      var rdSlot = h('span', { class: 'rd-slot row' });
+      if (D.reads) D.reads().then(function () {
+        var e = D.readFor(c.id); if (!e || !rdSlot.isConnected) return;
+        var rp = VV2.Library && VV2.Library.progress ? VV2.Library.progress(e.id) : null;
+        rdSlot.appendChild(h('a', { class: 'btn rd-cta', href: '#/read/' + encodeURIComponent(e.id), title: (e.minutes ? '≈ ' + e.minutes + ' min · ' : '') + 'A book-length companion to this chapter' }, rp && rp.done ? '📖 Read again: the full chapter' : rp && rp.pct > 1 ? '📖 Continue the chapter read (' + Math.round(rp.pct) + '%)' : '📖 Read the full chapter'));
+      });
       w.appendChild(h('header', { class: 'course-hero' }, [h('span', { class: 'ch-i', 'aria-hidden': 'true' }, c.icon || '📘'), h('div', { class: 'ch-txt' }, [h('p', { class: 'eyebrow' }, (s.icon || '') + ' ' + (s.name || '') + ' · ' + VV2.bandLabel(c.band) + ' · ages ' + (c.ages || [0, 99]).join('–')),
         h('h1', null, c.title), h('p', { class: 'lead' }, c.summary || ''),
         h('div', { class: 'cc-meta' }, [C.levelPill(c.level), h('span', { class: 'pill' }, '⏱ ' + VV2.fmtMin(c.minutes)), h('span', { class: 'pill' }, cnt + ' ' + VV2.t('lessons'))].concat((c.curricula || []).map(function (t) { return h('span', { class: 'pill tag' }, '🏷️ ' + t); }))),
-        h('div', { class: 'row' }, [startBtn, c.exam ? h('a', { class: 'btn', href: '#/exam/' + encodeURIComponent(c.id) }, '📝 Course exam') : null])]), h('div', { class: 'ch-ring', html: VV2.ring(pct, 96, c.color || s.color, pct + '% of this course done') })]));
+        h('div', { class: 'row' }, [startBtn, rdSlot, c.exam ? h('a', { class: 'btn', href: '#/exam/' + encodeURIComponent(c.id) }, '📝 Course exam') : null])]), h('div', { class: 'ch-ring', html: VV2.ring(pct, 96, c.color || s.color, pct + '% of this course done') })]));
       if (c.sensitive) w.appendChild(h('aside', { class: 'card sens-note', role: 'note' }, [h('span', { class: 'sn-i', 'aria-hidden': 'true' }, '🕊️'), h('div', null, [h('b', null, 'A calm, sensitive topic'), h('p', null, c.guardianNote || 'This course covers a personal topic in a respectful, factual, non-explicit way.'), h('p', { class: 'muted' }, 'You can leave at any time: press Esc or the Quick exit button. In an emergency in India call 112; Childline 1098; Tele-MANAS 14416.')])]));
       var unl = store.unlockedLevel(c.faculty);
       if (c.level > unl && !store.isFree(c.faculty) && !done) w.appendChild(h('aside', { class: 'card lv-note' }, [h('span', { 'aria-hidden': 'true' }, '🚀'), h('div', null, [h('b', null, 'Level ' + c.level + ' — above your unlocked Level ' + unl + ' in ' + s.name), h('p', { class: 'muted' }, 'Take a 10-question placement test to unlock it, or explore freely.')]), h('a', { class: 'btn small primary', href: '#/placement/' + c.faculty + '/' + c.level + '?course=' + encodeURIComponent(c.id) }, VV2.t('placement'))]));

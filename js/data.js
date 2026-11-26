@@ -240,6 +240,37 @@
   VV2.hrs = function (min) { var hh = (+min || 0) / 60; return '\u2248 ' + (hh < 1 ? Math.max(1, Math.round(+min || 0)) + ' min' : (hh < 10 ? Math.round(hh * 10) / 10 : Math.round(hh)).toLocaleString('en-IN') + ' h'); };
   VV2.hrsLong = function (min) { return VV2.hrs(min) + ' of guided study'; };
 
+  /* ---------------- v2.4: Library long reads (reads/index.json + reads/<id>.json, built by tmp/vv2/build_reads.py) ---------------- */
+  var readsP = null, readCache = {};
+  D.readsByCourse = {}; D.readsList = [];
+  D.reads = function () {
+    if (readsP) return readsP;
+    readsP = VV2.fetchJSON('reads/index.json?v=' + VV2.version).then(function (a) {
+      a = (Array.isArray(a) ? a : (a && a.reads) || []).filter(function (x) { return x && typeof x.id === 'string' && x.title; });
+      var bc = {};
+      /* a course links to the first part of its read ("<id>" before "<id>-2") */
+      a.forEach(function (x) { if (x.course && (!bc[x.course] || (/-\d+$/.test(bc[x.course].id) && !/-\d+$/.test(x.id)))) bc[x.course] = x; });
+      D.readsByCourse = bc; D.readsList = a; return a;
+    }).catch(function () { readsP = null; D.readsByCourse = {}; D.readsList = []; return []; });
+    return readsP;
+  };
+  D.readFor = function (courseId) { return D.readsByCourse[courseId] || null; };
+  /* reads are shipped in bundles (reads/rb-NN.json = {id: read, ...}); one fetch per bundle */
+  var rbCache = {};
+  function readBundle(f) { if (!rbCache[f]) rbCache[f] = VV2.fetchJSON('reads/' + f + '?v=' + VV2.version).catch(function (e) { delete rbCache[f]; throw e; }); return rbCache[f]; }
+  D.read = function (id, entry) {
+    if (!/^rd-[a-z0-9][a-z0-9._-]*$/i.test(id || '')) return Promise.reject(new Error('Unknown read'));
+    var f = entry && /^[a-z0-9][a-z0-9._-]*\.json$/i.test(entry.file || '') ? entry.file : id + '.json';
+    if (!readCache[id]) {
+      var src = /^rb-/.test(f) ? readBundle(f).then(function (b) { return b && b[id]; }) : VV2.fetchJSON('reads/' + f);
+      readCache[id] = src.then(function (d) {
+        if (!d || !Array.isArray(d.sections)) throw new Error('This book looks damaged');
+        return d;
+      }).catch(function (e) { delete readCache[id]; throw e; });
+    }
+    return readCache[id];
+  };
+
   /* degree / class / track of a pack, used to group long school pages (same prefix rules as tmp/vv2/build_programmes.py) */
   var UG = [
     [/^uni-common-/, 'B.Tech / BE \u00b7 First year (common)', 10], [/^(uni-cse-|university-cs$)/, 'B.Tech \u00b7 Computer Science (CSE)', 11], [/^uni-ece-/, 'B.Tech \u00b7 Electronics & Communication (ECE)', 12],
