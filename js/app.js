@@ -50,7 +50,7 @@
     school: [[], function (a) { return VV2.Campus.school(main, a[0]); }],
     course: [[], function (a) { return VV2.Campus.course(main, a[0]); }],
     search: [[], function (a, q) { return VV2.Campus.search(main, q.q || ''); }],
-    lesson: [['player', 'widgets-a', 'widgets-b', 'widgets-code'], function (a) { return VV2.Player.render(main, a[0]); }],
+    lesson: [['player', 'widgets-a', 'widgets-b', 'widgets-code', 'widgets-ops', 'widgets-3d', 'widgets-interview'], function (a) { return VV2.Player.render(main, a[0]); }, ['ops', 'scene3d', 'interview']],
     code: [['widgets-code', 'codestudio'], function (a) { return VV2.Studio.render(main, a[0]); }],
     exam: [['exam'], function (a, q) { return VV2.Exam.course(main, a[0], q); }],
     exams: [['exam'], function () { return VV2.Exam.hall(main); }],
@@ -58,6 +58,8 @@
     mock: [['exam'], function (a) { return VV2.Exam.mock(main, a[0]); }],
     placement: [['exam'], function (a, q) { return VV2.Exam.placement(main, a[0], +a[1] || 0, q.course || ''); }],
     labs: [['hub'], function () { return VV2.Hub.list(main, 'labs'); }],
+    handson: [['labhub'], function (a, q) { return VV2.LabHub.render(main, q); }, ['ops']],
+    roadmaps: [['roadmaps'], function (a) { return VV2.Roadmaps.render(main, a[0]); }, ['ops']],
     games: [['hub'], function () { return VV2.Hub.list(main, 'games'); }],
     lab: [['hub'], function (a) { return VV2.Hub.route(main, 'labs', a[0]); }],
     game: [['hub'], function (a) { return VV2.Hub.route(main, 'games', a[0]); }],
@@ -71,7 +73,7 @@
     notfound: [['pages'], function () { return VV2.Pages.notFound(main); }]
   };
   var GATED = { settings: 1, parents: 1, profiles: 1, about: 1, welcome: 1 };
-  var NAV = { home: 'home', school: 'home', course: 'home', search: 'home', lesson: 'home', exam: 'exams', exams: 'exams', ladder: 'exams', mock: 'exams', placement: 'exams', labs: 'labs', lab: 'labs', code: 'code', games: 'games', game: 'games', progress: 'progress', parents: 'parents', settings: 'progress', profiles: 'progress', about: 'about' };
+  var NAV = { home: 'home', school: 'home', course: 'home', search: 'home', lesson: 'home', exam: 'exams', exams: 'exams', ladder: 'exams', mock: 'exams', placement: 'exams', labs: 'labs', lab: 'labs', handson: 'labs', roadmaps: 'roadmaps', code: 'code', games: 'games', game: 'games', progress: 'progress', parents: 'parents', settings: 'progress', profiles: 'progress', about: 'about' };
 
   function parse() {
     var raw = (location.hash || '').replace(/^#\/?/, ''), qi = raw.indexOf('?'), q = {};
@@ -114,7 +116,7 @@
     var run = function () {
       main.classList.remove('enter'); void main.offsetWidth; main.classList.add('enter');
       window.scrollTo(0, 0);
-      return VV2.need(def[0]).then(function () { return def[1](r.args, r.q); }).then(function () { VV2.applyI18n(main); }).catch(function (e) {
+      return Promise.all([VV2.need(def[0]), VV2.needCss ? VV2.needCss(def[2] || []) : null]).then(function () { return def[1](r.args, r.q); }).then(function () { VV2.applyI18n(main); }).catch(function (e) {
         VV2.errorView(main, 'Something tripped on the stairs', (e && e.message ? e.message + '. ' : '') + 'Please check your connection and try again.', render);
       });
     };
@@ -145,7 +147,7 @@
   VV2.meMenu = function () {
     var p = store.cur(); if (!p) return;
     var L = store.level(p.xp);
-    var items = [['#/progress', '🏅', 'progress', 'XP, badges, streaks'], ['#/parents', '👪', 'parents', 'Per-profile progress & safety'], ['#/settings', '⚙️', 'settings', 'Sound, text, language, data'], ['#/profiles', '🧑‍🤝‍🧑', 'profiles', 'Switch or add a learner'], ['#/about', '🪷', 'about', 'What VidyaVerse is']];
+    var items = [['#/progress', '🏅', 'progress', 'XP, badges, streaks'], ['#/parents', '👪', 'parents', 'Per-profile progress & safety'], ['#/settings', '⚙️', 'settings', 'Sound, text, language, data'], ['#/profiles', '🧑‍🤝‍🧑', 'profiles', 'Switch or add a learner'], ['#/roadmaps', '🗺️', 'roadmaps', 'Zero to job-ready paths'], ['#/handson', '🧪', 'handson', 'Every hands-on lab'], ['#/about', '🪷', 'about', 'What VidyaVerse is']];
     var body = h('div', { class: 'me-menu' }, [
       h('div', { class: 'me-top' }, [h('span', { html: VV2.avatarSVG(p.avatar, 64) }), h('div', null, [h('b', null, p.name), h('small', null, 'Level ' + L.lvl + ' · ' + L.title + ' · ' + p.xp + ' XP'), h('div', { class: 'xpbar', 'aria-hidden': 'true' }, h('i', { style: { width: L.pct + '%' } }))])]),
       h('div', { class: 'me-grid' }, items.map(function (it) { return h('a', { href: it[0], class: 'me-item', onclick: function () { m.close(); } }, [h('span', { class: 'mi-i', 'aria-hidden': 'true' }, it[1]), h('b', { 'data-i18n': it[2] }, VV2.t(it[2])), h('small', null, it[3])]); })),

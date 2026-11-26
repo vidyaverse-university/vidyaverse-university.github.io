@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   var VV2 = window.VV2 = window.VV2 || {};
-  VV2.version = '2.1.2';
+  VV2.version = '2.2.0';
   VV2._id = 0;
 
   /* ---------- environment ---------- */
@@ -93,8 +93,8 @@
 
   /* ---------- i18n (navigation labels) ---------- */
   var DICT = {
-    en: { home: 'Campus', schools: 'Schools', exams: 'Exam hall', labs: 'Labs', games: 'Games', progress: 'Rewards', parents: 'Grown-ups', settings: 'Settings', about: 'About', search: 'Search courses & lessons', searchShort: 'Search', profiles: 'Profiles', continue: 'Continue learning', start: 'Start', next: 'Next', back: 'Back', quickExit: 'Quick exit', sound: 'Sound', mode: 'Mode', lessons: 'lessons', minutes: 'min', level: 'Level', recommended: 'Recommended for you', allSchools: 'All 15 schools', streak: 'day streak', dailyGoal: 'Daily goal', openLab: 'Open lab', playGame: 'Play game', exam: 'Exam', placement: 'Placement test', explore: 'Explore freely anyway', guest: 'Guest', menu: 'Menu', close: 'Close', listen: 'Listen' },
-    hi: { home: 'परिसर', schools: 'विद्यालय', exams: 'परीक्षा भवन', labs: 'प्रयोगशाला', games: 'खेल', progress: 'पुरस्कार', parents: 'अभिभावक', settings: 'सेटिंग्स', about: 'परिचय', search: 'पाठ्यक्रम और पाठ खोजें', searchShort: 'खोजें', profiles: 'प्रोफ़ाइल', continue: 'पढ़ाई जारी रखें', start: 'शुरू करें', next: 'आगे', back: 'पीछे', quickExit: 'तुरंत बाहर', sound: 'ध्वनि', mode: 'रूप', lessons: 'पाठ', minutes: 'मिनट', level: 'स्तर', recommended: 'आपके लिए सुझाव', allSchools: 'सभी 15 विद्यालय', streak: 'दिन लगातार', dailyGoal: 'आज का लक्ष्य', openLab: 'प्रयोगशाला खोलें', playGame: 'खेल खेलें', exam: 'परीक्षा', placement: 'स्तर परीक्षा', explore: 'फिर भी देखें', guest: 'अतिथि', menu: 'मेनू', close: 'बंद करें', listen: 'सुनें' }
+    en: { home: 'Campus', schools: 'Schools', exams: 'Exam hall', labs: 'Labs', games: 'Games', progress: 'Rewards', parents: 'Grown-ups', settings: 'Settings', about: 'About', search: 'Search courses & lessons', roadmaps: 'Roadmaps', handson: 'Lab Hub', searchShort: 'Search', profiles: 'Profiles', continue: 'Continue learning', start: 'Start', next: 'Next', back: 'Back', quickExit: 'Quick exit', sound: 'Sound', mode: 'Mode', lessons: 'lessons', minutes: 'min', level: 'Level', recommended: 'Recommended for you', allSchools: 'All 15 schools', streak: 'day streak', dailyGoal: 'Daily goal', openLab: 'Open lab', playGame: 'Play game', exam: 'Exam', placement: 'Placement test', explore: 'Explore freely anyway', guest: 'Guest', menu: 'Menu', close: 'Close', listen: 'Listen' },
+    hi: { home: 'परिसर', schools: 'विद्यालय', exams: 'परीक्षा भवन', labs: 'प्रयोगशाला', games: 'खेल', progress: 'पुरस्कार', parents: 'अभिभावक', settings: 'सेटिंग्स', about: 'परिचय', search: 'पाठ्यक्रम और पाठ खोजें', roadmaps: 'करियर मार्ग', handson: 'प्रयोग केंद्र', searchShort: 'खोजें', profiles: 'प्रोफ़ाइल', continue: 'पढ़ाई जारी रखें', start: 'शुरू करें', next: 'आगे', back: 'पीछे', quickExit: 'तुरंत बाहर', sound: 'ध्वनि', mode: 'रूप', lessons: 'पाठ', minutes: 'मिनट', level: 'स्तर', recommended: 'आपके लिए सुझाव', allSchools: 'सभी 15 विद्यालय', streak: 'दिन लगातार', dailyGoal: 'आज का लक्ष्य', openLab: 'प्रयोगशाला खोलें', playGame: 'खेल खेलें', exam: 'परीक्षा', placement: 'स्तर परीक्षा', explore: 'फिर भी देखें', guest: 'अतिथि', menu: 'मेनू', close: 'बंद करें', listen: 'सुनें' }
   };
   VV2.lang = 'en';
   VV2.t = function (k) { var d = DICT[VV2.lang] || DICT.en; return d[k] || DICT.en[k] || k; };
@@ -345,6 +345,22 @@
   VV2.need = function (names) {
     if (!Array.isArray(names)) names = [names];
     return Promise.all(names.map(function (n) { return VV2.load('js/' + n + '.js?v=' + VV2.version); }));
+  };
+  /* lazy stylesheets: VV2.needCss('ops') loads css/ops.css once; always resolves (a missing style never blocks a page) */
+  var cssLoaded = {};
+  VV2.needCss = function (names) {
+    if (!Array.isArray(names)) names = names ? [names] : [];
+    return Promise.all(names.map(function (n) {
+      if (cssLoaded[n]) return cssLoaded[n];
+      cssLoaded[n] = new Promise(function (res) {
+        var href = 'css/' + n + '.css?v=' + VV2.version;
+        if (document.querySelector && document.querySelector('link[data-vvcss="' + n + '"]')) return res(true);
+        var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = href; l.setAttribute('data-vvcss', n);
+        l.onload = function () { res(true); }; l.onerror = function () { delete cssLoaded[n]; res(false); };
+        document.head.appendChild(l); setTimeout(function () { res(true); }, 2500);
+      });
+      return cssLoaded[n];
+    }));
   };
   VV2.fetchJSON = function (url) {
     return fetch(url, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status + ' ' + url); return r.json(); });

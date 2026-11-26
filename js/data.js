@@ -133,6 +133,31 @@
     return listCache[kind];
   };
 
+  /* ---------------- hands-on labs index (only fetched by the Lab Hub) & career roadmaps ---------------- */
+  /* packs/labs-index.json is either an array of {l,c,p,f,t,k,s,b} or a manifest {parts:["labs-index-1.json",…]} */
+  var labsP = null, roadP = null;
+  D.labsIndex = function () {
+    if (labsP) return labsP;
+    labsP = VV2.fetchJSON('packs/labs-index.json?v=' + VV2.version).then(function (x) {
+      if (Array.isArray(x)) return x;
+      if (x && Array.isArray(x.parts)) {
+        return Promise.all(x.parts.filter(function (f) { return /^labs-index-\d+\.json$/.test(f); }).map(function (f) { return VV2.fetchJSON('packs/' + f + '?v=' + VV2.version); }))
+          .then(function (ps) { return [].concat.apply([], ps.map(function (p) { return Array.isArray(p) ? p : []; })); });
+      }
+      throw new Error('The lab index looks damaged');
+    }).then(function (a) { return a.filter(function (x) { return x && x.l && x.t; }); })
+      .catch(function (e) { labsP = null; throw e; });
+    return labsP;
+  };
+  D.roadmaps = function () {
+    if (roadP) return roadP;
+    roadP = VV2.fetchJSON('roadmaps/index.json').then(function (a) { if (!Array.isArray(a) || !a.length) throw 0; return a; })
+      .catch(function () { return VV2.fetchJSON('roadmaps/index.sample.json'); })
+      .then(function (a) { return (Array.isArray(a) ? a : []).filter(function (r) { return r && r.id && Array.isArray(r.stages); }); })
+      .catch(function (e) { roadP = null; throw e; });
+    return roadP;
+  };
+
   /* ---------------- filters, search, recommendations ---------------- */
   D.filter = function (list, f) {
     f = f || {}; var p = VV2.store.cur();
