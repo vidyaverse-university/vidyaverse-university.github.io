@@ -96,7 +96,8 @@
   D.pack = function (id) {
     if (!/^[a-z0-9_][a-z0-9_-]*$/i.test(id || '')) return Promise.reject(new Error('Unknown pack'));
     if (packCache[id]) return packCache[id];
-    var bk = (function (x) { var p = x.split('-'); return p[0] === 'school' ? p[0] + '-' + p[1] : p[0]; })(id);
+    var pe = (D.packs || []).filter(function (x) { return x.id === id; })[0];
+    var bk = (pe && pe.bundle) || (function (x) { var p = x.split('-'); return p[0] === 'school' ? p[0] + '-' + p[1] : p[0]; })(id);
     if (!bundleCache[bk]) bundleCache[bk] = VV2.fetchJSON('bundles/b-' + bk + '.json').catch(function () { delete bundleCache[bk]; return null; });
     packCache[id] = bundleCache[bk].then(function (b) { return (b && b[id]) ? b[id] : VV2.fetchJSON('packs/' + id + '.json'); }).then(function (p) {
       if (!p || !Array.isArray(p.courses)) throw new Error('Pack ' + id + ' looks damaged');
