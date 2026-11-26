@@ -50,7 +50,7 @@
     school: [[], function (a) { return VV2.Campus.school(main, a[0]); }],
     course: [[], function (a) { return VV2.Campus.course(main, a[0]); }],
     search: [[], function (a, q) { return VV2.Campus.search(main, q.q || ''); }],
-    lesson: [['player', 'widgets-a', 'widgets-b', 'widgets-code', 'widgets-ops'], function (a) { return VV2.Player.render(main, a[0]); }, ['ops']],
+    lesson: [['player', 'widgets-a', 'widgets-b', 'widgets-code', 'widgets-ops', 'widgets-3d', 'widgets-interview'], function (a) { return VV2.Player.render(main, a[0]); }, ['ops', 'scene3d', 'interview']],
     code: [['widgets-code', 'codestudio'], function (a) { return VV2.Studio.render(main, a[0]); }],
     exam: [['exam'], function (a, q) { return VV2.Exam.course(main, a[0], q); }],
     exams: [['exam'], function () { return VV2.Exam.hall(main); }],
