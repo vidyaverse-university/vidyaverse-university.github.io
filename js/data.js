@@ -80,7 +80,7 @@
   }
   D.index = function () {
     if (idxP) return idxP;
-    idxP = VV2.fetchJSON('packs/index.json').then(function (a) { if (!Array.isArray(a) || !a.length) throw new Error('empty'); return a; })
+    idxP = Promise.all([VV2.fetchJSON('packs/index-1.json'), VV2.fetchJSON('packs/index-2.json')]).then(function (p) { return p[0].concat(p[1]); }).catch(function () { return VV2.fetchJSON('packs/index.json'); }).then(function (a) { if (!Array.isArray(a) || !a.length) throw new Error('empty'); return a; })
       .catch(function () { D.sample = true; return VV2.fetchJSON('packs/index.sample.json'); })
       .then(function (a) { if (!Array.isArray(a)) throw new Error('Catalogue is not a list'); ingest(a); return D; })
       .catch(function (e) { D.error = e; idxP = null; ingest([]); D.ready = false; throw e; });
