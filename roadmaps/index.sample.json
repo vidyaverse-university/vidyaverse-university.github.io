@@ -1,0 +1,23 @@
+[
+ {"id":"cloud-devops-engineer","title":"Cloud & DevOps Engineer","icon":"☁️","color":"#0aa2c0",
+  "summary":"From your first line of code to shipping containers through a CI/CD pipeline on a public cloud.",
+  "audience":"Graduates, career switchers, IT support staff","duration":"6–8 months, ~8 h/week",
+  "outcomes":["Write and debug Python scripts","Use Git and work in a team repo","Explain core cloud services on Azure and AWS","Build a CI/CD pipeline and run containers","Reason about scaling, caching and reliability"],
+  "stages":[
+   {"title":"Programming foundations","weeks":6,"courses":["tech-programming.think-like-a-coder","tech-programming.python-from-zero"],"labs":["tech-codelab-samples.run-real-code.l1"],"milestone":"Write a script that reads a log file and counts errors."},
+   {"title":"Engineering habits: Git, testing, debugging","weeks":4,"courses":["tech-programming.oop-debugging-git"],"labs":[],"milestone":"Open a pull request with a tested bug fix."},
+   {"title":"Cloud fundamentals","weeks":6,"courses":["tech-cloud-azure.az-900-fundamentals","tech-cloud-aws-gcp.aws-cloud-practitioner","corp-cloud.ch1-concepts","corp-cloud.ch4-networking"],"labs":[],"milestone":"Sketch a 3-tier web app on Azure and on AWS and name every service."},
+   {"title":"DevOps & delivery","weeks":6,"courses":["tech-security-devops.devops-essentials","corp-cloud.ch5-security"],"labs":[],"milestone":"A pipeline that builds, tests and deploys a container on every push."},
+   {"title":"Designing for scale","weeks":4,"courses":["corp-sysdesign.ch1-fundamentals","corp-sysdesign.ch2-scalability","corp-sysdesign.ch3-caching"],"labs":[],"milestone":"Defend a design for a URL shortener in a mock interview."}
+  ]},
+ {"id":"data-analyst","title":"Data Analyst","icon":"📊","color":"#7b5cff",
+  "summary":"Excel to SQL to Python: turn messy business data into clear answers and dashboards.",
+  "audience":"Commerce, science and engineering graduates; working professionals","duration":"4–6 months, ~6 h/week",
+  "outcomes":["Clean and analyse data in Excel with lookups and PivotTables","Query databases confidently with SQL","Analyse data with Python","Explain a model's results to non-technical people"],
+  "stages":[
+   {"title":"Spreadsheet power","weeks":4,"courses":["corp-tools.ch1-excel-foundations","corp-tools.ch2-lookups","corp-tools.ch3-analysis"],"labs":[],"milestone":"A one-page PivotTable report on a sales dataset."},
+   {"title":"SQL for analysis","weeks":5,"courses":["corp-tools.ch4-sql","tech-data-systems.sql-from-zero"],"labs":["corp-tools.ch4-sql.l1"],"milestone":"Answer ten business questions with SQL joins and GROUP BY."},
+   {"title":"Python for data","weeks":5,"courses":["tech-programming.python-from-zero"],"labs":["tech-codelab-samples.run-real-code.l1"],"milestone":"A notebook that cleans a CSV and charts monthly trends."},
+   {"title":"Towards machine learning","weeks":4,"courses":["tech-ai-engineer.maths-for-ml","tech-ai-engineer.classical-ml"],"labs":[],"milestone":"Present a simple forecast and its limits to a manager."}
+  ]}
+]
