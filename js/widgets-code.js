@@ -27,6 +27,7 @@
   /* ===================== the shared Code Lab panel ===================== */
   C.lab = function (host, o) {
     o = o || {};
+    if (!C.langOf) { var self = this, args = arguments; return C.deps().then(function () { return C.lab.apply(self, args); }); }
     var lang = C.langOf(o.lang), L = C.LANGS[lang], web = C.isWeb(lang), eng = C.ENGINES[lang] || {};
     var tests = Array.isArray(o.tests) ? o.tests : [], busy = false, alive = true, prev = null, peeked = false, mine = null, saveT = 0, autoT = 0, reactStarted = false;
     var draftKey = o.draftKey || null, store = C.cstore.get(), draft = draftKey && store.drafts[draftKey];
