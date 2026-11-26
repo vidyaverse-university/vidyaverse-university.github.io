@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   var VV2 = window.VV2 = window.VV2 || {};
-  VV2.version = '2.0.0';
+  VV2.version = '2.1.2';
   VV2._id = 0;
 
   /* ---------- environment ---------- */
