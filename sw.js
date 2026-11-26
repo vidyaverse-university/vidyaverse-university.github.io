@@ -1,12 +1,12 @@
 /* VidyaVerse v2 service worker — app shell cache-first (with background refresh), packs/labs/games network-first with cache fallback */
-var VERSION = 'vv2-2.2.0', CDN_CACHE = 'vv2-cdn-1';
+var VERSION = 'vv2-2.2.1', CDN_CACHE = 'vv2-cdn-1';
 var SHELL = ['./', 'index.html', 'favicon.svg', 'manifest.webmanifest', 'css/base.css', 'css/modes.css', 'css/ui.css', 'css/widgets.css', 'css/welcome.css', 'css/print.css',
-  'js/core.js?v=2.2.0', 'js/data.js?v=2.2.0', 'js/store.js?v=2.2.0', 'js/campus.js?v=2.2.0', 'js/app.js?v=2.2.0',
-  'js/welcome.js?v=2.2.0', 'js/player.js?v=2.2.0', 'js/widgets-a.js?v=2.2.0', 'js/widgets-b.js?v=2.2.0', 'js/exam.js?v=2.2.0',
-  'js/progress.js?v=2.2.0', 'js/hub.js?v=2.2.0', 'js/pages.js?v=2.2.0', 'js/worldmap.js?v=2.2.0',
-  'css/code.css?v=2.2.0', 'js/widgets-code.js?v=2.2.0', 'js/codestudio.js?v=2.2.0', 'js/code-editor.js?v=2.2.0', 'js/code-run.js?v=2.2.0', 'js/code-preview.js?v=2.2.0',
-  'js/code-node.js?v=2.2.0', 'js/code-mongo.js?v=2.2.0', 'js/code-edu.js?v=2.2.0', 'js/code-edu-rt.js?v=2.2.0', 'js/code-edu-lib.js?v=2.2.0',
-  'css/ops.css?v=2.2.0', 'js/widgets-ops.js?v=2.2.0', 'js/labhub.js?v=2.2.0', 'js/roadmaps.js?v=2.2.0', 'js/lab-dim.js?v=2.2.0', 'roadmaps/index.sample.json'];
+  'js/core.js?v=2.2.1', 'js/data.js?v=2.2.1', 'js/store.js?v=2.2.1', 'js/campus.js?v=2.2.1', 'js/app.js?v=2.2.1',
+  'js/welcome.js?v=2.2.1', 'js/player.js?v=2.2.1', 'js/widgets-a.js?v=2.2.1', 'js/widgets-b.js?v=2.2.1', 'js/exam.js?v=2.2.1',
+  'js/progress.js?v=2.2.1', 'js/hub.js?v=2.2.1', 'js/pages.js?v=2.2.1', 'js/worldmap.js?v=2.2.1',
+  'css/code.css?v=2.2.1', 'js/widgets-code.js?v=2.2.1', 'js/codestudio.js?v=2.2.1', 'js/code-editor.js?v=2.2.1', 'js/code-run.js?v=2.2.1', 'js/code-preview.js?v=2.2.1',
+  'js/code-node.js?v=2.2.1', 'js/code-mongo.js?v=2.2.1', 'js/code-edu.js?v=2.2.1', 'js/code-edu-rt.js?v=2.2.1', 'js/code-edu-lib.js?v=2.2.1',
+  'css/ops.css?v=2.2.1', 'js/widgets-ops.js?v=2.2.1', 'js/labhub.js?v=2.2.1', 'js/roadmaps.js?v=2.2.1', 'js/lab-dim.js?v=2.2.1', 'roadmaps/index.sample.json'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(VERSION).then(function (c) { return Promise.all(SHELL.map(function (u) { return c.add(u).catch(function () { }); })); }).then(function () { return self.skipWaiting(); }));
 });
