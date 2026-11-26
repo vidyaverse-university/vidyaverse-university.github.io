@@ -201,7 +201,7 @@
     document.getElementById('modeBtn').addEventListener('click', function () { if (VV2.mode === 'tiny') VV2.adult('Changing the look is for grown-ups.').then(function (ok) { if (ok) VV2.modePicker(); }); else VV2.modePicker(); });
     document.getElementById('profileChip').addEventListener('click', function () { if (VV2.mode === 'tiny') VV2.adult('The menu is for grown-ups.').then(function (ok) { if (ok) VV2.meMenu(); }); else VV2.meMenu(); });
     document.getElementById('searchBtn').addEventListener('click', function () { VV2.go('search'); });
-    VV2.$('[data-more]').forEach(function (b) { b.addEventListener('click', function (e) { e.preventDefault(); if (VV2.mode === 'tiny') VV2.adult('The menu is for grown-ups.').then(function (ok) { if (ok) VV2.moreMenu(); }); else VV2.moreMenu(); }); });
+    VV2.$$('[data-more]').forEach(function (b) { b.addEventListener('click', function (e) { e.preventDefault(); if (VV2.mode === 'tiny') VV2.adult('The menu is for grown-ups.').then(function (ok) { if (ok) VV2.moreMenu(); }); else VV2.moreMenu(); }); });
     document.getElementById('quickExit').addEventListener('click', VV2.quickExit);
     window.addEventListener('hashchange', render);
     document.addEventListener('keydown', function (e) {
